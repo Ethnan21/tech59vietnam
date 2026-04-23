@@ -110,4 +110,31 @@
   }
   .text-glow { text-shadow: 0 0 30px hsl(217 91% 60% / 0.6); }
   .ring-glow { box-shadow: 0 0 0 1px hsl(217 91% 60% / 0.3), 0 0 30px hsl(217 91% 60% / 0.3); }
+  .text-gradient-animated {
+    background: linear-gradient(120deg, hsl(187 92% 70%), hsl(258 90% 75%), hsl(217 91% 70%), hsl(258 90% 75%), hsl(187 92% 70%));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 8s ease infinite;
+  }
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .light-streak {
+    background: linear-gradient(115deg, transparent 30%, hsl(187 92% 70% / 0.18) 45%, hsl(258 90% 75% / 0.18) 55%, transparent 70%);
+    background-size: 200% 100%;
+    animation: shimmer 6s linear infinite;
+  }
+  .scrollbar-thin::-webkit-scrollbar { height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: hsl(217 91% 60% / 0.3); border-radius: 3px; }
 }

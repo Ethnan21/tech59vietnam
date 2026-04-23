@@ -26,11 +26,11 @@ export const StatCounter = ({ end, label, suffix = "+" }: { end: number; label: 
   }, [end]);
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="font-display text-4xl md:text-6xl font-bold text-gradient tabular-nums">
+    <div ref={ref} className="text-center relative group">
+      <div className="font-display text-5xl md:text-7xl font-bold text-gradient-animated tabular-nums drop-shadow-[0_0_25px_hsl(258_90%_66%/0.5)]">
         {val.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm md:text-base text-muted-foreground mt-2 uppercase tracking-wider">{label}</div>
+      <div className="text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-[0.2em]">{label}</div>
     </div>
   );
 };
