@@ -80,6 +80,14 @@ export default {
           "0%": { transform: "scale(1)", opacity: "0.6" },
           "100%": { transform: "scale(1.4)", opacity: "0" },
         },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.04)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -94,6 +102,8 @@ export default {
         "glitch": "glitch 3s steps(1) infinite",
         "flicker": "flicker 4s ease-in-out infinite",
         "pulse-ring": "pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "breathe": "breathe 3.5s ease-in-out infinite",
+        "float-slow": "float-slow 7s ease-in-out infinite",
       },
     },
   },
