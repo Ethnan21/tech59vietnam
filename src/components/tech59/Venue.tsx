@@ -21,12 +21,12 @@ export const Venue = () => (
           </div>
         </div>
         <div className="order-1 lg:order-2">
-          <p className="text-xs uppercase tracking-widest text-accent mb-3">The Venue</p>
-          <h2 className="font-display text-5xl md:text-6xl font-bold leading-[0.95] mb-5">
-            Vietnam's <span className="text-gradient">tech capital</span>.
+          <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Venue</p>
+          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-5">
+            Vietnam's <span className="text-gradient-animated">tech capital</span>.
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            QTSC IT Park · Orbital 2.0 Tower. Where Vietnam builds.
+            QTSC IT Park · Orbital 2.0. Where Vietnam builds.
           </p>
           <div className="space-y-3 mb-8">
             {facts.map(({ icon: Icon, k, v }) => (
