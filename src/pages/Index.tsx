@@ -9,6 +9,7 @@ import { Partners } from "@/components/tech59/Partners";
 import { Program } from "@/components/tech59/Program";
 import { FinalCTA } from "@/components/tech59/FinalCTA";
 import { Footer } from "@/components/tech59/Footer";
+import { StickyCTA } from "@/components/tech59/StickyCTA";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -31,6 +32,7 @@ const Index = () => {
       <Program />
       <FinalCTA />
       <Footer />
+      <StickyCTA />
     </main>
   );
 };
