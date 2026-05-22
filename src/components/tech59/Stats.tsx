@@ -1,4 +1,6 @@
 import { StatCounter } from "./StatCounter";
+import { Reveal } from "./Reveal";
+
 
 const stats = [
   { end: 2100, label: "In the room" },
