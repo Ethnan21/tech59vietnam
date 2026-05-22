@@ -1,4 +1,7 @@
 import { Reveal } from "./Reveal";
+
+const tracks = [
+
   { title: "Vietnam Tech Outlook", desc: "Where capital flows next." },
   { title: "AI & Automation", desc: "What's actually shipping." },
   { title: "Outsourcing & BPO", desc: "Why Vietnam wins next." },
