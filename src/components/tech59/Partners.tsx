@@ -20,12 +20,13 @@ const Marquee = ({ items }: { items: string[] }) => (
 export const Partners = () => (
   <section id="partners" className="py-24 relative">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
+      <Reveal className="text-center max-w-2xl mx-auto mb-14">
         <p className="text-xs uppercase tracking-widest text-accent mb-3">Trusted by</p>
         <h2 className="font-display text-5xl md:text-6xl font-bold leading-[0.95]">
           Government. Global brands. <span className="text-gradient">Press.</span>
         </h2>
-      </div>
+      </Reveal>
+
 
       <div className="space-y-8">
         <Marquee items={local} />
