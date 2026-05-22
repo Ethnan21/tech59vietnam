@@ -2,6 +2,8 @@ import keynote from "@/assets/exp-keynote.jpg";
 import pitch from "@/assets/exp-pitch.jpg";
 import night from "@/assets/exp-night.jpg";
 import tour from "@/assets/exp-tour.jpg";
+import { Reveal } from "./Reveal";
+
 
 const items = [
   { img: keynote, title: "Tech Talks", tag: "Main Stage", desc: "Insights from the frontlines." },
