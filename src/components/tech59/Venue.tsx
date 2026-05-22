@@ -60,4 +60,6 @@ export const Venue = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
+
