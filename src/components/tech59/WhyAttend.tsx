@@ -1,4 +1,6 @@
 import { Network, TrendingUp, Cpu, Globe2 } from "lucide-react";
+import { Reveal } from "./Reveal";
+
 
 const items = [
   { icon: Network, title: "Meet investors", desc: "1,800+ funds. One room." },
