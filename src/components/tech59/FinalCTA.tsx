@@ -7,8 +7,6 @@ export const FinalCTA = () => (
     <div className="absolute inset-0 grid-bg" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
-    <div className="absolute inset-0 light-streak pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
 
     <div className="container relative z-10">
       <div className="text-center max-w-4xl mx-auto">
