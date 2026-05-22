@@ -1,6 +1,9 @@
+import { Reveal } from "./Reveal";
+
 const local = ["NIC Vietnam", "QTSC", "The Sentry", "SPARK Hub", "AVV", "Orbital 2.0", "Sky Mavis", "VOV"];
 const intl = ["Business Finland", "e27", "Vietnam News", "Vietnam+", "Embassy of Vietnam SG", "Global VC Network"];
 const media = ["VOV", "Việt Nam News", "Vietnam+", "e27"];
+
 
 const Marquee = ({ items }: { items: string[] }) => (
   <div className="overflow-hidden">
