@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "./Reveal";
+
 
 const tabs = [
   { key: "founders", label: "Founders", benefit: "Raise. Build. Scale." },
@@ -15,12 +17,13 @@ export const Audience = () => {
   return (
     <section id="audience" className="py-24 relative">
       <div className="container">
-        <div className="max-w-2xl mb-12">
+        <Reveal className="max-w-2xl mb-12">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Who it's for</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
             Built for <span className="text-gradient-animated">builders.</span>
           </h2>
-        </div>
+        </Reveal>
+
 
         <div className="flex flex-wrap gap-2 mb-8">
           {tabs.map(t => (

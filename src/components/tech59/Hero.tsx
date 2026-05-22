@@ -2,11 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useParallax } from "@/hooks/useParallax";
 
-export const Hero = () => (
+export const Hero = () => {
+  const bgRef = useParallax<HTMLImageElement>(0.25);
+  const gridRef = useParallax<HTMLDivElement>(0.1);
+  return (
   <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-hero grain">
-    <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen animate-[float_18s_ease-in-out_infinite]" width={1920} height={1080} />
-    <div className="absolute inset-0 grid-bg" />
+    <img ref={bgRef} src={heroBg} alt="" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen will-change-transform" width={1920} height={1080} />
+    <div ref={gridRef} className="absolute inset-0 grid-bg will-change-transform" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
     <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
     <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/15 blur-[140px] animate-pulse-glow [animation-delay:1.5s]" />
@@ -59,4 +63,6 @@ export const Hero = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
+
