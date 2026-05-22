@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Flame } from "lucide-react";
+import { Reveal } from "./Reveal";
+
 
 export const FinalCTA = () => (
   <section id="register" className="py-32 relative overflow-hidden grain">
