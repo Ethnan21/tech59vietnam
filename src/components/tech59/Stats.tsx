@@ -1,5 +1,4 @@
 import { StatCounter } from "./StatCounter";
-import { Stagger } from "./Stagger";
 
 const stats = [
   { end: 2100, label: "In the room" },
@@ -11,11 +10,9 @@ const stats = [
 export const Stats = () => (
   <section className="py-16 relative">
     <div className="container">
-      <div className="relative glass-strong rounded-3xl p-8 md:p-12 overflow-hidden grain">
+      <div className="relative glass-strong rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 overflow-hidden grain">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-secondary/15 blur-[120px] animate-pulse-glow pointer-events-none" />
-        <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 relative" step={120}>
-          {stats.map(s => <StatCounter key={s.label} {...s} />)}
-        </Stagger>
+        {stats.map(s => <StatCounter key={s.label} {...s} />)}
       </div>
       <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mt-6 animate-flicker">
         ⚡ Vietnam's most attended tech event · 2025
