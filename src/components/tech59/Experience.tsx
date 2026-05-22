@@ -15,19 +15,20 @@ const items = [
 export const Experience = () => (
   <section id="experience" className="py-24 relative">
     <div className="container">
-      <div className="max-w-2xl mb-12">
+      <Reveal className="max-w-2xl mb-12">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Experience</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
           Four formats. <span className="text-gradient-animated">One summit.</span>
         </h2>
-      </div>
+      </Reveal>
 
       <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4 scrollbar-thin">
         {items.map((it, i) => (
-          <article
+          <Reveal
+            as="article"
             key={it.title}
-            style={{ animationDelay: `${i * 120}ms` }}
-            className="snap-start shrink-0 w-[85%] sm:w-[60%] lg:w-[32%] glass rounded-3xl overflow-hidden group hover:border-primary/60 hover:-translate-y-2 hover:shadow-[0_25px_70px_-15px_hsl(258_90%_66%/0.6)] transition-all duration-500 animate-fade-in-up"
+            delay={i * 100}
+            className="snap-start shrink-0 w-[85%] sm:w-[60%] lg:w-[32%] glass rounded-3xl overflow-hidden group hover:border-primary/60 hover:-translate-y-2 hover:shadow-[0_25px_70px_-15px_hsl(258_90%_66%/0.6)] transition-all duration-500"
           >
             <div className="aspect-[4/3] overflow-hidden relative">
               <img src={it.img} alt={it.title} loading="lazy" width={1024} height={768}
