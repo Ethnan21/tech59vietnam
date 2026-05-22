@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "./Reveal";
+
 
 const tabs = [
   { key: "founders", label: "Founders", benefit: "Raise. Build. Scale." },
