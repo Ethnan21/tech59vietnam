@@ -1,3 +1,6 @@
+import { Reveal } from "./Reveal";
+import { Stagger } from "./Stagger";
+
 const tracks = [
   { title: "Vietnam Tech Outlook", desc: "Where capital flows next." },
   { title: "AI & Automation", desc: "What's actually shipping." },
@@ -10,19 +13,20 @@ const tracks = [
 export const Program = () => (
   <section id="program" className="py-24 relative">
     <div className="container">
-      <div className="max-w-2xl mb-12">
-        <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Program</p>
-        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-          Six tracks. <span className="text-gradient-animated">Endless deals.</span>
-        </h2>
-      </div>
+      <Reveal>
+        <div className="max-w-2xl mb-12">
+          <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Program</p>
+          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+            Six tracks. <span className="text-gradient-animated">Endless deals.</span>
+          </h2>
+        </div>
+      </Reveal>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" step={80}>
         {tracks.map((t, i) => (
           <div
             key={t.title}
-            style={{ animationDelay: `${i * 80}ms` }}
-            className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 animate-fade-in-up cursor-pointer group overflow-hidden"
+            className="relative glass rounded-2xl p-6 hover-lift hover:border-accent/60 cursor-pointer group overflow-hidden h-full"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
             <span className="relative text-[10px] uppercase tracking-[0.2em] text-accent">Track 0{i + 1}</span>
@@ -30,7 +34,7 @@ export const Program = () => (
             <p className="relative text-sm text-muted-foreground">{t.desc}</p>
           </div>
         ))}
-      </div>
+      </Stagger>
     </div>
   </section>
 );

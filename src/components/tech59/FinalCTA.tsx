@@ -3,9 +3,10 @@ import { Countdown } from "./Countdown";
 import { ArrowRight, Flame } from "lucide-react";
 
 export const FinalCTA = () => (
-  <section id="register" className="py-32 relative overflow-hidden grain">
-    <div className="absolute inset-0 bg-hero opacity-90" />
+  <section id="register" className="py-32 relative overflow-hidden grain bg-aurora">
     <div className="absolute inset-0 grid-bg" />
+    <div className="absolute inset-0 light-streak pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
 
@@ -29,14 +30,11 @@ export const FinalCTA = () => (
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <div className="relative">
-            <span className="absolute inset-0 rounded-xl bg-brand blur-2xl opacity-70 animate-pulse-glow pointer-events-none" />
-            <Button variant="hero" size="xl" asChild className="relative">
-              <a href="mailto:henry.nguyen@thesentry.com.vn?subject=TECH59%20Summit%202026%20-%20Register">
-                Register Now <ArrowRight className="h-5 w-5" />
-              </a>
-            </Button>
-          </div>
+          <Button variant="hero" size="xl" asChild className="cta-glow">
+            <a href="mailto:henry.nguyen@thesentry.com.vn?subject=TECH59%20Summit%202026%20-%20Register">
+              Register Now <ArrowRight className="h-5 w-5" />
+            </a>
+          </Button>
           <Button variant="outlineGlow" size="xl" asChild>
             <a href="mailto:henry.nguyen@thesentry.com.vn?subject=TECH59%20Summit%202026%20-%20Partnership">Talk to the team</a>
           </Button>
