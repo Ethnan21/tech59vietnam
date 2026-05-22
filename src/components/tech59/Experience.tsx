@@ -41,7 +41,7 @@ export const Experience = () => (
                 <p className="text-sm text-muted-foreground">{it.desc}</p>
               </div>
             </div>
-          </article>
+          </Reveal>
         ))}
       </div>
     </div>
