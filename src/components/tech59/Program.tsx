@@ -1,4 +1,4 @@
-const tracks = [
+import { Reveal } from "./Reveal";
   { title: "Vietnam Tech Outlook", desc: "Where capital flows next." },
   { title: "AI & Automation", desc: "What's actually shipping." },
   { title: "Outsourcing & BPO", desc: "Why Vietnam wins next." },
