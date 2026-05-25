@@ -1,22 +1,16 @@
-## Refinements
+## Changes to `src/components/tech59/Audience.tsx`
 
-### 1. Experience section imagery
-Regenerate the four placeholder images in `src/assets/` with a natural, hyperrealistic photographic style (warm/neutral tones, real lighting) instead of the current pink/blue neon look. Files replaced in place so imports stay the same:
+1. **Heading**: Change "Built for builders." → "Built for **you.**" (keep gradient on "you").
 
-- `exp-keynote.jpg` — hyperrealistic photo of a packed keynote stage, warm stage lighting, real audience
-- `exp-pitch.jpg` — hyperrealistic photo of a startup founder pitching to investors, daylight/neutral tones
-- `exp-night.jpg` — hyperrealistic photo of an expo floor with booths, natural ambient lighting
-- `exp-tour.jpg` — hyperrealistic photo of a tech facility tour, daylight, real architecture
+2. **Eyebrow / label**: Replace the eyebrow line above the heading with `⚡ I'm a...` so users immediately know to pick a tab. (Keeps "Who it's for" intent but turns it into an actionable prompt right above the tab row.)
 
-Generated with the `premium` tier for fidelity. No code changes in `Experience.tsx`.
+3. **Tab interaction**: Remove `onMouseEnter` switching — only switch on click. Add a richer hover effect on inactive tabs: subtle lift (`hover:-translate-y-0.5`), accent border glow, and a soft shadow. Active tab keeps current bold styling.
 
-### 2. Venue image parallax
-In `src/components/tech59/Venue.tsx`:
-- Remove `useParallax` import and the `imgRef` hook
-- Remove the `ref={imgRef}` and `will-change-transform` from the `<img>`
-- Restore standard sizing (drop the `h-[115%] -mt-[7%]` parallax compensation, use `h-full`)
+4. **Shortened CTAs**:
+   - Founders: "Secure a Booth" → **"Get a Booth"**
+   - Investors: "Partner with Us" → **"Partner Up"**
+   - Enterprises: "Secure a Booth" → **"Get a Booth"**
+   - Tech Talent: "Secure Your Spot" → **"Get My Spot"**
+   - Attendee: "Secure Your Spot" → **"Get My Spot"**
 
-Keeps the hover scale animation; only the scroll-tied parallax is removed.
-
-### Out of scope
-No copy, layout, or color-token changes elsewhere.
+No structural changes elsewhere.
