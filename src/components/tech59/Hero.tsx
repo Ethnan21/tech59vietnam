@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/tech59-logo.png";
 import { useParallax } from "@/hooks/useParallax";
 
 export const Hero = () => {
