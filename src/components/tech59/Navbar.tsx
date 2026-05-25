@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/tech59-logo.png";
 
 const links = [
   { label: "Why Attend", href: "#why" },
