@@ -1,16 +1,13 @@
-## Changes to `src/components/tech59/Audience.tsx`
+Update the `src/components/tech59/Audience.tsx` section with the following changes:
 
-1. **Heading**: Change "Built for builders." → "Built for **you.**" (keep gradient on "you").
-
-2. **Eyebrow / label**: Replace the eyebrow line above the heading with `⚡ I'm a...` so users immediately know to pick a tab. (Keeps "Who it's for" intent but turns it into an actionable prompt right above the tab row.)
-
-3. **Tab interaction**: Remove `onMouseEnter` switching — only switch on click. Add a richer hover effect on inactive tabs: subtle lift (`hover:-translate-y-0.5`), accent border glow, and a soft shadow. Active tab keeps current bold styling.
-
-4. **Shortened CTAs**:
-   - Founders: "Secure a Booth" → **"Get a Booth"**
-   - Investors: "Partner with Us" → **"Partner Up"**
-   - Enterprises: "Secure a Booth" → **"Get a Booth"**
-   - Tech Talent: "Secure Your Spot" → **"Get My Spot"**
-   - Attendee: "Secure Your Spot" → **"Get My Spot"**
-
-No structural changes elsewhere.
+1. Remove the "I'm a..." eyebrow text and its wrapper `<Reveal>` element.
+2. Shorten the descriptive `benefit` text for each audience group to be punchier:
+   - Founder: "Showcase your product. Meet investors. Get users."
+   - Investor: "Find the next unicorn before anyone else."
+   - Enterprise: "Connect with Vietnam's rising tech stars."
+   - Tech Talent: "Join the teams shaping tomorrow."
+   - Attendee: "Network, learn, and get inspired."
+3. Refine spacing:
+   - Tighten margins between heading, tabs, and content card.
+   - Slightly reduce tab padding and content card padding for a cleaner density.
+   - Increase tab row gap from `gap-2` to `gap-3`.
