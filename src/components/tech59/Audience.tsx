@@ -5,10 +5,36 @@ import { Reveal } from "./Reveal";
 
 
 const tabs = [
-  { key: "founders", label: "Founders", benefit: "Raise. Build. Scale." },
-  { key: "investors", label: "Investors", benefit: "Find the next unicorn." },
-  { key: "tech", label: "Tech Talent", benefit: "Join what matters." },
-  { key: "ent", label: "Enterprises", benefit: "Partner with Vietnam's best." },
+  {
+    key: "founders",
+    label: "Founders",
+    benefit: "Showcase your product. Meet investors. Find your first 1,000 users.",
+    cta: "Secure a Booth",
+  },
+  {
+    key: "investors",
+    label: "Investors",
+    benefit: "Discover the next unicorn before the rest of the market.",
+    cta: "Partner with Us",
+  },
+  {
+    key: "ent",
+    label: "Enterprises",
+    benefit: "Partner with Vietnam's most promising tech companies.",
+    cta: "Secure a Booth",
+  },
+  {
+    key: "tech",
+    label: "Tech Talent",
+    benefit: "Join the teams building the future.",
+    cta: "Secure Your Spot",
+  },
+  {
+    key: "attendee",
+    label: "Attendee",
+    benefit: "Be where the future is built. Network, learn, and get inspired.",
+    cta: "Secure Your Spot",
+  },
 ];
 
 export const Audience = () => {
@@ -46,7 +72,7 @@ export const Audience = () => {
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
-            <a href="#register">Secure Your Spot <ArrowRight className="h-5 w-5" /></a>
+            <a href="#register">{cur.cta} <ArrowRight className="h-5 w-5" /></a>
           </Button>
         </div>
       </div>
