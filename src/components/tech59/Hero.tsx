@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/tech59-logo.png";
 import { useParallax } from "@/hooks/useParallax";
 
 export const Hero = () => {
@@ -25,13 +26,8 @@ export const Hero = () => {
           <span className="text-xs uppercase tracking-widest text-muted-foreground">Organised by The Sentry · Curated audience</span>
         </div>
 
-        <h1 className="font-display font-bold leading-[0.9] mb-6 animate-fade-in-up">
-          <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] tracking-tight text-gradient-animated text-glow animate-flicker">
-            TECH59
-          </span>
-          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-2">
-            SUMMIT <span className="text-muted-foreground font-light">/ 2026</span>
-          </span>
+        <h1 className="mb-6 animate-fade-in-up">
+          <img src={logo} alt="TECH59 Summit Vietnam 2026" className="w-full max-w-3xl h-auto" />
         </h1>
 
         <p className="text-xl md:text-3xl font-display font-semibold text-foreground/90 max-w-2xl mb-8 animate-fade-in-up [animation-delay:120ms]">

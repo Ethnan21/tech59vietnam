@@ -1,22 +1,20 @@
-## Refinements
+## Logo updates
 
-### 1. Experience section imagery
-Regenerate the four placeholder images in `src/assets/` with a natural, hyperrealistic photographic style (warm/neutral tones, real lighting) instead of the current pink/blue neon look. Files replaced in place so imports stay the same:
+### 1. Save the uploaded logo
+Copy `user-uploads://ChatGPT_Image_May_25_2026_04_15_59_PM.png` to `src/assets/tech59-logo.png` so it can be imported as an ES6 module.
 
-- `exp-keynote.jpg` — hyperrealistic photo of a packed keynote stage, warm stage lighting, real audience
-- `exp-pitch.jpg` — hyperrealistic photo of a startup founder pitching to investors, daylight/neutral tones
-- `exp-night.jpg` — hyperrealistic photo of an expo floor with booths, natural ambient lighting
-- `exp-tour.jpg` — hyperrealistic photo of a tech facility tour, daylight, real architecture
+### 2. Navbar logo (inside the circle)
+In `src/components/tech59/Navbar.tsx`:
+- Import the new logo
+- Replace the "T" letter inside the `h-8 w-8 rounded-lg bg-brand` square with an `<img>` of the logo, sized to fit (e.g. `h-5 w-5 object-contain`), keeping the gradient background as requested
+- Keep the "TECH59" wordmark text next to it untouched
 
-Generated with the `premium` tier for fidelity. No code changes in `Experience.tsx`.
-
-### 2. Venue image parallax
-In `src/components/tech59/Venue.tsx`:
-- Remove `useParallax` import and the `imgRef` hook
-- Remove the `ref={imgRef}` and `will-change-transform` from the `<img>`
-- Restore standard sizing (drop the `h-[115%] -mt-[7%]` parallax compensation, use `h-full`)
-
-Keeps the hover scale animation; only the scroll-tied parallax is removed.
+### 3. Hero headline → official logo
+In `src/components/tech59/Hero.tsx`:
+- Remove the two text spans ("TECH59" gradient text + "SUMMIT / 2026")
+- Replace the `<h1>` content with an `<img>` of the official logo (which already reads "Tech59 Summit Vietnam"), sized responsively (e.g. `max-w-3xl w-full h-auto`) with proper `alt="TECH59 Summit Vietnam"` for SEO
+- Keep the H1 wrapper for semantic SEO (visually-hidden text "TECH59 Summit Vietnam 2026" or use alt on img inside h1)
+- Keep the tagline "Where the future of tech is decided." and everything below unchanged
 
 ### Out of scope
-No copy, layout, or color-token changes elsewhere.
+No other copy, layout, color, or section changes.
