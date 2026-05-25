@@ -3,7 +3,6 @@ import { MapPin, Building2, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { useParallax } from "@/hooks/useParallax";
 
 
 const facts = [
