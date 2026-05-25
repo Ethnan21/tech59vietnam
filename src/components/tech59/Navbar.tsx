@@ -13,7 +13,7 @@ export const Navbar = () => (
     <div className="container mt-4">
       <nav className="glass-strong rounded-2xl px-5 py-3 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
-          <span className="h-8 w-8 rounded-lg bg-brand grid place-items-center text-primary-foreground">T</span>
+          <span className="h-8 w-8 rounded-lg bg-brand grid place-items-center overflow-hidden"><img src={logo} alt="TECH59" className="h-5 w-5 object-contain" /></span>
           <span>TECH<span className="text-gradient">59</span></span>
         </a>
         <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
