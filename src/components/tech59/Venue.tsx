@@ -3,7 +3,6 @@ import { MapPin, Building2, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { useParallax } from "@/hooks/useParallax";
 
 
 const facts = [
@@ -13,15 +12,14 @@ const facts = [
 ];
 
 export const Venue = () => {
-  const imgRef = useParallax<HTMLImageElement>(0.12);
   return (
   <section id="venue" className="py-24 relative">
     <div className="container">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         <Reveal variant="left" className="relative rounded-3xl overflow-hidden glass-strong order-2 lg:order-1 group">
           <div className="aspect-[4/3] overflow-hidden">
-            <img ref={imgRef} src={venueImg} alt="QTSC IT Park & Orbital 2.0 Tower" loading="lazy" width={1280} height={800}
-              className="w-full h-[115%] -mt-[7%] object-cover group-hover:scale-105 transition-transform duration-[1.2s] will-change-transform" />
+            <img src={venueImg} alt="QTSC IT Park & Orbital 2.0 Tower" loading="lazy" width={1280} height={800}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.2s]" />
           </div>
           <div className="absolute bottom-4 left-4 glass-strong rounded-xl px-4 py-2 text-sm">
             <MapPin className="inline h-4 w-4 text-accent mr-1" /> QTSC, Ho Chi Minh City
