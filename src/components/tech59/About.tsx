@@ -27,14 +27,17 @@ export const About = () => (
           <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
           <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
-          <div className="relative flex gap-5 md:gap-6">
+          <div className="relative flex gap-5 md:gap-6 min-h-[320px]">
             <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
-            <div className="flex-1">
-              <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90 px-0 mx-0 my-0 pt-4">
-                We are not just building a community.{" "}
-                <span className="text-gradient-animated italic">We are shaping the future of Vietnam's innovation economy.</span>
-              </p>
-              <div className="mt-10 pt-5 border-t border-border/50 flex items-center justify-end">
+            <div className="flex-1 flex flex-col">
+              <span aria-hidden="true" className="font-display text-7xl md:text-8xl leading-none text-gradient-animated -mt-2 mb-2 select-none">“</span>
+              <div className="flex-1 flex items-center">
+                <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90">
+                  We are not just building a community.{" "}
+                  <span className="text-gradient-animated italic">We are shaping the future of Vietnam's innovation economy.</span>
+                </p>
+              </div>
+              <div className="mt-8 pt-5 border-t border-border/50 flex items-center justify-end">
                 <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Tech59 · Est. 2024</span>
               </div>
             </div>
