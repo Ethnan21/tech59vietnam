@@ -22,7 +22,7 @@ export const Hero = () => {
             <span className="absolute inline-flex h-full w-full rounded-full bg-accent animate-pulse-ring" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
           </span>
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Organised by The Sentry · Curated audience</span>
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">By The Sentry</span>
         </div>
 
         <h1 className="font-display font-black tracking-tight leading-[0.9] text-6xl md:text-8xl lg:text-9xl mb-6 animate-fade-in-up">
