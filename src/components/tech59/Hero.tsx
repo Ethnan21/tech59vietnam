@@ -36,7 +36,7 @@ export const Hero = () => {
           <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[80px]" />
         </h1>
 
-        <p className="text-xl md:text-3xl font-display font-semibold text-foreground/90 max-w-2xl mb-8 animate-fade-in-up [animation-delay:120ms]">
+        <p className="text-xl md:text-3xl font-display font-semibold text-foreground/90 max-w-2xl mb-8 animate-fade-in-up [animation-delay:120ms] mx-[25px]">
           Where the future of tech is decided.
         </p>
 
