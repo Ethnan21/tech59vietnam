@@ -35,7 +35,7 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms]">
-          <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 23–24 July 2026</span>
+          <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
           <span className="h-1 w-1 rounded-full bg-border" />
           <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Ho Chi Minh City</span>
         </div>
