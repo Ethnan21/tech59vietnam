@@ -41,10 +41,10 @@ const day1: Slot[] = [
 ];
 
 const day2: Slot[] = [
-  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview" },
-  { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "Curated cohort × jury of investors & operators" },
-  { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes access to Vietnam's tech ecosystem" },
-  { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Speakers, partners, founders & investors" },
+  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview", people: "Magnus Eriksen (Programme Director, Tech59)" },
+  { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "12 finalists · Jury: Clara Wei (Sequoia SEA), Oskar Lindgren (Creandum), Thuy Le (Touchstone Partners)" },
+  { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes Visits to Vietnam's Leading Tech Campuses", people: "Hosted by Khoa Doan (Head of Ecosystem, Saigon Innovation Hub)" },
+  { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Hosted by Ingrid Halvorsen & Bao Pham" },
 ];
 
 const days = { day1, day2 } as const;
