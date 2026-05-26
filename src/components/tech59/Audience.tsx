@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Network, TrendingUp, Cpu, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 
@@ -37,6 +37,13 @@ const tabs = [
   },
 ];
 
+const whyItems = [
+  { icon: Network, title: "Meet investors", desc: "1,800+ funds. One room." },
+  { icon: TrendingUp, title: "Build your network", desc: "Meet the people building the future." },
+  { icon: Cpu, title: "See what's next", desc: "Before everyone else." },
+  { icon: Globe2, title: "Own Southeast Asia", desc: "Vietnam is the gateway." },
+];
+
 export const Audience = () => {
   const [active, setActive] = useState(tabs[0].key);
   const cur = tabs.find(t => t.key === active)!;
@@ -72,6 +79,22 @@ export const Audience = () => {
           <Button variant="hero" size="lg" asChild className="relative">
             <a href="#register">{cur.cta} <ArrowRight className="h-5 w-5" /></a>
           </Button>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+          {whyItems.map(({ icon: Icon, title, desc }, i) => (
+            <Reveal key={title} delay={i * 90} variant="up" className="relative glass rounded-2xl p-7 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsl(258_90%_66%/0.6)] group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-secondary/0 to-accent/0 group-hover:from-primary/10 group-hover:via-secondary/5 group-hover:to-accent/10 transition-all duration-700" />
+              <div className="relative h-14 w-14 rounded-xl bg-brand grid place-items-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                <Icon className="h-7 w-7 text-primary-foreground" />
+              </div>
+              <h3 className="relative font-display text-2xl font-semibold mb-2 inline-block">
+                <span className="block">{title}</span>
+                <span aria-hidden className="absolute inset-0 text-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity duration-300">{title}</span>
+              </h3>
+              <p className="relative text-sm text-muted-foreground leading-relaxed">{desc}</p>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
