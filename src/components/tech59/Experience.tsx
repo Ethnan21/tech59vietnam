@@ -6,10 +6,10 @@ import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
 
 const items = [
-  { img: keynote, title: "Keynote Speeches", tag: "Main Stage", desc: "Insights from the frontlines." },
-  { img: pitch, title: "Startup Pitch", tag: "SPARK Hub", desc: "Where ideas get funded." },
-  { img: night, title: "Booths", tag: "Expo Floor", desc: "Discover what's shipping next." },
-  { img: tour, title: "Tech Tours", tag: "Immersive", desc: "Behind-the-scenes access to Vietnam's tech ecosystem." },
+  { img: keynote, title: "Keynote Speeches", desc: "Insights from the frontlines." },
+  { img: pitch, title: "Startup Pitch", desc: "Where ideas get funded." },
+  { img: night, title: "Booths", desc: "Discover what's shipping next." },
+  { img: tour, title: "Networking", desc: "Curated intros where deals get made." },
 ];
 
 const themes = [
@@ -41,14 +41,13 @@ export const Experience = () => (
             as="article"
             key={it.title}
             delay={i * 100}
-            className="glass rounded-3xl overflow-hidden group hover:border-primary/60 hover:-translate-y-2 hover:shadow-[0_25px_70px_-15px_hsl(258_90%_66%/0.6)] transition-all duration-500"
+            className="glass rounded-3xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)] transition-all duration-700 ease-out"
           >
             <div className="aspect-[4/3] overflow-hidden relative">
               <img src={it.img} alt={it.title} loading="lazy" width={1024} height={768}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.2s]" />
+                className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[2000ms] ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak" />
-              <span className="absolute top-4 left-4 glass-strong rounded-full px-3 py-1 text-[10px] uppercase tracking-widest text-accent">{it.tag}</span>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 light-streak" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <h3 className="font-display text-2xl font-semibold mb-1 group-hover:text-gradient-animated transition-all">{it.title}</h3>
                 <p className="text-sm text-muted-foreground">{it.desc}</p>
