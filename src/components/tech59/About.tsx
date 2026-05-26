@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 
 export const About = () => (
   <section id="about" className="pt-12 pb-24 relative">
-    <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <Reveal>
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ About Us</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
@@ -22,7 +22,7 @@ export const About = () => (
         </div>
       </Reveal>
 
-      <Reveal variant="scale" delay={120}>
+      <Reveal variant="scale" delay={120} className="lg:mt-10">
         <div className="relative glass-strong rounded-3xl p-7 md:p-10 overflow-hidden grain">
           <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
