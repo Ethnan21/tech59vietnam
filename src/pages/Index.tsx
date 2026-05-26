@@ -29,6 +29,7 @@ const Index = () => {
       
       <Experience />
       <Audience />
+      <Packages />
       <Venue />
       <Partners />
       <FinalCTA />
