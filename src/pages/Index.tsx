@@ -5,6 +5,7 @@ import { About } from "@/components/tech59/About";
 
 import { Audience } from "@/components/tech59/Audience";
 import { Experience } from "@/components/tech59/Experience";
+import { Packages } from "@/components/tech59/Packages";
 import { Venue } from "@/components/tech59/Venue";
 import { Partners } from "@/components/tech59/Partners";
 import { FinalCTA } from "@/components/tech59/FinalCTA";
