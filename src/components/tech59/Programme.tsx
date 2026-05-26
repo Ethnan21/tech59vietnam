@@ -56,9 +56,8 @@ export const Programme = () => {
   return (
     <div className="mt-8 mb-24">
       <Reveal className="max-w-2xl mb-10">
-        <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Programme</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-          Two days. <span className="text-gradient-animated">Every conversation that matters.</span>
+          <span className="text-gradient-animated">Programme</span>
         </h2>
         <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">*Agenda is subject to change</p>
       </Reveal>
