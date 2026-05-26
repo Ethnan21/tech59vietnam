@@ -72,7 +72,8 @@ export const Experience = () => (
       <Reveal className="max-w-2xl mb-12">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Core Themes</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-          Ten tracks. <span className="text-gradient-animated">Endless deals.</span>
+          Ten tracks.<br />
+          <span className="text-gradient-animated">Endless deals.</span>
         </h2>
       </Reveal>
 
