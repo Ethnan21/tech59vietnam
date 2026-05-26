@@ -1,9 +1,8 @@
-## Plan
+## Reorder: Experience before Audience
 
-1. **Remove the tagline**: Delete the `<p>` element with "Where the future of tech is decided." from the Hero component.
-2. **Shift and align remaining content**: Add `mx-[25px]` horizontal margin to the three content blocks below the tagline so they align left at the same position the tagline was:
-   - Date/Location row
-   - CTA buttons row  
-   - Countdown section
+**Changes:**
 
-This will remove the tagline and visually shift everything up, while maintaining consistent left alignment.
+1. `src/pages/Index.tsx` — swap `<Audience />` and `<Experience />` so Experience renders first.
+2. `src/components/tech59/Navbar.tsx` — swap the nav items so "Experience" appears before "Audience" in the navigation bar.
+
+Anchor IDs (`#audience`, `#experience`) and section internals remain unchanged.
