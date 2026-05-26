@@ -2,6 +2,16 @@ import keynote from "@/assets/exp-keynote.jpg";
 import pitch from "@/assets/exp-pitch.jpg";
 import night from "@/assets/exp-night.jpg";
 import tour from "@/assets/exp-tour.jpg";
+import themeMarket from "@/assets/theme-market.jpg";
+import themeOutsourcing from "@/assets/theme-outsourcing.jpg";
+import themeGaming from "@/assets/theme-gaming.jpg";
+import themeEdu from "@/assets/theme-edu.jpg";
+import themeAi from "@/assets/theme-ai.jpg";
+import themeGov from "@/assets/theme-gov.jpg";
+import themeVc from "@/assets/theme-vc.jpg";
+import themeRealEstate from "@/assets/theme-real-estate.jpg";
+import themeFashion from "@/assets/theme-fashion.jpg";
+import themeWorkshop from "@/assets/theme-workshop.jpg";
 import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
 
@@ -13,16 +23,16 @@ const items = [
 ];
 
 const themes = [
-  { title: "Vietnam Market Outlook", desc: "Where capital flows next." },
-  { title: "Outsourcing", desc: "Why Vietnam wins next." },
-  { title: "Gaming & Creator Economy", desc: "Inside the creator boom." },
-  { title: "Education & EdTech", desc: "Building the next 100 unicorns." },
-  { title: "AI & Enterprise Automation", desc: "What's actually shipping." },
-  { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making." },
-  { title: "Venture Capital & Investment", desc: "Find the next unicorn." },
-  { title: "Real Estate & Tech", desc: "Proptech meets capital." },
-  { title: "Fashion Tech", desc: "Where style meets software." },
-  { title: "Hot Topic Workshops", desc: "Hands-on, off-record." },
+  { title: "Vietnam Market Outlook", desc: "Where capital flows next.", bg: themeMarket },
+  { title: "Outsourcing", desc: "Why Vietnam wins next.", bg: themeOutsourcing },
+  { title: "Gaming & Creator Economy", desc: "Inside the creator boom.", bg: themeGaming },
+  { title: "Education & EdTech", desc: "Building the next 100 unicorns.", bg: themeEdu },
+  { title: "AI & Enterprise Automation", desc: "What's actually shipping.", bg: themeAi },
+  { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making.", bg: themeGov },
+  { title: "Venture Capital & Investment", desc: "Find the next unicorn.", bg: themeVc },
+  { title: "Real Estate & Tech", desc: "Proptech meets capital.", bg: themeRealEstate },
+  { title: "Fashion Tech", desc: "Where style meets software.", bg: themeFashion },
+  { title: "Hot Topic Workshops", desc: "Hands-on, off-record.", bg: themeWorkshop },
 ];
 
 export const Experience = () => (
@@ -73,6 +83,16 @@ export const Experience = () => (
             delay={i * 60}
             className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-pointer group overflow-hidden"
           >
+            <img
+              src={t.bg}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              width={768}
+              height={768}
+              className="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/40 pointer-events-none" />
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
             <span className="relative text-[10px] uppercase tracking-[0.2em] text-accent">Theme {String(i + 1).padStart(2, "0")}</span>
             <h3 className="relative font-display text-xl font-semibold mt-2 mb-2 group-hover:text-gradient-animated transition-all leading-tight">{t.title}</h3>
