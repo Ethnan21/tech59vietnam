@@ -21,9 +21,6 @@ export const Stats = () => (
         ))}
       </Reveal>
 
-      <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mt-6 animate-flicker">
-        ⚡ Vietnam's most attended tech event · 2025
-      </p>
     </div>
   </section>
 );
