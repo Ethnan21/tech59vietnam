@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroLogo from "@/assets/tech59-hero-logo.png";
+import heroLogo from "@/assets/tech59-hero-logo-white.png";
 import logoSentry from "@/assets/logo-thesentry.png";
 import logoSpark from "@/assets/logo-sparkhub.png";
 import logoAvv from "@/assets/logo-avv.png";
