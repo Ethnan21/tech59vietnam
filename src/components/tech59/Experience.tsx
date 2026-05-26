@@ -3,6 +3,7 @@ import pitch from "@/assets/exp-pitch.jpg";
 import night from "@/assets/exp-night.jpg";
 import tour from "@/assets/exp-tour.jpg";
 import { Reveal } from "./Reveal";
+import { Programme } from "./Programme";
 
 const items = [
   { img: keynote, title: "Keynote Speeches", tag: "Main Stage", desc: "Insights from the frontlines." },
@@ -56,6 +57,8 @@ export const Experience = () => (
           </Reveal>
         ))}
       </div>
+
+      <Programme />
 
       <Reveal className="max-w-2xl mb-12">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Core Themes</p>
