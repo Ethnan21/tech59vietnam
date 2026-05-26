@@ -81,12 +81,12 @@ export default {
           "100%": { transform: "scale(1.4)", opacity: "0" },
         },
         "breathe": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.95" },
-          "50%": { transform: "scale(1.03)", opacity: "1" },
+          "0%, 100%": { transform: "scale(1)", opacity: "0.98" },
+          "50%": { transform: "scale(1.01)", opacity: "1" },
         },
         "halo-pulse": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.35" },
-          "50%": { transform: "scale(1.08)", opacity: "0.7" },
+          "0%, 100%": { transform: "scale(1)", opacity: "0.2" },
+          "50%": { transform: "scale(1.02)", opacity: "0.35" },
         },
       },
       animation: {
