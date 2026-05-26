@@ -30,7 +30,7 @@ export const About = () => (
           <div className="relative flex gap-5 md:gap-6">
             <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
             <div className="flex-1">
-              <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90">
+              <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90 px-0 mx-0 my-0">
                 We are not just building a community.{" "}
                 <span className="text-gradient-animated italic">We are shaping the future of Vietnam's innovation economy.</span>
               </p>
