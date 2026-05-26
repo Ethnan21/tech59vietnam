@@ -34,9 +34,9 @@ export const Hero = () => {
         <h1 className="mb-6 animate-fade-in-up -ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
           <div className="relative inline-block">
-            <div aria-hidden className="absolute inset-0 -m-12 rounded-full bg-electric/30 blur-3xl motion-safe:animate-halo-pulse pointer-events-none" />
-            <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-accent/20 blur-2xl motion-safe:animate-halo-pulse [animation-delay:1.5s] pointer-events-none" />
-            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[70px] motion-safe:animate-breathe drop-shadow-[0_0_30px_hsl(var(--electric)/0.5)]" />
+            <div aria-hidden className="absolute inset-0 -m-12 rounded-full bg-electric/15 blur-3xl motion-safe:animate-halo-pulse pointer-events-none" />
+            <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-accent/10 blur-2xl motion-safe:animate-halo-pulse [animation-delay:1.5s] pointer-events-none" />
+            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[70px] motion-safe:animate-breathe drop-shadow-[0_0_20px_hsl(var(--electric)/0.25)]" />
           </div>
         </h1>
 
