@@ -10,7 +10,7 @@ const items = [
 ];
 
 export const WhyAttend = () => (
-  <section id="why" className="py-24 relative">
+  <section id="why" className="pt-12 pb-24 relative">
     <div className="container">
       <Reveal className="max-w-2xl mb-14">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Why Attend</p>
