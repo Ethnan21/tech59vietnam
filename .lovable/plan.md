@@ -1,20 +1,51 @@
-## Hero logo glow + breathing, plus navbar logo
+## Refactor Programme section
 
-**Hero (`src/components/tech59/Hero.tsx`)**
-- Wrap the hero logo `<img>` in a relative container.
-- Add a layered radial glow behind it: an absolutely positioned blurred div using brand/accent color at low opacity, sized slightly larger than the logo.
-- Apply a slow "breathing" animation to the logo itself: subtle scale (1 → 1.03 → 1) + opacity pulse over ~4s ease-in-out infinite.
-- Apply a parallel, offset glow pulse on the backdrop so the halo softly inhales/exhales (scale + opacity).
-- Use existing tokens (`bg-brand`, `bg-accent`) for color; respect `prefers-reduced-motion` by gating the animation with Tailwind's `motion-safe:` prefix.
+**File:** `src/components/tech59/Programme.tsx`
 
-**Navbar (`src/components/tech59/Navbar.tsx`)**
-- Replace the `<span>…T</span>` brand mark with an `<img>` of `@/assets/tech59-hero-logo-white.png` inside the existing `h-8 w-8 rounded-lg` container (switch to `rounded-full` per request), `object-contain` with small padding so the mark fits cleanly.
-- Keep the adjacent wordmark text untouched.
+### Content changes
 
-**Animation tokens (`tailwind.config.ts`)**
-- Add two keyframes/animations if not already present:
-  - `breathe`: `scale(1)` ↔ `scale(1.03)` with opacity 0.95 ↔ 1, 4s ease-in-out infinite.
-  - `halo-pulse`: opacity 0.35 ↔ 0.7 + scale 1 ↔ 1.08, 5s ease-in-out infinite.
-- No new colors or tokens beyond keyframes.
+Replace real speakers/topics with placeholder copy. Two days kept.
 
-**Out of scope:** no other sections, no asset regeneration, no copy changes.
+**Day 1 — Thu 16 Jul · VIP Night** (single evening track, drafted copy):
+- 6:00 PM — Arrival · Guest check-in & welcome drinks
+- 7:00 PM — Opening Toast · Hosted by Tech59 Summit
+- 7:30 PM — VIP Dinner · Curated tasting menu with speakers & partners
+- 8:30 PM — Fireside Chat · Intimate conversation with a headline guest *(speaker TBA)*
+- 9:15 PM — Networking Lounge · Connect with founders, investors & operators
+- 10:30 PM — Afterparty · Live set & late-night drinks
+
+**Day 2 — Fri 17 Jul** (from attached Excel, times as shown):
+| Start | End | Activity |
+|-------|------|----------|
+| 8:00 | 9:00 | Registration & Coffee |
+| 9:00 | 9:10 | Opening Remarks |
+| 9:10 | 9:20 | Topic 1 |
+| 9:20 | 9:30 | Topic 2 |
+| 9:30 | 9:40 | Topic 3 |
+| 9:40 | 10:15 | Topic 4 |
+| 10:15 | 10:50 | Topic 5 |
+| 10:50 | 11:25 | Topic 6 |
+| 11:25 | 12:00 | Topic 7 |
+| 12:00 | 1:30 | Lunch break |
+| 1:30 | 2:05 | Topic 7 |
+| 2:05 | 2:40 | Topic 8 |
+| 2:40 | 3:10 | Workshop 1 |
+| 3:10 | 3:40 | Workshop 2 |
+| 3:40 | 4:00 | Conclude & Takeaway |
+
+All Day 2 topics use placeholder copy like *"Session title coming soon — talk description placeholder."*
+
+### Layout changes (smaller, scannable, with reveal control)
+
+- Reduce heading from `text-5xl md:text-7xl` to `text-4xl md:text-5xl`.
+- Compact timeline rows: each row becomes a single-line summary (time range · tag · title) at `text-sm`, padding `p-3 md:p-4`, smaller timeline dot.
+- Drop the large two-column `text-3xl` time block; show `8:00 – 9:00` inline as tabular-nums.
+- Use shadcn **Accordion** (already in `ui/accordion.tsx`) so each item is collapsed by default and expands to reveal the placeholder description. Header shows time + title; chevron makes the expand affordance obvious.
+- Above the list, add a small helper line: *"Tap any session to expand details"* with a chevron icon, so the interaction is discoverable.
+- Add **Expand all / Collapse all** toggle button (top-right of the list) for users who want everything at once.
+- Day tabs unchanged in behavior, slightly smaller (`px-4 py-2 text-[11px]`).
+
+### Out of scope
+- No nav/route changes, no other sections touched.
+- No new assets, tokens, or animations beyond existing ones.
+- Real speaker data not reintroduced — all copy is placeholder.
