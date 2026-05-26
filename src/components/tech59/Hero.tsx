@@ -31,9 +31,9 @@ export const Hero = () => {
           <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-6 md:h-7 w-auto object-contain opacity-90" />
         </div>
 
-        <h1 className="font-display font-black tracking-tight leading-[0.9] text-6xl md:text-8xl lg:text-9xl mb-6 animate-fade-in-up">
-          <span className="block text-gradient">TECH59</span>
-          <span className="block text-foreground/90 text-3xl md:text-5xl lg:text-6xl mt-2">SUMMIT / 2026</span>
+        <h1 className="mb-6 animate-fade-in-up">
+          <span className="sr-only">TECH59 Summit Vietnam 2026</span>
+          <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-2xl lg:max-w-3xl h-auto" />
         </h1>
 
         <p className="text-xl md:text-3xl font-display font-semibold text-foreground/90 max-w-2xl mb-8 animate-fade-in-up [animation-delay:120ms]">
