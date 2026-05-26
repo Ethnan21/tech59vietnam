@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logoSentry from "@/assets/logo-thesentry.png";
+import logoSpark from "@/assets/logo-sparkhub.png";
+import logoAvv from "@/assets/logo-avv.png";
 import { useParallax } from "@/hooks/useParallax";
 
 export const Hero = () => {
@@ -17,12 +20,14 @@ export const Hero = () => {
 
     <div className="container relative z-10">
       <div className="max-w-5xl">
-        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 animate-fade-in">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-accent animate-pulse-ring" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-          </span>
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">By The Sentry</span>
+        <div className="inline-flex flex-wrap items-center gap-4 md:gap-5 glass rounded-full pl-5 pr-5 py-2.5 mb-8 animate-fade-in">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Powered by</span>
+          <span className="h-4 w-px bg-border" />
+          <img src={logoSentry} alt="The Sentry" className="h-6 md:h-7 w-auto object-contain opacity-90" />
+          <span className="h-4 w-px bg-border" />
+          <img src={logoSpark} alt="SPARK Hub" className="h-6 md:h-7 w-auto object-contain opacity-90" />
+          <span className="h-4 w-px bg-border" />
+          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-6 md:h-7 w-auto object-contain opacity-90" />
         </div>
 
         <h1 className="font-display font-black tracking-tight leading-[0.9] text-6xl md:text-8xl lg:text-9xl mb-6 animate-fade-in-up">
