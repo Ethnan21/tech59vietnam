@@ -4,47 +4,47 @@ import { Reveal } from "./Reveal";
 type Slot = { time: string; tag: string; title: string; people?: string; moderator?: string };
 
 const day1: Slot[] = [
-  { time: "8:30 AM", tag: "Check-in", title: "Check-in & Welcome Guests" },
+  { time: "8:30 AM", tag: "Check-in", title: "Registration, Coffee & Networking" },
   {
     time: "9:00 AM",
     tag: "Opening Remarks",
     title: "Welcome to Tech59 Summit 2026",
-    people: "Stella Sevegran (Vice Chair, NordCham Vietnam) · H.E. Pekka Voutilainen (Ambassador of Finland to Vietnam)",
+    people: "Astrid Lindqvist (Chair, Nordic Tech Council) · H.E. Johan Bergström (Ambassador of Sweden to Vietnam)",
   },
   {
     time: "9:10 AM",
     tag: "Keynote #1",
-    title: "Vietnam Is Changing Fast: What It Means for How Organizations Must Perform",
-    people: "Bui Thi Ninh (Deputy General Director, VCCI-HCM)",
+    title: "Southeast Asia's Decade: Capital, Talent, and the New Operating Model",
+    people: "Dr. Mai Nguyen-Hartwell (Chief Economist, Mekong Ventures)",
   },
   {
     time: "9:25 AM",
     tag: "Fireside Chat #1",
-    title: "From Growth to Complexity: Leadership and Talent in Vietnam's Next Chapter",
-    people: "Dr. Marcus Wittner (Managing Director, JP contagi ASIA)",
-    moderator: "David Nguyen (Executive Director, NordCham)",
+    title: "Scaling With Soul: Lessons From Building a Regional Champion",
+    people: "Henrik Olsen (CEO, Polaris Logistics)",
+    moderator: "Priya Ramaswamy (Partner, Northwind Capital)",
   },
   {
     time: "9:45 AM",
     tag: "Panel Discussion #1",
-    title: "AI in Practice: Trust, Ownership, and How Work Is Changing",
-    people: "Linh Pham (LOGIVAN / FreightPilot.AI) · Gary C Tate (Lead With AI)",
-    moderator: "Mads Werner (CEO, Ekko)",
+    title: "Agents at Work: Where AI Is Actually Moving the Needle",
+    people: "Tuan Phan (Co-founder, Vega.AI) · Sofia Kallio (Head of AI, Norse Bank) · Diego Martín (VP Engineering, Helix Robotics)",
+    moderator: "Emma Sørensen (Editor-in-Chief, Tech Quarterly)",
   },
   {
     time: "10:05 AM",
     tag: "Panel Discussion #2",
-    title: "The Structuring Success: How Nordic Companies Build High-Performing Teams",
-    people: "Andrew Khan (Carlsberg Vietnam) · Sandra Andersson (Head of HR Asia, Lindström)",
-    moderator: "David Nguyen (Executive Director, NordCham)",
+    title: "The Talent Equation: Hiring, Retaining, and Developing Across Borders",
+    people: "Lars Bjørn (CHRO, Atlas Materials) · Yuki Tanaka (Director of People, Lumen Health) · Anh Tran (Founder, Hatch Talent Lab)",
+    moderator: "Rebecca Hoffmann (Managing Partner, North Star Advisory)",
   },
 ];
 
 const day2: Slot[] = [
-  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview" },
-  { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "Curated cohort × jury of investors & operators" },
-  { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes access to Vietnam's tech ecosystem" },
-  { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Speakers, partners, founders & investors" },
+  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview", people: "Magnus Eriksen (Programme Director, Tech59)" },
+  { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "12 finalists · Jury: Clara Wei (Sequoia SEA), Oskar Lindgren (Creandum), Thuy Le (Touchstone Partners)" },
+  { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes Visits to Vietnam's Leading Tech Campuses", people: "Hosted by Khoa Doan (Head of Ecosystem, Saigon Innovation Hub)" },
+  { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Hosted by Ingrid Halvorsen & Bao Pham" },
 ];
 
 const days = { day1, day2 } as const;
