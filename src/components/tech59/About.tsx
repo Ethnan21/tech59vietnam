@@ -23,7 +23,7 @@ export const About = () => (
       </Reveal>
 
       <Reveal variant="scale" delay={120}>
-        <div className="relative glass-strong rounded-3xl p-6 md:p-8 overflow-hidden grain">
+        <div className="relative glass-strong rounded-3xl p-6 md:p-8 overflow-hidden grain mt-6">
           <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
           <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
           <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
