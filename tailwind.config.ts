@@ -81,12 +81,12 @@ export default {
           "100%": { transform: "scale(1.4)", opacity: "0" },
         },
         "breathe": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.95" },
-          "50%": { transform: "scale(1.03)", opacity: "1" },
+          "0%, 100%": { transform: "scale(1)", opacity: "0.98" },
+          "50%": { transform: "scale(1.01)", opacity: "1" },
         },
         "halo-pulse": {
-          "0%, 100%": { transform: "scale(1)", opacity: "0.35" },
-          "50%": { transform: "scale(1.08)", opacity: "0.7" },
+          "0%, 100%": { transform: "scale(1)", opacity: "0.2" },
+          "50%": { transform: "scale(1.02)", opacity: "0.35" },
         },
       },
       animation: {
@@ -102,8 +102,8 @@ export default {
         "glitch": "glitch 3s steps(1) infinite",
         "flicker": "flicker 4s ease-in-out infinite",
         "pulse-ring": "pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "breathe": "breathe 4s ease-in-out infinite",
-        "halo-pulse": "halo-pulse 5s ease-in-out infinite",
+        "breathe": "breathe 6s ease-in-out infinite",
+        "halo-pulse": "halo-pulse 7s ease-in-out infinite",
       },
     },
   },
