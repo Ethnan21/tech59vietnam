@@ -33,7 +33,7 @@ export const Hero = () => {
 
         <h1 className="mb-6 animate-fade-in-up -ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
-          <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[80px]" />
+          <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[70px]" />
         </h1>
 
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] mx-[25px]">
