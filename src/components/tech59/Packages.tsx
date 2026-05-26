@@ -50,7 +50,7 @@ export const Packages = () => (
       <Reveal className="max-w-2xl mb-12">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Attendee Packages</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-          Pick your pass. <span className="text-gradient-animated">Own the room.</span>
+          Pick your pass
         </h2>
       </Reveal>
 
