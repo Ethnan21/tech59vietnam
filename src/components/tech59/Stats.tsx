@@ -10,7 +10,7 @@ const stats = [
 ];
 
 export const Stats = () => (
-  <section className="py-16 relative">
+  <section className="pt-16 pb-8 relative">
     <div className="container">
       <Reveal variant="scale" className="relative glass-strong rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 overflow-hidden grain">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-secondary/15 blur-[120px] animate-pulse-glow pointer-events-none" />
@@ -21,9 +21,6 @@ export const Stats = () => (
         ))}
       </Reveal>
 
-      <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mt-6 animate-flicker">
-        ⚡ Vietnam's most attended tech event · 2025
-      </p>
     </div>
   </section>
 );

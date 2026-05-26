@@ -10,7 +10,7 @@ const items = [
 ];
 
 export const WhyAttend = () => (
-  <section id="why" className="py-24 relative">
+  <section id="why" className="pt-12 pb-24 relative">
     <div className="container">
       <Reveal className="max-w-2xl mb-14">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Why Attend</p>
@@ -25,7 +25,10 @@ export const WhyAttend = () => (
             <div className="relative h-14 w-14 rounded-xl bg-brand grid place-items-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
               <Icon className="h-7 w-7 text-primary-foreground" />
             </div>
-            <h3 className="relative font-display text-2xl font-semibold mb-2 group-hover:text-gradient-animated transition-all">{title}</h3>
+            <h3 className="relative font-display text-2xl font-semibold mb-2 inline-block">
+              <span className="block">{title}</span>
+              <span aria-hidden className="absolute inset-0 text-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity duration-300">{title}</span>
+            </h3>
             <p className="relative text-sm text-muted-foreground leading-relaxed">{desc}</p>
           </Reveal>
         ))}

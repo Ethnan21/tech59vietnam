@@ -22,7 +22,7 @@ export const Hero = () => {
             <span className="absolute inline-flex h-full w-full rounded-full bg-accent animate-pulse-ring" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
           </span>
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Organised by The Sentry · Curated audience</span>
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">By The Sentry</span>
         </div>
 
         <h1 className="font-display font-black tracking-tight leading-[0.9] text-6xl md:text-8xl lg:text-9xl mb-6 animate-fade-in-up">
@@ -35,7 +35,7 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms]">
-          <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 23–24 July 2026</span>
+          <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
           <span className="h-1 w-1 rounded-full bg-border" />
           <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Ho Chi Minh City</span>
         </div>
