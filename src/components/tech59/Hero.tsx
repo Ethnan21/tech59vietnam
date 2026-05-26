@@ -31,7 +31,7 @@ export const Hero = () => {
           <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-6 md:h-7 w-auto object-contain opacity-90" />
         </div>
 
-        <h1 className="mb-6 animate-fade-in-up">
+        <h1 className="mb-6 animate-fade-in-up -ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
           <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-2xl lg:max-w-3xl h-auto" />
         </h1>
