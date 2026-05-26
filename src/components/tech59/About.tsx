@@ -30,13 +30,12 @@ export const About = () => (
           <div className="relative flex gap-5 md:gap-6">
             <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
             <div className="flex-1">
-              <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90 px-0 mx-0 my-0">
+              <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-foreground/90 px-0 mx-0 my-0 pt-4">
                 We are not just building a community.{" "}
                 <span className="text-gradient-animated italic">We are shaping the future of Vietnam's innovation economy.</span>
               </p>
-              <div className="mt-7 pt-5 border-t border-border/50 flex items-center justify-between">
+              <div className="mt-10 pt-5 border-t border-border/50 flex items-center justify-end">
                 <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Tech59 · Est. 2024</span>
-                <span className="text-xs uppercase tracking-[0.25em] text-accent">HCMC → SEA</span>
               </div>
             </div>
           </div>
