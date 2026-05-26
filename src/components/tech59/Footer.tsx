@@ -6,7 +6,7 @@ export const Footer = () => (
         TECH<span className="text-gradient">59</span> Summit Vietnam 2026
       </div>
       <div className="text-center md:text-right">
-        <div>Henry Nguyen — Event Lead · <a className="text-foreground hover:text-accent" href="mailto:henry.nguyen@thesentry.com.vn">henry.nguyen@thesentry.com.vn</a></div>
+        <div>Henry Nguyen — Leasing & Event Manager · <a className="text-foreground hover:text-accent" href="mailto:henry.nguyen@thesentry.com.vn">henry.nguyen@thesentry.com.vn</a></div>
         <div className="text-xs mt-1">Powered by The Sentry · SPARK Hub · AVV</div>
       </div>
     </div>
