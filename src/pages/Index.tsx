@@ -25,7 +25,7 @@ const Index = () => {
       <Hero />
       <Stats />
       <About />
-      <WhyAttend />
+      
       <Audience />
       <Experience />
       <Venue />
