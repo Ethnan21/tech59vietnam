@@ -26,8 +26,8 @@ const Index = () => {
       <Stats />
       <About />
       
-      <Audience />
       <Experience />
+      <Audience />
       <Venue />
       <Partners />
       <FinalCTA />
