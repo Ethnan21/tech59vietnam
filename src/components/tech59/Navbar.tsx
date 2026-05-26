@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 
 const links = [
   { label: "About", href: "#about" },
-  { label: "Why Attend", href: "#why" },
   { label: "Audience", href: "#audience" },
   { label: "Experience", href: "#experience" },
   { label: "Venue", href: "#venue" },

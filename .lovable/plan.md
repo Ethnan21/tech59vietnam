@@ -1,34 +1,19 @@
-## Refinements
+## Merge Why Attend into Audience
 
-### 1. Navbar — add About link
-`src/components/tech59/Navbar.tsx`: insert `{ label: "About", href: "#about" }` as the first item in the `links` array.
+### 1. `src/components/tech59/Audience.tsx`
+- Import `Network, TrendingUp, Cpu, Globe2` from `lucide-react`.
+- Add the same `items` array currently in `WhyAttend.tsx` (4 icon/title/desc entries).
+- Below the benefit/CTA card (after line 75), add a responsive grid `grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10` rendering the four `glass` cards exactly as styled in `WhyAttend.tsx` (icon tile, title with gradient hover, description), each wrapped in `<Reveal delay={i*90}>`.
+- No "Two days. Years of upside." heading — cards sit directly under the CTA card with appropriate spacing.
 
-### 2. Hero — replace "By The Sentry" pill with "Powered by" + 3 logos
-`src/components/tech59/Hero.tsx`: replace the small status pill above the H1 with a horizontal row:
-- "Powered by" label (uppercase, tracked, muted)
-- Three logo images: The Sentry, SPARK Hub, AVV (white logos on dark, height ~24–28px, with subtle dividers between them)
+### 2. `src/components/tech59/Navbar.tsx`
+- Remove the `{ label: "Why Attend", href: "#why" }` entry from `links`.
 
-Logos: copy the uploaded PNGs into the project as assets and import them:
-- `user-uploads://TheSentry.png` → `src/assets/logo-thesentry.png`
-- `user-uploads://Sparkhub.png` → `src/assets/logo-sparkhub.png`
-- `user-uploads://AVV.png` → `src/assets/logo-avv.png`
+### 3. `src/pages/Index.tsx`
+- Remove the `WhyAttend` import and `<WhyAttend />` render.
 
-Used as `<img>` with `alt` for each, wrapped in a `glass` rounded container to match the existing pill styling.
+### 4. Delete `src/components/tech59/WhyAttend.tsx`
+- File is no longer referenced.
 
-### 3. About section — refine
-`src/components/tech59/About.tsx`:
-- Change headline from "Vietnam's leading tech & startup community." to **"What is Tech59?"** with `Tech59` in the animated gradient.
-- Remove the "Powered by … chips" row (now in Hero).
-- Refine the quote card to fit the rest of the site:
-  - Drop the oversized display `"` glyph; use a slim left accent bar (gradient `from-primary via-secondary to-accent`) instead.
-  - Quote text uses body sans (`font-sans`) — not `font-display` — at `text-xl md:text-2xl`, `font-medium`, `leading-relaxed`, `text-foreground/90`, italicized only on the second sentence via the gradient span.
-  - Tighter padding (`p-7 md:p-10`), keep `glass-strong`, grain, and the blurred glow accents.
-  - Footer line stays (`Tech59 · Est. 2024` / `HCMC → SEA`).
-
-### Files touched
-- edit `src/components/tech59/Navbar.tsx`
-- edit `src/components/tech59/Hero.tsx`
-- edit `src/components/tech59/About.tsx`
-- add `src/assets/logo-thesentry.png`, `src/assets/logo-sparkhub.png`, `src/assets/logo-avv.png`
-
-No design tokens, routing, or other sections changed.
+### Result
+Audience section flows: heading → tab buttons → benefit/CTA card → 4 "why attend" feature cards. Nav loses the Why Attend link. No other sections change.
