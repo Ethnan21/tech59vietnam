@@ -1,41 +1,20 @@
-## Add Packages section
+## Hero logo glow + breathing, plus navbar logo
 
-### New file: `src/components/tech59/Packages.tsx`
+**Hero (`src/components/tech59/Hero.tsx`)**
+- Wrap the hero logo `<img>` in a relative container.
+- Add a layered radial glow behind it: an absolutely positioned blurred div using brand/accent color at low opacity, sized slightly larger than the logo.
+- Apply a slow "breathing" animation to the logo itself: subtle scale (1 → 1.03 → 1) + opacity pulse over ~4s ease-in-out infinite.
+- Apply a parallel, offset glow pulse on the backdrop so the halo softly inhales/exhales (scale + opacity).
+- Use existing tokens (`bg-brand`, `bg-accent`) for color; respect `prefers-reduced-motion` by gating the animation with Tailwind's `motion-safe:` prefix.
 
-A new `<section id="packages">` rendered between Audience and Venue. Built with:
+**Navbar (`src/components/tech59/Navbar.tsx`)**
+- Replace the `<span>…T</span>` brand mark with an `<img>` of `@/assets/tech59-hero-logo-white.png` inside the existing `h-8 w-8 rounded-lg` container (switch to `rounded-full` per request), `object-contain` with small padding so the mark fits cleanly.
+- Keep the adjacent wordmark text untouched.
 
-- **Dynamic themed background** mirroring FinalCTA's style: layered `bg-hero` gradient, `grid-bg`, `light-streak`, and a large blurred secondary-color radial glow with `animate-pulse-glow`. `overflow-hidden grain` on the section.
-- **Eyebrow + heading** matching other sections:
-  - "⚡ Attendee Packages" eyebrow (accent, animate-flicker)
-  - Headline: `Pick your pass. <span class="text-gradient-animated">Own the room.</span>`
-- **Comparison table** inside a `glass-strong` rounded-3xl wrapper, horizontally scrollable on mobile (`overflow-x-auto scrollbar-thin`). Uses shadcn `Table` primitives.
-  - Columns: Feature / Access · VIP Pass · Premium Pass · Standard Pass · Start Up Pass · Partner Pass
-  - Rows (exact content from screenshot):
-    1. Main Stage Keynotes Access — ✓ / ✓ / ✓ / ✓ / ✓
-    2. All Main Stage Panels Access (Gaming, Venture, Edtech, Enterprise) — ✓ / ✓ / ✓ / ✓ / ✓
-    3. VIP / Speaker Lounge Access — ✓ / ✓ / ✗ / ✗ / ✗
-    4. Coworking Lounge Access — ✓ / ✓ / ✓ / ✗ / ✗
-    5. Workshops (Limited 30–40 Pax) — ✓ All Workshops / ✓ 1–2 Workshop / ✗ / ✓ 1 Workshop / ✓ 1 Workshop
-    6. Executive Policy Keynotes (Gov / Consulate – 30 Pax) — ✓ Front Seating / ✓ / ✗ / ✗ / By Invitation
-    7. After Party Access — ✓ VIP Lounge Area / ✓ / ✓ / ✗ / ✓
-    8. VIP Reception (Night Before) — ✓ / ✓ / ✗ / ✗ / By Invitation
-    9. Priority Registration & Fast Track Check-in — ✓ / ✓ / ✗ / ✗ / ✓
-    10. Lunch Provision — ✓ / ✗ / ✗ / ✗ / ✗
-    11. Welcome Gift Bag — ✓ / ✓ / ✗ / ✗ / ✓
-    12. **Price** row (highlighted): Exclusive offer / 3,000,000 VND / 1,250,000 VND / 750,000 VND / Exclusive Offer
-  - Checkmarks rendered with `Check` icon (accent color), X with `X` icon (muted), inline annotations as small muted text below the check.
-  - Header row: column titles use `font-display`, accent color for pass columns. VIP/Premium columns get a subtle gradient tint to highlight tiers.
-  - Price row: thicker top border, `font-display` larger text, gradient text for amounts.
-- Subtle Reveal animations on heading and table.
+**Animation tokens (`tailwind.config.ts`)**
+- Add two keyframes/animations if not already present:
+  - `breathe`: `scale(1)` ↔ `scale(1.03)` with opacity 0.95 ↔ 1, 4s ease-in-out infinite.
+  - `halo-pulse`: opacity 0.35 ↔ 0.7 + scale 1 ↔ 1.08, 5s ease-in-out infinite.
+- No new colors or tokens beyond keyframes.
 
-### Edit: `src/components/tech59/Navbar.tsx`
-
-Add `{ label: "Packages", href: "#packages" }` to the links array between Audience and Venue.
-
-### Edit: `src/pages/Index.tsx`
-
-Import `Packages` and render `<Packages />` between `<Audience />` and `<Venue />`.
-
-### Out of scope
-
-No changes to design tokens, other sections, or pricing logic. No backend.
+**Out of scope:** no other sections, no asset regeneration, no copy changes.
