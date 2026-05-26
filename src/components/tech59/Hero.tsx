@@ -36,17 +36,13 @@ export const Hero = () => {
           <img src={heroLogo} alt="TECH59 Summit Vietnam" className="w-full max-w-xl lg:max-w-2xl h-auto my-0 py-0 pr-[20px] pt-0 pl-0 pb-0 px-px mx-[80px]" />
         </h1>
 
-        <p className="text-xl md:text-3xl font-display font-semibold text-foreground/90 max-w-2xl mb-8 animate-fade-in-up [animation-delay:120ms] mx-[25px]">
-          Where the future of tech is decided.
-        </p>
-
-        <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms]">
+        <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] mx-[25px]">
           <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
           <span className="h-1 w-1 rounded-full bg-border" />
           <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Ho Chi Minh City</span>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms]">
+        <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms] mx-[25px]">
           <div className="relative">
             <span className="absolute inset-0 rounded-xl bg-brand blur-xl opacity-60 animate-pulse-glow pointer-events-none" />
             <Button variant="hero" size="xl" asChild className="relative">
@@ -58,10 +54,11 @@ export const Hero = () => {
           </Button>
         </div>
 
-        <div className="animate-fade-in-up [animation-delay:360ms]">
+        <div className="animate-fade-in-up [animation-delay:360ms] mx-[25px]">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Doors open in</p>
           <Countdown />
         </div>
+
       </div>
     </div>
   </section>
