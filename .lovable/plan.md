@@ -1,34 +1,27 @@
 ## Refine Experience section
 
-### 1. Replace the four format cards with networking-themed cards
+### 1. Replace Tech Tours with Networking
 
-In `src/components/tech59/Experience.tsx`, replace the current `items` array (Keynote Speeches, Startup Pitch, Booths, Tech Tours) with four networking-focused experiences. Keep four cards so the grid layout stays balanced. Proposed:
+In `src/components/tech59/Experience.tsx`, keep Keynote Speeches, Startup Pitch, and Booths. Replace the fourth item (Tech Tours) with:
 
-- Founder Mixers — Curated intros between operators building at scale.
-- Investor Roundtables — Private conversations with active capital.
-- VIP Dinners — Off-record evenings with the inner circle.
-- Open Lounges — Serendipitous connections, all summit long.
+- **Networking** — "Curated intros where deals get made."
 
-Reuse the existing four images (`exp-keynote`, `exp-pitch`, `exp-night`, `exp-tour`) so no new assets are needed.
+Reuse the existing `exp-tour.jpg` image (or swap later if desired). Section heading "Four formats. One summit." stays.
 
-Update the section heading from "Four formats. One summit." to something networking-led, e.g. "Four ways to connect. One summit."
+### 2. Remove the location tag chips
 
-### 2. Remove the location tag header on each card
+Delete the `<span class="absolute top-4 left-4 ...">{it.tag}</span>` from each card and drop the `tag` field from the items array — no more "Main Stage / SPARK Hub / Expo Floor / Immersive" labels.
 
-Delete the `<span class="absolute top-4 left-4 ...">{it.tag}</span>` element from each card so the top-left "Main Stage / SPARK Hub / Expo Floor / Immersive" chips disappear. Drop the `tag` field from the items.
-
-### 3. Premium, slow-zoom hover state
+### 3. Premium, slow-zoom hover
 
 Refine the card hover for a more luxurious feel:
 
-- Image zoom: change `group-hover:scale-110` + `duration-[1.2s]` to a slower, gentler `group-hover:scale-[1.06]` with `duration-[2000ms]` and `ease-out`.
-- Card lift: soften `-translate-y-2` to `-translate-y-1` and slow `duration-500` to `duration-700` with `ease-out`.
-- Shadow: swap the heavy neon purple shadow for a softer, more premium glow — `hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)]`.
-- Border: ease border tint transition (`hover:border-primary/40` instead of `/60`) for a subtler highlight.
-- Keep the existing light-streak shimmer overlay; it already reads premium.
+- Image zoom: `group-hover:scale-[1.06]` with `duration-[2000ms] ease-out` (slower, gentler than the current `scale-110` / `1.2s`)
+- Card lift: soften to `-translate-y-1`, `duration-700 ease-out`
+- Shadow: swap heavy neon purple for a softer premium glow — `hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)]`
+- Border: subtler `hover:border-primary/40`
+- Keep the existing light-streak shimmer overlay
 
-### Technical notes
+### Scope
 
-- Only `src/components/tech59/Experience.tsx` changes. No new assets, no token changes, no other components touched.
-- The `tag` property is removed from the items array since it's no longer rendered.
-- The "Core Themes" grid below is untouched.
+Only `src/components/tech59/Experience.tsx` changes. Core Themes grid untouched.
