@@ -52,6 +52,25 @@ import logo50 from "@/assets/partners/logo-50.png";
 import logo51 from "@/assets/partners/logo-51.png";
 import logo52 from "@/assets/partners/logo-52.png";
 import logo53 from "@/assets/partners/logo-53.png";
+import press01 from "@/assets/press/press-01.png";
+import press02 from "@/assets/press/press-02.png";
+import press03 from "@/assets/press/press-03.png";
+import press04 from "@/assets/press/press-04.png";
+import press05 from "@/assets/press/press-05.png";
+import press06 from "@/assets/press/press-06.svg";
+import press07 from "@/assets/press/press-07.svg";
+import press08 from "@/assets/press/press-08.png";
+
+const pressLogos = [
+  { src: press01, alt: "VOV - Tiếng nói Việt Nam" },
+  { src: press02, alt: "Việt Nam News" },
+  { src: press03, alt: "Vietnam+" },
+  { src: press04, alt: "e27" },
+  { src: press05, alt: "Tin Tức" },
+  { src: press06, alt: "Press partner 6" },
+  { src: press07, alt: "Press partner 7" },
+  { src: press08, alt: "Press partner 8" },
+];
 
 const allLogos = [
   { src: logo01, alt: "Partner 1" },
@@ -150,6 +169,23 @@ export const Partners = () => (
             <LogoRow items={rowB} />
             <LogoRow items={rowB} />
           </div>
+        </div>
+      </div>
+
+      <div className="mt-20 pt-12 border-t border-white/10">
+        <Reveal className="text-center mb-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured in</p>
+        </Reveal>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-10 items-center justify-items-center max-w-6xl mx-auto">
+          {pressLogos.map((p, i) => (
+            <img
+              key={i}
+              src={p.src}
+              alt={p.alt}
+              loading="lazy"
+              className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+            />
+          ))}
         </div>
       </div>
     </div>
