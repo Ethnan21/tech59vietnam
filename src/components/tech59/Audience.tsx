@@ -15,6 +15,7 @@ const tabs = [
     label: "Enterprise",
     benefit: "Connect with Vietnam's rising tech stars.",
     cta: "Get a Booth",
+    href: "#contact",
     image: audienceEnterprise,
   },
   {
@@ -22,6 +23,7 @@ const tabs = [
     label: "Founder",
     benefit: "Showcase your product. Meet investors. Get users.",
     cta: "Get a Booth",
+    href: "#contact",
     image: audienceFounder,
   },
   {
@@ -29,6 +31,7 @@ const tabs = [
     label: "Investor",
     benefit: "Find the next unicorn before anyone else.",
     cta: "Get My Spot",
+    href: "https://lu.ma/bde1n8vo",
     image: audienceInvestor,
   },
   {
@@ -36,6 +39,7 @@ const tabs = [
     label: "Innovator",
     benefit: "Discover what's next. Meet the builders.",
     cta: "Get My Spot",
+    href: "https://lu.ma/bde1n8vo",
     image: audienceInnovator,
   },
   {
@@ -43,6 +47,7 @@ const tabs = [
     label: "Attendee",
     benefit: "Network, learn, and get inspired.",
     cta: "Get My Spot",
+    href: "https://lu.ma/bde1n8vo",
     image: audienceAttendee,
   },
 ];
@@ -90,7 +95,7 @@ export const Audience = () => {
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
-            <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">{cur.cta} <ArrowRight className="h-5 w-5" /></a>
+            <a href={cur.href} {...(cur.href.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{cur.cta} <ArrowRight className="h-5 w-5" /></a>
           </Button>
         </div>
 
