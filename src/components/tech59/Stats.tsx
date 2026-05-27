@@ -12,7 +12,7 @@ export const Stats = () => (
   <section className="pt-16 pb-8 relative">
     <div className="container">
       <Reveal className="text-center mb-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-accent">Tech59 2025's Impact</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-accent">TECH59 2025 IMPACT</p>
       </Reveal>
       <Reveal variant="scale" className="relative glass-strong rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 overflow-hidden grain">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-secondary/15 blur-[120px] animate-pulse-glow pointer-events-none" />
