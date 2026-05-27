@@ -42,7 +42,7 @@ const day1: Slot[] = [
 ];
 
 const day2: Slot[] = [
-  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview", people: "Magnus Eriksen (Programme Director, Tech59)" },
+  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview", people: "Magnus Eriksen (Program Director, Tech59)" },
   { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "12 finalists · Jury: Clara Wei (Sequoia SEA), Oskar Lindgren (Creandum), Thuy Le (Touchstone Partners)" },
   { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes Visits to Vietnam's Leading Tech Campuses", people: "Hosted by Khoa Doan (Head of Ecosystem, Saigon Innovation Hub)" },
   { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Hosted by Ingrid Halvorsen & Bao Pham" },
@@ -93,7 +93,7 @@ export const Programme = () => {
     <div className="mt-8 mb-24">
       <Reveal className="max-w-2xl mb-10">
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-          <span className="text-gradient-animated">Programme</span>
+          <span className="text-gradient-animated">Program</span>
         </h2>
         <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">*Agenda is subject to change</p>
       </Reveal>
