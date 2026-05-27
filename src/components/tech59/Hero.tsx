@@ -32,14 +32,15 @@ export const Hero = () => {
         </div>
 
 
-        <h1 className="mb-6 animate-fade-in-up -ml-[8%]">
+        <h1 className="mb-6 animate-fade-in-up md:-ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
-          <div className="relative inline-block">
+          <div className="relative inline-block max-w-full">
             <div aria-hidden className="absolute inset-0 -m-12 rounded-full bg-electric/15 blur-3xl motion-safe:animate-halo-pulse pointer-events-none" />
             <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-accent/10 blur-2xl motion-safe:animate-halo-pulse [animation-delay:1.5s] pointer-events-none" />
-            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 pr-[20px] pt-4 pl-0 pb-0 px-px mx-[70px] motion-safe:animate-breathe drop-shadow-[0_0_20px_hsl(var(--electric)/0.25)]" />
+            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px md:mx-[70px] motion-safe:animate-breathe drop-shadow-[0_0_20px_hsl(var(--electric)/0.25)]" />
           </div>
         </h1>
+
 
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] mx-[25px]">
           <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
