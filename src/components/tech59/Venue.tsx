@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 const facts = [
   { icon: Building2, k: "QTSC IT Park", v: "HCMC's largest tech hub" },
   { icon: Users, k: "20,000+", v: "professionals on-site" },
-  { icon: MapPin, k: "Orbital 2.0", v: "Premier tech venue" },
+  { icon: MapPin, k: "Orbital 2.0 Tower", v: "Premier tech venue" },
 ];
 
 export const Venue = () => {
@@ -32,7 +32,7 @@ export const Venue = () => {
               Vietnam's <span className="text-gradient-animated">tech capital</span>.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              QTSC IT Park · Orbital 2.0. Where Vietnam builds.
+              QTSC IT Park · Orbital 2.0 Tower. Where Vietnam builds.
             </p>
           </Reveal>
           <div className="space-y-3 mb-8">
