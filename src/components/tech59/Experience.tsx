@@ -18,7 +18,7 @@ import { Programme } from "./Programme";
 const items = [
   { img: keynote, title: "Keynote Speeches", desc: "Insights from the frontlines." },
   { img: pitch, title: "Startup Pitch", desc: "Where ideas get funded." },
-  { img: night, title: "Booths", desc: "Discover what's shipping next." },
+  { img: night, title: "Exhibitor Booths", desc: "Discover what's shipping next." },
   { img: tour, title: "Networking", desc: "Curated intros where deals get made." },
 ];
 
