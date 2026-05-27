@@ -29,6 +29,16 @@ import logo27 from "@/assets/partners/logo-27.png";
 import logo28 from "@/assets/partners/logo-28.png";
 import logo29 from "@/assets/partners/logo-29.png";
 import logo30 from "@/assets/partners/logo-30.png";
+import logo31 from "@/assets/partners/logo-31.png";
+import logo32 from "@/assets/partners/logo-32.png";
+import logo33 from "@/assets/partners/logo-33.png";
+import logo34 from "@/assets/partners/logo-34.png";
+import logo35 from "@/assets/partners/logo-35.png";
+import logo36 from "@/assets/partners/logo-36.png";
+import logo37 from "@/assets/partners/logo-37.png";
+import logo38 from "@/assets/partners/logo-38.png";
+import logo39 from "@/assets/partners/logo-39.png";
+import logo40 from "@/assets/partners/logo-40.png";
 
 const logos = [
   { src: logo01, alt: "Partner 1" },
@@ -61,6 +71,16 @@ const logos = [
   { src: logo28, alt: "Partner 28" },
   { src: logo29, alt: "Partner 29" },
   { src: logo30, alt: "Partner 30" },
+  { src: logo31, alt: "Partner 31" },
+  { src: logo32, alt: "Partner 32" },
+  { src: logo33, alt: "Partner 33" },
+  { src: logo34, alt: "Partner 34" },
+  { src: logo35, alt: "Partner 35" },
+  { src: logo36, alt: "Partner 36" },
+  { src: logo37, alt: "Partner 37" },
+  { src: logo38, alt: "Partner 38" },
+  { src: logo39, alt: "Partner 39" },
+  { src: logo40, alt: "Partner 40" },
 ];
 
 const LogoRow = () => (
