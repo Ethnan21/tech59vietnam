@@ -1,16 +1,53 @@
-## Changes
+## Rebuild the bottom section as "Contact"
 
-### 1. Experience cards (`src/components/tech59/Experience.tsx`)
-- **Align titles/subtext**: Make the text block bottom-aligned consistently. Currently the text sits at `absolute bottom-0` over the image, but if one description wraps to two lines (Networking: "Curated intros where deals get made.") vs others, alignment differs. Fix by giving each title a fixed min-height (or `line-clamp` / consistent height) so titles and subtext align across all 4 cards. Approach: wrap title in a fixed-height container (e.g. `min-h-[3.5rem]` for title area) so subtext starts at same Y.
-- **Remove image zoom on hover**: drop `group-hover:scale-[1.06]` and `transition-transform duration-[4000ms]` on the `<img>`.
-- **Subtle float-up**: keep card hover float, but make it more subtle — reduce `-translate-y-1` to `-translate-y-0.5`, soften shadow. Remove pointer affordance: no border color change/glow that implies clickability; keep `cursor-default` (don't use `cursor-pointer`). Current code doesn't set cursor-pointer but `hover:border-primary/40` + big shadow suggests interactivity — tone down.
+Refactor `src/components/tech59/FinalCTA.tsx` (rename intent to Contact section) and update the nav link in `src/components/tech59/Navbar.tsx`.
 
-### 2. Core themes grid (`src/components/tech59/Experience.tsx`)
-- Remove `cursor: pointer` — change `cursor-pointer` → `cursor-default` on the themes `Reveal` cards.
+### Section structure (top → bottom)
 
-### 3. Packages table (`src/components/tech59/Packages.tsx`)
-- Reorder columns: VIP Pass, **Partner Pass**, Premium Pass, Standard Pass, Start Up Pass.
-- Reorder `columns`, `prices`, and each `row.values` tuple accordingly (move index 4 → index 1).
-- Update the header styling logic so Partner Pass (now index 1) gets an appropriate accent; keep VIP gradient at index 0. Adjust so Premium accent moves to its new index.
+1. **Keep** the "Limited access · Not everyone gets in" glass badge (with flame icon, flicker animation).
+2. **Keep** the countdown timer (`<Countdown compact />`) above the form.
+3. **Replace** the giant "TECH59 SUMMIT / Be in the room." headline + Register/Talk to team buttons with a new **enquiry form card**.
 
-No other files affected.
+### Enquiry form
+
+A glass-style card centered max-w-2xl containing:
+- Heading: "Get in touch" (font-display, large but smaller than current 9xl headline)
+- Subtext: "Send us an enquiry — we'll be in touch."
+- Three inputs in a responsive 3-column grid (stacks on mobile):
+  - Name (text, required)
+  - Email (email, required)
+  - Enquiry (short text — single line, required) — the "subject/category" line
+- One large `<textarea>` below: "Your enquiry" (required, ~6 rows)
+- Submit button (hero variant): "Send Enquiry"
+
+### Behavior
+
+- Use controlled React state (useState) for the 4 fields.
+- On submit: build a `mailto:` URL targeting `events@thesentry.com.vn`:
+  - `subject` = the Enquiry field value (URL-encoded)
+  - `body` = `Name: ...\nEmail: ...\n\n<message>` (URL-encoded via `encodeURIComponent`)
+  - `window.location.href = mailto:events@thesentry.com.vn?subject=...&body=...`
+- This opens the user's default mail client (Outlook on Windows for the target audience).
+- Client-side validation: required fields + simple email regex; show inline error states using existing input styling. No backend, no Lovable Cloud needed.
+
+### Dynamic effects (premium, subtle)
+
+- Wrap section heading, subtext, form card, and button in `<Reveal>` with staggered delays (matching the existing rhythm: 80/180/260/340ms).
+- Form card: `glass` background + subtle border, soft shadow, on `:focus-within` a gentle glow ring (using `--primary` token).
+- Inputs/textarea: focus ring with smooth transition, subtle background lift on focus.
+- Submit button: keep the existing pulsing glow halo behind the hero button (reuse the blur+pulse pattern already used).
+- Keep the section's hero gradient bg, grid-bg overlay, light-streak, and the pulsing secondary glow blob behind everything.
+
+### Section id + nav
+
+- Change section id from `register` → `contact`.
+- Update `Navbar.tsx`: find any link to `#register` and change to `#contact`; if the nav label is "Register", change to "Contact". (Will verify the exact nav items in build phase.)
+- Keep the existing "Limited access" footer line at the very bottom.
+
+### Files touched
+
+- `src/components/tech59/FinalCTA.tsx` — major rewrite of the inner content; keep imports/structure for background layers.
+- `src/components/tech59/Navbar.tsx` — update link href/label for the contact section.
+- Reuse existing `Input` and `Textarea` shadcn components for consistent styling.
+
+No new dependencies, no backend, no design tokens changed.
