@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
-import { ArrowRight, Sparkles, MapPin, Calendar } from "lucide-react";
+import { ArrowRight, Sparkles, MapPin, Calendar, ArrowUpRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroLogo from "@/assets/tech59-hero-logo-white.png";
 import logoSentry from "@/assets/logo-thesentry.png";
@@ -43,7 +43,7 @@ export const Hero = () => {
         <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] mx-[25px]">
           <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
           <span className="h-1 w-1 rounded-full bg-border" />
-          <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" />Ho Chi Minh City</span>
+          <a href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 whitespace-nowrap hover:text-foreground transition-colors"><MapPin className="h-4 w-4 text-accent" />The Sentry Q, Thành phố Hồ Chí Minh, Hồ Chí Minh<ArrowUpRight className="h-3.5 w-3.5" /></a>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms] mx-[25px]">
