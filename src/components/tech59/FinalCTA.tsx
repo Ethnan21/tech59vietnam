@@ -74,7 +74,7 @@ export const FinalCTA = () => {
           </div>
 
           <p className="text-xs text-muted-foreground mt-10 uppercase tracking-[0.25em] animate-flicker">
-            ⚡ Last edition sold out · Curated audience only
+            ⚡ TECH59 SUMMIT · CURATED AUDIENCE ONLY
           </p>
         </div>
       </div>
