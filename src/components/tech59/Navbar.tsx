@@ -26,7 +26,7 @@ export const Navbar = () => (
           ))}
         </ul>
         <Button variant="hero" size="sm" asChild>
-          <a href="#contact">Contact</a>
+          <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">Register</a>
         </Button>
       </nav>
     </div>
