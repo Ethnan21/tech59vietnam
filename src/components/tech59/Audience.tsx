@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, Network, TrendingUp, Cpu, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
+import audienceBg from "@/assets/audience-bg.jpg";
 
 
 const tabs = [
