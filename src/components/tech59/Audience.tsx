@@ -2,39 +2,48 @@ import { useState } from "react";
 import { ArrowRight, Network, TrendingUp, Cpu, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import audienceBg from "@/assets/audience-bg.jpg";
+import audienceEnterprise from "@/assets/audience-enterprise.jpg";
+import audienceFounder from "@/assets/audience-founder.jpg";
+import audienceInvestor from "@/assets/audience-investor.jpg";
+import audienceInnovator from "@/assets/audience-innovator.jpg";
+import audienceAttendee from "@/assets/audience-attendee.jpg";
 
 
 const tabs = [
-  {
-    key: "founders",
-    label: "Founder",
-    benefit: "Showcase your product. Meet investors. Get users.",
-    cta: "Get a Booth",
-  },
-  {
-    key: "investors",
-    label: "Investor",
-    benefit: "Find the next unicorn before anyone else.",
-    cta: "Partner Up",
-  },
   {
     key: "ent",
     label: "Enterprise",
     benefit: "Connect with Vietnam's rising tech stars.",
     cta: "Get a Booth",
+    image: audienceEnterprise,
   },
   {
-    key: "tech",
-    label: "Tech Talent",
-    benefit: "Join the teams shaping tomorrow.",
+    key: "founders",
+    label: "Founder",
+    benefit: "Showcase your product. Meet investors. Get users.",
+    cta: "Get a Booth",
+    image: audienceFounder,
+  },
+  {
+    key: "investors",
+    label: "Investor",
+    benefit: "Find the next unicorn before anyone else.",
     cta: "Get My Spot",
+    image: audienceInvestor,
+  },
+  {
+    key: "innovator",
+    label: "Innovator",
+    benefit: "Discover what's next and meet the builders making it.",
+    cta: "Get My Spot",
+    image: audienceInnovator,
   },
   {
     key: "attendee",
     label: "Attendee",
     benefit: "Network, learn, and get inspired.",
     cta: "Get My Spot",
+    image: audienceAttendee,
   },
 ];
 
@@ -73,7 +82,7 @@ export const Audience = () => {
         </div>
 
         <div key={cur.key} className="relative glass-strong rounded-3xl p-8 md:p-14 animate-fade-in overflow-hidden grain">
-          <img src={audienceBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none" />
+          <img src={cur.image} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-r from-card via-card/60 to-card/20 pointer-events-none" />
           <div className="absolute inset-0 bg-card/20 pointer-events-none" />
           <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
