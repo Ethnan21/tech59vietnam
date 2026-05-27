@@ -117,10 +117,9 @@ export const FinalCTA = () => {
                 {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
               </div>
 
-              <div className="relative inline-block w-full sm:w-auto">
-                <span className="absolute inset-0 rounded-xl bg-brand blur-2xl opacity-60 animate-pulse-glow pointer-events-none" />
-                <Button type="submit" variant="hero" size="xl" className="relative w-full sm:w-auto">
-                  Send Enquiry <Send className="h-5 w-5" />
+              <div className="flex justify-center">
+                <Button type="submit" variant="outlineGlow" size="lg" className="w-full sm:w-auto">
+                  Send Enquiry <Send className="h-4 w-4" />
                 </Button>
               </div>
             </form>
