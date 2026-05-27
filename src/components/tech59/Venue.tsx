@@ -16,14 +16,22 @@ export const Venue = () => {
   <section id="venue" className="py-24 relative">
     <div className="container">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <Reveal variant="left" className="relative rounded-3xl overflow-hidden glass-strong order-2 lg:order-1 group">
-          <div className="aspect-[4/3] overflow-hidden">
-            <img src={venueImg} alt="QTSC IT Park & Orbital 2.0 Tower" loading="lazy" width={1280} height={800}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.2s]" />
-          </div>
-          <div className="absolute bottom-4 left-4 glass-strong rounded-xl px-4 py-2 text-sm">
-            <MapPin className="inline h-4 w-4 text-accent mr-1" /> QTSC, Ho Chi Minh City
-          </div>
+        <Reveal variant="left" className="order-2 lg:order-1">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block rounded-3xl overflow-hidden glass-strong group"
+            aria-label="Open QTSC location in Google Maps"
+          >
+            <div className="aspect-[4/3] overflow-hidden">
+              <img src={venueImg} alt="QTSC IT Park & Orbital 2.0 Tower" loading="lazy" width={1280} height={800}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.2s]" />
+            </div>
+            <div className="absolute bottom-4 left-4 glass-strong rounded-xl px-4 py-2 text-sm group-hover:text-foreground transition-colors">
+              <MapPin className="inline h-4 w-4 text-accent mr-1" /> QTSC, Ho Chi Minh City
+            </div>
+          </a>
         </Reveal>
         <div className="order-1 lg:order-2">
           <Reveal>
