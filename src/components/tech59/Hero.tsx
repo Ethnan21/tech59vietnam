@@ -42,28 +42,29 @@ export const Hero = () => {
         </h1>
 
 
-        <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] mx-[25px]">
+        <div className="flex flex-wrap items-center gap-3 md:gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] md:mx-[25px]">
           <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
-          <span className="h-1 w-1 rounded-full bg-border" />
-          <a href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 whitespace-nowrap hover:text-foreground transition-colors"><MapPin className="h-4 w-4 text-accent" />The Sentry Q, Thành phố Hồ Chí Minh, Hồ Chí Minh<ArrowUpRight className="h-3.5 w-3.5" /></a>
+          <span className="hidden md:inline-block h-1 w-1 rounded-full bg-border" />
+          <a href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn" target="_blank" rel="noopener noreferrer" className="inline-flex items-start md:items-center gap-2 md:whitespace-nowrap hover:text-foreground transition-colors"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5 md:mt-0" /><span>The Sentry Q, Thành phố Hồ Chí Minh, Hồ Chí Minh</span><ArrowUpRight className="h-3.5 w-3.5 shrink-0 mt-0.5 md:mt-0" /></a>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms] mx-[25px]">
+        <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms] md:mx-[25px]">
           <div className="relative">
             <span className="absolute inset-0 rounded-xl bg-brand blur-xl opacity-60 animate-pulse-glow pointer-events-none" />
-            <Button variant="hero" size="xl" asChild className="relative">
+            <Button variant="hero" size="xl" asChild className="relative w-full sm:w-auto">
               <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">Get Your Pass <ArrowRight className="h-5 w-5" /></a>
             </Button>
           </div>
-          <Button variant="outlineGlow" size="xl" asChild>
+          <Button variant="outlineGlow" size="xl" asChild className="w-full sm:w-auto">
             <a href="#contact">Become a Partner</a>
           </Button>
         </div>
 
-        <div className="animate-fade-in-up [animation-delay:360ms] mx-[25px]">
+        <div className="animate-fade-in-up [animation-delay:360ms] md:mx-[25px]">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Doors open in</p>
           <Countdown />
         </div>
+
 
       </div>
     </div>
