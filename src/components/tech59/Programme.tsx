@@ -16,7 +16,7 @@ const day2: Slot[] = [
   { time: "10:15 AM", tag: "Panel Discussion", title: "Presentation + Panel", people: "Panelists & topic to be announced" },
   { time: "11:00 AM", tag: "Keynote", title: "Keynote Speech", people: "Speaker & topic to be announced" },
   { time: "12:00 PM", tag: "Break", title: "Lunch & Networking" },
-  { time: "1:30 PM", tag: "Panel Discussion", title: "Industry Leaders Roundtable", people: "Panelists & topic to be announced" },
+  { time: "1:30 PM", tag: "Panel Discussion", title: "Presentation + Panel", people: "Panelists & topic to be announced" },
   { time: "3:00 PM", tag: "Workshop", title: "Interactive Session", people: "Details to be announced" },
   { time: "4:30 PM", tag: "Closing", title: "Conclusion & Key Takeaways" },
 ];
