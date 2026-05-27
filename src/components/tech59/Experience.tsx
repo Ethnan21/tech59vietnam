@@ -16,9 +16,9 @@ import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
 
 const items = [
-  { img: keynote, title: "Keynote Speeches", desc: "Insights from the frontlines." },
-  { img: pitch, title: "Startup Pitch", desc: "Where ideas get funded." },
-  { img: night, title: "Exhibitor Booths", desc: "Discover what's shipping next." },
+  { img: keynote, title: "Keynote Speeches & Panel", desc: "Insights from industry leaders and expert panels." },
+  { img: pitch, title: "Live Workshops", desc: "Hands-on sessions with real-world applications." },
+  { img: night, title: "Exhibitor Booths", desc: "Discover the latest innovations and products." },
   { img: tour, title: "Networking", desc: "Curated intros where deals get made." },
 ];
 
