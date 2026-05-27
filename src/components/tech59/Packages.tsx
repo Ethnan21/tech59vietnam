@@ -68,7 +68,7 @@ export const Packages = () => (
                     className={`text-center font-display font-semibold px-4 py-4 border-b border-border/60 ${
                       i === 0
                         ? "text-gradient-animated"
-                        : i === 1
+                        : i === 2
                           ? "text-accent"
                           : "text-foreground/90"
                     }`}
