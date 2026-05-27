@@ -1,19 +1,40 @@
 import { Reveal } from "./Reveal";
+import logo01 from "@/assets/partners/logo-01.png";
+import logo02 from "@/assets/partners/logo-02.png";
+import logo03 from "@/assets/partners/logo-03.png";
+import logo04 from "@/assets/partners/logo-04.png";
+import logo05 from "@/assets/partners/logo-05.png";
+import logo06 from "@/assets/partners/logo-06.png";
+import logo07 from "@/assets/partners/logo-07.png";
+import logo08 from "@/assets/partners/logo-08.png";
+import logo09 from "@/assets/partners/logo-09.png";
+import logo10 from "@/assets/partners/logo-10.png";
 
-const local = ["NIC Vietnam", "QTSC", "The Sentry", "SPARK Hub", "AVV", "Orbital 2.0", "Sky Mavis", "VOV"];
-const intl = ["Business Finland", "e27", "Vietnam News", "Vietnam+", "Embassy of Vietnam SG", "Global VC Network"];
-const media = ["VOV", "Việt Nam News", "Vietnam+", "e27"];
+const logos = [
+  { src: logo01, alt: "Partner 1" },
+  { src: logo02, alt: "Partner 2" },
+  { src: logo03, alt: "Partner 3" },
+  { src: logo04, alt: "Partner 4" },
+  { src: logo05, alt: "Partner 5" },
+  { src: logo06, alt: "Partner 6" },
+  { src: logo07, alt: "Partner 7" },
+  { src: logo08, alt: "Partner 8" },
+  { src: logo09, alt: "Partner 9" },
+  { src: logo10, alt: "Partner 10" },
+];
 
-
-const Marquee = ({ items }: { items: string[] }) => (
-  <div className="overflow-hidden">
-    <div className="flex gap-3 animate-marquee w-max">
-      {[...items, ...items].map((n, i) => (
-        <div key={i} className="glass rounded-xl px-5 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all whitespace-nowrap">
-          {n}
-        </div>
-      ))}
-    </div>
+const LogoRow = () => (
+  <div className="flex shrink-0 items-center gap-12 pr-12">
+    {logos.map((l, i) => (
+      <div key={i} className="flex h-20 items-center justify-center">
+        <img
+          src={l.src}
+          alt={l.alt}
+          loading="lazy"
+          className="max-h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+    ))}
   </div>
 );
 
@@ -27,15 +48,12 @@ export const Partners = () => (
         </h2>
       </Reveal>
 
-
-      <div className="space-y-8">
-        <Marquee items={local} />
-        <Marquee items={intl} />
-        <div className="glass-strong rounded-2xl py-6 px-8">
-          <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mb-4">Featured In</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-foreground/70 font-display font-semibold tracking-tight">
-            {media.map(m => <span key={m}>{m}</span>)}
-          </div>
+      <div
+        className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+      >
+        <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+          <LogoRow />
+          <LogoRow />
         </div>
       </div>
     </div>
