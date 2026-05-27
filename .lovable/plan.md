@@ -1,23 +1,20 @@
-Replace the contact form in FinalCTA.tsx with two styled contact cards showing team member names, titles, and email addresses. Update booth/partner CTAs to scroll to #contact.
+## Goal
+Add a "Register" CTA button beneath the "Pick your pass" pricing table in the Packages section, with refined alignment and consistent styling.
 
-### Changes
+## Current State
+- The Packages section (`Packages.tsx`) contains a pricing comparison table with a "Pick your pass" heading.
+- Below the table there is only a small disclaimer text (`*Pricing and inclusions subject to change`).
+- The Hero section already has a "Get Your Pass" button pattern using `Button variant="hero" size="xl"` linking to the Luma registration URL.
 
-**1. FinalCTA.tsx — Replace form with contact cards**
-- Remove the form state and validation logic.
-- Replace the `<form>` with two side-by-side cards:
-  - **Maisy Vo** — Event Leader — `events@thesentry.com.vn`
-  - **Henry Nguyen** — Leasing & Event Manager — `henry.nguyen@thesentry.com.vn`
-- Use existing site styling: `glass-strong` container, `text-gradient-animated` headings, `font-display`, hover lift with glow shadow, and the `Reveal` animation wrapper.
-- Emails are clickable `mailto:` links.
+## Plan
+1. **Add a centered Register button** below the pricing table and above the disclaimer.
+   - Use `Button variant="hero" size="xl"` with an `ArrowRight` icon to match the primary CTA style in Hero.
+   - Link to the existing Luma registration URL: `https://lu.ma/bde1n8vo`.
+   - Wrap it in a `Reveal` animation for consistency.
+2. **Refine alignment** by centering the button within the container using `flex justify-center`.
+3. **Adjust spacing** to create a clean visual hierarchy between the table, the button, and the disclaimer.
 
-**2. Hero.tsx — "Become a Partner" CTA**
-- Change link from `#partners` to `#contact`.
-
-**3. Audience.tsx — Booth CTAs**
-- Enterprise tab "Get a Booth" → `#contact`
-- Founder tab "Get a Booth" → `#contact`
-- Investor, Innovator, Attendee "Get My Spot" tabs stay on Luma (`https://lu.ma/bde1n8vo`).
-
-### Design Notes
-- Match the existing card style used in Audience `whyItems` and other glass-strong components.
-- Keep the section background, heading, countdown, and footer text unchanged.
+## Technical Details
+- File to edit: `src/components/tech59/Packages.tsx`
+- Add import for `ArrowRight` from `lucide-react` and `Button` from `@/components/ui/button`.
+- Insert the button block between the table Reveal and the disclaimer Reveal.

@@ -1,5 +1,6 @@
-import { Check, X } from "lucide-react";
+import { Check, X, ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Button } from "@/components/ui/button";
 
 type Cell = boolean | string;
 type Row = { feature: string; values: [Cell, Cell, Cell, Cell, Cell] };
