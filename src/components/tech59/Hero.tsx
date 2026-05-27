@@ -12,7 +12,7 @@ export const Hero = () => {
   const bgRef = useParallax<HTMLImageElement>(0.25);
   const gridRef = useParallax<HTMLDivElement>(0.1);
   return (
-  <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-hero grain">
+  <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-x-clip overflow-hidden bg-hero grain">
     <img ref={bgRef} src={heroBg} alt="" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen will-change-transform" width={1920} height={1080} />
     <div ref={gridRef} className="absolute inset-0 grid-bg will-change-transform" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
