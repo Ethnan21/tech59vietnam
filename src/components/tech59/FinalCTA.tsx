@@ -54,7 +54,7 @@ export const FinalCTA = () => {
           </Reveal>
           <Reveal delay={160}>
             <p className="text-base md:text-lg text-foreground/70 mb-8">
-              Send us an enquiry — we'll be in touch.
+              Have an enquiry? — we'll be in touch.
             </p>
           </Reveal>
 
