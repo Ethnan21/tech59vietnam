@@ -90,7 +90,7 @@ export const Audience = () => {
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
-            <a href="#register">{cur.cta} <ArrowRight className="h-5 w-5" /></a>
+            <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">{cur.cta} <ArrowRight className="h-5 w-5" /></a>
           </Button>
         </div>
 
