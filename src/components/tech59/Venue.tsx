@@ -50,7 +50,7 @@ export const Venue = () => {
           </div>
           <Reveal>
             <Button variant="hero" size="lg" asChild>
-              <a href="#register">Register Now <ArrowRight className="h-5 w-5" /></a>
+              <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">Register Now <ArrowRight className="h-5 w-5" /></a>
             </Button>
           </Reveal>
         </div>
