@@ -40,7 +40,7 @@ export const Experience = () => (
     <div className="container">
       <Reveal className="max-w-2xl mx-auto mb-12 text-center">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Experience</p>
-        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] whitespace-nowrap">
           Four formats. <span className="text-gradient-animated">One summit.</span>
         </h2>
       </Reveal>
