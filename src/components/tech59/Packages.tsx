@@ -55,8 +55,10 @@ export const Packages = () => (
         </h2>
       </Reveal>
 
-      <Reveal delay={120} className="glass-strong rounded-3xl p-2 md:p-4 overflow-hidden">
+      <Reveal delay={120} className="glass-strong rounded-3xl p-2 md:p-4 md:overflow-hidden">
+        <p className="md:hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground/80 px-3 pt-2 pb-1">Swipe to compare →</p>
         <div className="overflow-x-auto scrollbar-thin">
+
           <table className="w-full min-w-[920px] border-separate border-spacing-0 text-sm">
             <thead>
               <tr>
