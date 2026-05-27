@@ -171,6 +171,23 @@ export const Partners = () => (
           </div>
         </div>
       </div>
+
+      <div className="mt-20 pt-12 border-t border-white/10">
+        <Reveal className="text-center mb-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured in</p>
+        </Reveal>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-10 items-center justify-items-center max-w-6xl mx-auto">
+          {pressLogos.map((p, i) => (
+            <img
+              key={i}
+              src={p.src}
+              alt={p.alt}
+              loading="lazy"
+              className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 );
