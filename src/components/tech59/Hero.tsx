@@ -21,15 +21,16 @@ export const Hero = () => {
 
     <div className="container relative z-10">
       <div className="max-w-5xl">
-        <div className="inline-flex flex-wrap items-center gap-4 md:gap-5 glass rounded-full pl-5 pr-5 py-2.5 mb-8 animate-fade-in">
+        <div className="inline-flex flex-wrap items-center gap-3 md:gap-5 glass rounded-2xl md:rounded-full pl-4 pr-4 md:pl-5 md:pr-5 py-2.5 mb-8 animate-fade-in max-w-full">
           <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Powered by</span>
-          <span className="h-4 w-px bg-border" />
-          <img src={logoSentry} alt="The Sentry" className="h-6 md:h-7 w-auto object-contain opacity-90" />
-          <span className="h-4 w-px bg-border" />
-          <img src={logoSpark} alt="SPARK Hub" className="h-6 md:h-7 w-auto object-contain opacity-90" />
-          <span className="h-4 w-px bg-border" />
-          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-6 md:h-7 w-auto object-contain opacity-90" />
+          <span className="hidden md:inline-block h-4 w-px bg-border" />
+          <img src={logoSentry} alt="The Sentry" className="h-5 md:h-7 w-auto object-contain opacity-90" />
+          <span className="hidden md:inline-block h-4 w-px bg-border" />
+          <img src={logoSpark} alt="SPARK Hub" className="h-5 md:h-7 w-auto object-contain opacity-90" />
+          <span className="hidden md:inline-block h-4 w-px bg-border" />
+          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-5 md:h-7 w-auto object-contain opacity-90" />
         </div>
+
 
         <h1 className="mb-6 animate-fade-in-up -ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
