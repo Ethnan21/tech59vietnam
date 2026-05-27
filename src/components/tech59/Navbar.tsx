@@ -25,7 +25,7 @@ export const Navbar = () => (
           ))}
         </ul>
         <Button variant="hero" size="sm" asChild>
-          <a href="#register">Register</a>
+          <a href="#contact">Contact</a>
         </Button>
       </nav>
     </div>
