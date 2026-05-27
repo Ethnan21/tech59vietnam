@@ -49,8 +49,11 @@ import logo47 from "@/assets/partners/logo-47.png";
 import logo48 from "@/assets/partners/logo-48.png";
 import logo49 from "@/assets/partners/logo-49.png";
 import logo50 from "@/assets/partners/logo-50.png";
+import logo51 from "@/assets/partners/logo-51.png";
+import logo52 from "@/assets/partners/logo-52.png";
+import logo53 from "@/assets/partners/logo-53.png";
 
-const logos = [
+const allLogos = [
   { src: logo01, alt: "Partner 1" },
   { src: logo02, alt: "Partner 2" },
   { src: logo03, alt: "Partner 3" },
@@ -101,11 +104,18 @@ const logos = [
   { src: logo48, alt: "Partner 48" },
   { src: logo49, alt: "Partner 49" },
   { src: logo50, alt: "Partner 50" },
+  { src: logo51, alt: "Partner 51" },
+  { src: logo52, alt: "Partner 52" },
+  { src: logo53, alt: "Partner 53" },
 ];
 
-const LogoRow = () => (
+const mid = Math.ceil(allLogos.length / 2);
+const rowA = allLogos.slice(0, mid);
+const rowB = allLogos.slice(mid);
+
+const LogoRow = ({ items }: { items: typeof allLogos }) => (
   <div className="flex shrink-0 items-center gap-12 pr-12">
-    {logos.map((l, i) => (
+    {items.map((l, i) => (
       <div key={i} className="flex h-20 items-center justify-center">
         <img
           src={l.src}
@@ -128,12 +138,18 @@ export const Partners = () => (
         </h2>
       </Reveal>
 
-      <div
-        className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
-      >
-        <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-          <LogoRow />
-          <LogoRow />
+      <div className="space-y-8">
+        <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+            <LogoRow items={rowA} />
+            <LogoRow items={rowA} />
+          </div>
+        </div>
+        <div className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <div className="flex w-max animate-marquee-reverse group-hover:[animation-play-state:paused]">
+            <LogoRow items={rowB} />
+            <LogoRow items={rowB} />
+          </div>
         </div>
       </div>
     </div>
