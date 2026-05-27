@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, Network, TrendingUp, Cpu, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
+import audienceBg from "@/assets/audience-bg.jpg";
 
 
 const tabs = [
@@ -72,6 +73,9 @@ export const Audience = () => {
         </div>
 
         <div key={cur.key} className="relative glass-strong rounded-3xl p-8 md:p-14 animate-fade-in overflow-hidden grain">
+          <img src={audienceBg} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-card via-card/80 to-card/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-card/40 pointer-events-none" />
           <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
           <p className="relative font-display text-3xl md:text-6xl font-bold leading-[0.95] mb-8 max-w-3xl text-gradient-animated">
             {cur.benefit}
