@@ -60,7 +60,7 @@ export const Experience = () => (
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] light-streak" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="font-display text-2xl font-semibold mb-1 group-hover:text-gradient-animated transition-all">{it.title}</h3>
+                <h3 className="font-display font-semibold mb-1 group-hover:text-gradient-animated transition-all text-lg">{it.title}</h3>
                 <p className="text-sm text-muted-foreground">{it.desc}</p>
               </div>
             </div>
