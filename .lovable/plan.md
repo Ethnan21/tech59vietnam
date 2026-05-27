@@ -1,20 +1,25 @@
-## Hero logo glow + breathing, plus navbar logo
+## Programme section refinements
 
-**Hero (`src/components/tech59/Hero.tsx`)**
-- Wrap the hero logo `<img>` in a relative container.
-- Add a layered radial glow behind it: an absolutely positioned blurred div using brand/accent color at low opacity, sized slightly larger than the logo.
-- Apply a slow "breathing" animation to the logo itself: subtle scale (1 → 1.03 → 1) + opacity pulse over ~4s ease-in-out infinite.
-- Apply a parallel, offset glow pulse on the backdrop so the halo softly inhales/exhales (scale + opacity).
-- Use existing tokens (`bg-brand`, `bg-accent`) for color; respect `prefers-reduced-motion` by gating the animation with Tailwind's `motion-safe:` prefix.
+**File:** `src/components/tech59/Programme.tsx`
 
-**Navbar (`src/components/tech59/Navbar.tsx`)**
-- Replace the `<span>…T</span>` brand mark with an `<img>` of `@/assets/tech59-hero-logo-white.png` inside the existing `h-8 w-8 rounded-lg` container (switch to `rounded-full` per request), `object-contain` with small padding so the mark fits cleanly.
-- Keep the adjacent wordmark text untouched.
+### 1. Make Day 1 / Day 2 collapsible
+- Replace current tab buttons with an accordion-style toggle: each day is a header row that expands/collapses its schedule.
+- Both days collapsed by default (or Day 1 open) so the long list no longer dominates the page.
+- Day headers keep current pill/glass styling; add a chevron that rotates on open.
+- Smooth height/opacity transition when expanding.
 
-**Animation tokens (`tailwind.config.ts`)**
-- Add two keyframes/animations if not already present:
-  - `breathe`: `scale(1)` ↔ `scale(1.03)` with opacity 0.95 ↔ 1, 4s ease-in-out infinite.
-  - `halo-pulse`: opacity 0.35 ↔ 0.7 + scale 1 ↔ 1.08, 5s ease-in-out infinite.
-- No new colors or tokens beyond keyframes.
+### 2. Tighten typography and spacing
+- Time: `text-2xl md:text-3xl` → `text-xl md:text-2xl`.
+- Slot title: `text-xl md:text-2xl` → `text-base md:text-lg`.
+- Tag chip: keep size, reduce bottom margin.
+- People / moderator: `text-sm` → `text-xs md:text-sm`.
+- Card padding: `p-6 md:p-7` → `p-4 md:p-5`.
+- Vertical spacing between cards: `space-y-5` → `space-y-3`.
+- Timeline dot + rail: keep, scaled to match smaller cards.
 
-**Out of scope:** no other sections, no asset regeneration, no copy changes.
+### 3. Keep intact
+- People/moderator lines remain visible inside each card (not behind a second dropdown).
+- Colors, gradients, glass tokens, hover/reveal animations unchanged.
+- Section heading and "agenda subject to change" note unchanged.
+
+No other components or data are touched.
