@@ -7,6 +7,7 @@ const links = [
   { label: "Audience", href: "#audience" },
   { label: "Packages", href: "#packages" },
   { label: "Venue", href: "#venue" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Navbar = () => (
@@ -25,7 +26,7 @@ export const Navbar = () => (
           ))}
         </ul>
         <Button variant="hero" size="sm" asChild>
-          <a href="#contact">Contact</a>
+          <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">Register</a>
         </Button>
       </nav>
     </div>
