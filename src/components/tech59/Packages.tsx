@@ -67,7 +67,7 @@ export const Packages = () => (
                   <th
                     key={c}
                     className={`text-center font-display font-semibold px-4 py-4 border-b border-border/60 ${
-                      i === 0
+                      i === 0 || i === 1
                         ? "text-gradient-animated"
                         : i === 2
                           ? "text-accent"
