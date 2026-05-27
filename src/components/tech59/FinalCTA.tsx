@@ -1,38 +1,21 @@
-import { useState, FormEvent } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Countdown } from "./Countdown";
-import { Send, Flame } from "lucide-react";
+import { Flame, Mail, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-const CONTACT_EMAIL = "events@thesentry.com.vn";
+const contacts = [
+  {
+    name: "Maisy Vo",
+    title: "Event Leader",
+    email: "events@thesentry.com.vn",
+  },
+  {
+    name: "Henry Nguyen",
+    title: "Leasing & Event Manager",
+    email: "henry.nguyen@thesentry.com.vn",
+  },
+];
 
 export const FinalCTA = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [enquiry, setEnquiry] = useState("");
-  const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    const next: Record<string, string> = {};
-    if (!name.trim()) next.name = "Required";
-    if (!email.trim()) next.email = "Required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Invalid email";
-    if (!enquiry.trim()) next.enquiry = "Required";
-    if (!message.trim()) next.message = "Required";
-    setErrors(next);
-    if (Object.keys(next).length) return;
-
-    const subject = encodeURIComponent(`[TECH59 Enquiry] ${enquiry}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nEnquiry: ${enquiry}\n\n${message}`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  };
-
   return (
     <section id="contact" className="py-32 relative overflow-hidden grain">
       <div className="absolute inset-0 bg-hero opacity-90" />
@@ -41,7 +24,7 @@ export const FinalCTA = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
 
       <div className="container relative z-10">
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
           <Reveal variant="scale" className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-8">
             <Flame className="h-3.5 w-3.5 text-accent animate-flicker" />
             <span className="text-xs uppercase tracking-widest">Limited access · Not everyone gets in</span>
@@ -54,78 +37,43 @@ export const FinalCTA = () => {
           </Reveal>
           <Reveal delay={160}>
             <p className="text-base md:text-lg text-foreground/70 mb-8">
-              Have an enquiry? — we'll be in touch.
+              Partnerships, booths, or anything else — reach our team directly.
             </p>
           </Reveal>
 
-          <Reveal delay={240} className="flex justify-center mb-10">
+          <Reveal delay={240} className="flex justify-center mb-12">
             <Countdown compact />
           </Reveal>
 
-          <Reveal delay={320}>
-            <form
-              onSubmit={handleSubmit}
-              className="glass-strong rounded-2xl p-6 md:p-8 text-left border border-primary/20 transition-all duration-500 focus-within:border-primary/50 focus-within:shadow-[0_0_60px_-10px_hsl(217_91%_60%/0.4)]"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Name</label>
-                  <Input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Your name"
-                    maxLength={100}
-                    className="bg-background/40 border-primary/20 focus-visible:ring-primary/40 transition-all"
-                  />
-                  {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Email</label>
-                  <Input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
-                    maxLength={255}
-                    className="bg-background/40 border-primary/20 focus-visible:ring-primary/40 transition-all"
-                  />
-                  {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
-                </div>
-                <div>
-                  <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Enquiry</label>
-                  <Input
-                    value={enquiry}
-                    onChange={(e) => setEnquiry(e.target.value)}
-                    placeholder="Partnership, tickets…"
-                    maxLength={150}
-                    className="bg-background/40 border-primary/20 focus-visible:ring-primary/40 transition-all"
-                  />
-                  {errors.enquiry && <p className="text-xs text-destructive mt-1">{errors.enquiry}</p>}
-                </div>
-              </div>
+          <div className="grid sm:grid-cols-2 gap-5 text-left">
+            {contacts.map((c, i) => (
+              <Reveal key={c.email} delay={320 + i * 100} variant="up">
+                <a
+                  href={`mailto:${c.email}`}
+                  className="group relative block glass-strong rounded-2xl p-7 md:p-8 border border-primary/20 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsl(258_90%_66%/0.6)] overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-secondary/0 to-accent/0 group-hover:from-primary/10 group-hover:via-secondary/5 group-hover:to-accent/10 transition-all duration-700" />
+                  <div className="relative flex items-start justify-between gap-4 mb-5">
+                    <div className="h-12 w-12 rounded-xl bg-brand grid place-items-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                      <Mail className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                  </div>
+                  <h3 className="relative font-display text-2xl md:text-3xl font-semibold leading-tight mb-1">
+                    {c.name}
+                  </h3>
+                  <p className="relative text-xs uppercase tracking-[0.2em] text-accent mb-4">
+                    {c.title}
+                  </p>
+                  <p className="relative text-sm md:text-base text-foreground/80 group-hover:text-gradient-animated break-all">
+                    {c.email}
+                  </p>
+                </a>
+              </Reveal>
+            ))}
+          </div>
 
-              <div className="mb-6">
-                <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Your message</label>
-                <Textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell us more about your enquiry…"
-                  rows={6}
-                  maxLength={2000}
-                  className="bg-background/40 border-primary/20 focus-visible:ring-primary/40 transition-all resize-none"
-                />
-                {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
-              </div>
-
-              <div className="flex justify-center">
-                <Button type="submit" variant="outlineGlow" size="lg" className="w-full sm:w-auto">
-                  Send Enquiry <Send className="h-4 w-4" />
-                </Button>
-              </div>
-            </form>
-          </Reveal>
-
-          <p className="text-xs text-muted-foreground mt-8 uppercase tracking-[0.25em] animate-flicker">
+          <p className="text-xs text-muted-foreground mt-10 uppercase tracking-[0.25em] animate-flicker">
             ⚡ Last edition sold out · Curated audience only
           </p>
         </div>

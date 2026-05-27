@@ -54,7 +54,7 @@ export const Hero = () => {
             </Button>
           </div>
           <Button variant="outlineGlow" size="xl" asChild>
-            <a href="#partners">Become a Partner</a>
+            <a href="#contact">Become a Partner</a>
           </Button>
         </div>
 
