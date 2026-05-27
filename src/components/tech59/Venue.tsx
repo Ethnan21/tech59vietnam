@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 const facts = [
   { icon: Building2, k: "QTSC IT Park", v: "HCMC's largest IT & Software hub" },
   { icon: Users, k: "20,000+", v: "Professionals & Students on-site" },
-  { icon: MapPin, k: "Orbital 2.0 Tower", v: "Premier tech venue" },
+  { icon: MapPin, k: "Orbital 2.0 Tower", v: "Premier tech venue in Vietnam's leading tech hub" },
 ];
 
 export const Venue = () => {
