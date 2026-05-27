@@ -108,8 +108,19 @@ export const Packages = () => (
         </div>
       </Reveal>
 
-      <Reveal delay={200}>
-        <p className="text-xs text-muted-foreground mt-6 uppercase tracking-[0.2em]">
+      <Reveal delay={180} className="flex justify-center mt-10">
+        <div className="relative">
+          <span className="absolute inset-0 rounded-xl bg-brand blur-xl opacity-60 animate-pulse-glow pointer-events-none" />
+          <Button variant="hero" size="xl" asChild className="relative">
+            <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">
+              Register <ArrowRight className="h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </Reveal>
+
+      <Reveal delay={240}>
+        <p className="text-xs text-muted-foreground mt-6 uppercase tracking-[0.2em] text-center">
           *Pricing and inclusions subject to change
         </p>
       </Reveal>
