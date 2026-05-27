@@ -5,52 +5,23 @@ import { Reveal } from "./Reveal";
 type Slot = { time: string; tag: string; title: string; people?: string; moderator?: string };
 
 const day1: Slot[] = [
-  { time: "8:30 AM", tag: "Check-in", title: "Registration, Coffee & Networking" },
-  {
-    time: "9:00 AM",
-    tag: "Opening Remarks",
-    title: "Welcome to Tech59 Summit 2026",
-    people: "Astrid Lindqvist (Chair, Nordic Tech Council) · H.E. Johan Bergström (Ambassador of Sweden to Vietnam)",
-  },
-  {
-    time: "9:10 AM",
-    tag: "Keynote #1",
-    title: "Southeast Asia's Decade: Capital, Talent, and the New Operating Model",
-    people: "Dr. Mai Nguyen-Hartwell (Chief Economist, Mekong Ventures)",
-  },
-  {
-    time: "9:25 AM",
-    tag: "Fireside Chat #1",
-    title: "Scaling With Soul: Lessons From Building a Regional Champion",
-    people: "Henrik Olsen (CEO, Polaris Logistics)",
-    moderator: "Priya Ramaswamy (Partner, Northwind Capital)",
-  },
-  {
-    time: "9:45 AM",
-    tag: "Panel Discussion #1",
-    title: "Agents at Work: Where AI Is Actually Moving the Needle",
-    people: "Tuan Phan (Co-founder, Vega.AI) · Sofia Kallio (Head of AI, Norse Bank) · Diego Martín (VP Engineering, Helix Robotics)",
-    moderator: "Emma Sørensen (Editor-in-Chief, Tech Quarterly)",
-  },
-  {
-    time: "10:05 AM",
-    tag: "Panel Discussion #2",
-    title: "The Talent Equation: Hiring, Retaining, and Developing Across Borders",
-    people: "Lars Bjørn (CHRO, Atlas Materials) · Yuki Tanaka (Director of People, Lumen Health) · Anh Tran (Founder, Hatch Talent Lab)",
-    moderator: "Rebecca Hoffmann (Managing Partner, North Star Advisory)",
-  },
+  { time: "6:00 PM", tag: "Check-in", title: "Registration, Coffee & Networking" },
+  { time: "7:00 PM", tag: "Opening", title: "Opening Remarks, Drinks & Dinner" },
 ];
 
 const day2: Slot[] = [
-  { time: "9:00 AM", tag: "Day 2 Opening", title: "Welcome Back & Day 2 Agenda Overview", people: "Magnus Eriksen (Program Director, Tech59)" },
-  { time: "10:00 AM", tag: "Startup Pitch", title: "Startup Pitch Competition — Finals", people: "12 finalists · Jury: Clara Wei (Sequoia SEA), Oskar Lindgren (Creandum), Thuy Le (Touchstone Partners)" },
-  { time: "1:30 PM", tag: "Tech Tours", title: "Behind-the-scenes Visits to Vietnam's Leading Tech Campuses", people: "Hosted by Khoa Doan (Head of Ecosystem, Saigon Innovation Hub)" },
-  { time: "7:00 PM", tag: "Closing Night", title: "Tech59 Summit VIP Closing Night", people: "Invite-only · Hosted by Ingrid Halvorsen & Bao Pham" },
+  { time: "8:00 AM", tag: "Check-in", title: "Registration & Coffee" },
+  { time: "9:00 AM", tag: "Opening Remarks", title: "Welcome to Tech59 Summit 2026" },
+  { time: "9:30 AM", tag: "Keynote", title: "Featured Speaker", people: "Speaker & topic to be announced" },
+  { time: "12:00 PM", tag: "Break", title: "Lunch & Networking" },
+  { time: "1:30 PM", tag: "Panel Discussion", title: "Industry Leaders Roundtable", people: "Panelists & topic to be announced" },
+  { time: "3:00 PM", tag: "Workshop", title: "Interactive Session", people: "Details to be announced" },
+  { time: "4:30 PM", tag: "Closing", title: "Conclusion & Key Takeaways" },
 ];
 
 const dayList = [
-  { id: "day1" as const, label: "Day 1 — Thu 16 Jul", slots: day1 },
-  { id: "day2" as const, label: "Day 2 — Fri 17 Jul", slots: day2 },
+  { id: "day1" as const, label: "Day 1 — VIP Reception · Thu 16 Jul", slots: day1 },
+  { id: "day2" as const, label: "Day 2 — Main Event · Fri 17 Jul", slots: day2 },
 ];
 
 const SlotList = ({ slots }: { slots: Slot[] }) => (
