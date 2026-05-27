@@ -16,9 +16,9 @@ import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
 
 const items = [
-  { img: keynote, title: "Keynote Speeches", desc: "Insights from the frontlines." },
-  { img: pitch, title: "Startup Pitch", desc: "Where ideas get funded." },
-  { img: night, title: "Exhibitor Booths", desc: "Discover what's shipping next." },
+  { img: keynote, title: "Keynote Speeches & Panel", desc: "Insights from industry leaders and expert panels." },
+  { img: pitch, title: "Live Workshops", desc: "Hands-on sessions with real-world applications." },
+  { img: night, title: "Exhibitor Booths", desc: "Discover the latest innovations and products." },
   { img: tour, title: "Networking", desc: "Curated intros where deals get made." },
 ];
 
@@ -52,13 +52,13 @@ export const Experience = () => (
             as="article"
             key={it.title}
             delay={i * 100}
-            className="glass rounded-3xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)] transition-all duration-700 ease-out"
+            className="glass rounded-3xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)] transition-all duration-[1200ms] ease-out"
           >
             <div className="aspect-[4/3] overflow-hidden relative">
               <img src={it.img} alt={it.title} loading="lazy" width={1024} height={768}
-                className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[2000ms] ease-out" />
+                className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[4000ms] ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 light-streak" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] light-streak" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <h3 className="font-display text-2xl font-semibold mb-1 group-hover:text-gradient-animated transition-all">{it.title}</h3>
                 <p className="text-sm text-muted-foreground">{it.desc}</p>
