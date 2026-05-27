@@ -4,28 +4,28 @@ import { Reveal } from "./Reveal";
 type Cell = boolean | string;
 type Row = { feature: string; values: [Cell, Cell, Cell, Cell, Cell] };
 
-const columns = ["VIP Pass", "Premium Pass", "Standard Pass", "Start Up Pass", "Partner Pass"] as const;
+const columns = ["VIP Pass", "Partner Pass", "Premium Pass", "Standard Pass", "Start Up Pass"] as const;
 
 const rows: Row[] = [
   { feature: "Main Stage Keynotes Access", values: [true, true, true, true, true] },
   { feature: "All Main Stage Panels Access (Gaming, Venture, Edtech, Enterprise)", values: [true, true, true, true, true] },
-  { feature: "VIP / Speaker Lounge Access", values: [true, true, false, false, false] },
-  { feature: "Coworking Lounge Access", values: [true, true, true, false, false] },
-  { feature: "Workshops (Limited 30–40 Pax)", values: ["All Workshops", "1–2 Workshop", false, "1 Workshop", "1 Workshop"] },
-  { feature: "Executive Policy Keynotes (Gov / Consulate – 30 Pax)", values: ["Front Seating", true, false, false, "By Invitation"] },
-  { feature: "After Party Access", values: ["VIP Lounge Area", true, true, false, true] },
-  { feature: "VIP Reception (Night Before)", values: [true, true, false, false, "By Invitation"] },
-  { feature: "Priority Registration & Fast Track Check-in", values: [true, true, false, false, true] },
+  { feature: "VIP / Speaker Lounge Access", values: [true, false, true, false, false] },
+  { feature: "Coworking Lounge Access", values: [true, false, true, true, false] },
+  { feature: "Workshops (Limited 30–40 Pax)", values: ["All Workshops", "1 Workshop", "1–2 Workshop", false, "1 Workshop"] },
+  { feature: "Executive Policy Keynotes (Gov / Consulate – 30 Pax)", values: ["Front Seating", "By Invitation", true, false, false] },
+  { feature: "After Party Access", values: ["VIP Lounge Area", true, true, true, false] },
+  { feature: "VIP Reception (Night Before)", values: [true, "By Invitation", true, false, false] },
+  { feature: "Priority Registration & Fast Track Check-in", values: [true, true, true, false, false] },
   { feature: "Lunch Provision", values: [true, false, false, false, false] },
-  { feature: "Welcome Gift Bag", values: [true, true, false, false, true] },
+  { feature: "Welcome Gift Bag", values: [true, true, true, false, false] },
 ];
 
 const prices: [string, string, string, string, string] = [
   "Exclusive offer",
+  "Exclusive Offer",
   "3,000,000 VND",
   "1,250,000 VND",
   "750,000 VND",
-  "Exclusive Offer",
 ];
 
 const renderCell = (v: Cell) => {
@@ -68,7 +68,7 @@ export const Packages = () => (
                     className={`text-center font-display font-semibold px-4 py-4 border-b border-border/60 ${
                       i === 0
                         ? "text-gradient-animated"
-                        : i === 1
+                        : i === 2
                           ? "text-accent"
                           : "text-foreground/90"
                     }`}

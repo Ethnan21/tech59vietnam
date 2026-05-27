@@ -52,16 +52,16 @@ export const Experience = () => (
             as="article"
             key={it.title}
             delay={i * 100}
-            className="glass rounded-3xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_hsl(217_91%_60%/0.35)] transition-all duration-[1200ms] ease-out"
+            className="glass rounded-3xl overflow-hidden group hover:-translate-y-0.5 transition-all duration-[1200ms] ease-out cursor-default"
           >
             <div className="aspect-[4/3] overflow-hidden relative">
               <img src={it.img} alt={it.title} loading="lazy" width={1024} height={768}
-                className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-[4000ms] ease-out" />
+                className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] light-streak" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="font-display font-semibold mb-1 group-hover:text-gradient-animated transition-all text-lg">{it.title}</h3>
-                <p className="text-sm text-muted-foreground">{it.desc}</p>
+                <h3 className="font-display font-semibold mb-1 group-hover:text-gradient-animated transition-all text-lg min-h-[1.75rem]">{it.title}</h3>
+                <p className="text-sm text-muted-foreground min-h-[2.5rem]">{it.desc}</p>
               </div>
             </div>
           </Reveal>
@@ -83,7 +83,7 @@ export const Experience = () => (
           <Reveal
             key={t.title}
             delay={i * 60}
-            className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-pointer group overflow-hidden"
+            className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-default group overflow-hidden"
           >
             <img
               src={t.bg}
