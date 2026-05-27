@@ -83,7 +83,7 @@ export const Experience = () => (
           <Reveal
             key={t.title}
             delay={i * 60}
-            className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-pointer group overflow-hidden"
+            className="relative glass rounded-2xl p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-default group overflow-hidden"
           >
             <img
               src={t.bg}
