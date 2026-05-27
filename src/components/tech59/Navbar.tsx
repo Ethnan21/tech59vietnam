@@ -7,6 +7,7 @@ const links = [
   { label: "Audience", href: "#audience" },
   { label: "Packages", href: "#packages" },
   { label: "Venue", href: "#venue" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Navbar = () => (
