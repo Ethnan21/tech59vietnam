@@ -39,6 +39,16 @@ import logo37 from "@/assets/partners/logo-37.png";
 import logo38 from "@/assets/partners/logo-38.png";
 import logo39 from "@/assets/partners/logo-39.png";
 import logo40 from "@/assets/partners/logo-40.png";
+import logo41 from "@/assets/partners/logo-41.png";
+import logo42 from "@/assets/partners/logo-42.png";
+import logo43 from "@/assets/partners/logo-43.png";
+import logo44 from "@/assets/partners/logo-44.png";
+import logo45 from "@/assets/partners/logo-45.png";
+import logo46 from "@/assets/partners/logo-46.png";
+import logo47 from "@/assets/partners/logo-47.png";
+import logo48 from "@/assets/partners/logo-48.png";
+import logo49 from "@/assets/partners/logo-49.png";
+import logo50 from "@/assets/partners/logo-50.png";
 
 const logos = [
   { src: logo01, alt: "Partner 1" },
@@ -81,6 +91,16 @@ const logos = [
   { src: logo38, alt: "Partner 38" },
   { src: logo39, alt: "Partner 39" },
   { src: logo40, alt: "Partner 40" },
+  { src: logo41, alt: "Partner 41" },
+  { src: logo42, alt: "Partner 42" },
+  { src: logo43, alt: "Partner 43" },
+  { src: logo44, alt: "Partner 44" },
+  { src: logo45, alt: "Partner 45" },
+  { src: logo46, alt: "Partner 46" },
+  { src: logo47, alt: "Partner 47" },
+  { src: logo48, alt: "Partner 48" },
+  { src: logo49, alt: "Partner 49" },
+  { src: logo50, alt: "Partner 50" },
 ];
 
 const LogoRow = () => (
