@@ -56,57 +56,62 @@ export const Packages = () => (
       </Reveal>
 
       <Reveal delay={120} className="glass-strong rounded-3xl p-2 md:p-4 md:overflow-hidden">
-        <p className="md:hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground/80 px-3 pt-2 pb-1">Swipe to compare →</p>
-        <div className="overflow-x-auto scrollbar-thin">
-
-          <table className="w-full min-w-[920px] border-separate border-spacing-0 text-sm">
-            <thead>
-              <tr>
-                <th className="text-left font-display font-semibold text-foreground/80 px-5 py-4 border-b border-border/60">
-                  Feature / Access
-                </th>
-                {columns.map((c, i) => (
-                  <th
-                    key={c}
-                    className={`text-center font-display font-semibold px-4 py-4 border-b border-border/60 ${
-                      i === 0 || i === 1
-                        ? "text-gradient-animated"
-                        : i === 2
-                          ? "text-accent"
-                          : "text-foreground/90"
-                    }`}
-                  >
-                    {c}
+        <div className="md:hidden flex items-center gap-2 px-3 pt-2 pb-2 text-accent animate-pulse">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em]">Swipe to compare</span>
+          <ArrowRight className="h-4 w-4" />
+        </div>
+        <div className="relative">
+          <div className="md:hidden pointer-events-none absolute top-0 right-0 bottom-0 w-10 bg-gradient-to-l from-card/90 to-transparent z-10 rounded-r-3xl" />
+          <div className="overflow-x-auto scrollbar-thin">
+            <table className="w-full min-w-[760px] md:min-w-[920px] border-separate border-spacing-0 text-xs sm:text-sm">
+              <thead>
+                <tr>
+                  <th className="text-left font-display font-semibold text-foreground/80 px-3 py-3 sm:px-5 sm:py-4 border-b border-border/60">
+                    Feature / Access
                   </th>
+                  {columns.map((c, i) => (
+                    <th
+                      key={c}
+                      className={`text-center font-display font-semibold px-3 py-3 sm:px-4 sm:py-4 border-b border-border/60 ${
+                        i === 0 || i === 1
+                          ? "text-gradient-animated"
+                          : i === 2
+                            ? "text-accent"
+                            : "text-foreground/90"
+                      }`}
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, ri) => (
+                  <tr key={row.feature} className={ri % 2 === 0 ? "bg-card/30" : ""}>
+                    <td className="px-3 py-3 sm:px-5 sm:py-4 text-foreground/85 border-b border-border/30">{row.feature}</td>
+                    {row.values.map((v, ci) => (
+                      <td key={ci} className="px-3 py-3 sm:px-4 sm:py-4 text-center border-b border-border/30 align-middle">
+                        {renderCell(v)}
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, ri) => (
-                <tr key={row.feature} className={ri % 2 === 0 ? "bg-card/30" : ""}>
-                  <td className="px-5 py-4 text-foreground/85 border-b border-border/30">{row.feature}</td>
-                  {row.values.map((v, ci) => (
-                    <td key={ci} className="px-4 py-4 text-center border-b border-border/30 align-middle">
-                      {renderCell(v)}
+                <tr className="bg-card/50">
+                  <td className="px-3 py-4 sm:px-5 sm:py-5 font-display text-sm sm:text-lg font-semibold border-t-2 border-accent/40">
+                    Price
+                  </td>
+                  {prices.map((p, i) => (
+                    <td
+                      key={i}
+                      className="px-3 py-4 sm:px-4 sm:py-5 text-center font-display font-semibold text-xs sm:text-base border-t-2 border-accent/40"
+                    >
+                      <span className="text-gradient-animated">{p}</span>
                     </td>
                   ))}
                 </tr>
-              ))}
-              <tr className="bg-card/50">
-                <td className="px-5 py-5 font-display text-lg font-semibold border-t-2 border-accent/40">
-                  Price
-                </td>
-                {prices.map((p, i) => (
-                  <td
-                    key={i}
-                    className="px-4 py-5 text-center font-display font-semibold text-base border-t-2 border-accent/40"
-                  >
-                    <span className="text-gradient-animated">{p}</span>
-                  </td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </Reveal>
 
