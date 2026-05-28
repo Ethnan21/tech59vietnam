@@ -99,18 +99,18 @@ export const Audience = () => {
           </Button>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10">
           {whyItems.map(({ icon: Icon, title, desc }, i) => (
-            <Reveal key={title} delay={i * 90} variant="up" className="relative glass rounded-2xl p-7 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsl(258_90%_66%/0.6)] group overflow-hidden">
+            <Reveal key={title} delay={i * 90} variant="up" className="relative glass rounded-2xl p-4 sm:p-7 hover:border-primary/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsl(258_90%_66%/0.6)] group overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-secondary/0 to-accent/0 group-hover:from-primary/10 group-hover:via-secondary/5 group-hover:to-accent/10 transition-all duration-700" />
-              <div className="relative h-14 w-14 rounded-xl bg-brand grid place-items-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
-                <Icon className="h-7 w-7 text-primary-foreground" />
+              <div className="relative h-10 w-10 sm:h-14 sm:w-14 rounded-xl bg-brand grid place-items-center mb-3 sm:mb-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                <Icon className="h-5 w-5 sm:h-7 sm:w-7 text-primary-foreground" />
               </div>
-              <h3 className="relative font-display text-2xl font-semibold mb-2 inline-block">
+              <h3 className="relative font-display text-base sm:text-2xl font-semibold mb-1.5 sm:mb-2 inline-block leading-tight">
                 <span className="block">{title}</span>
                 <span aria-hidden className="absolute inset-0 text-gradient-animated opacity-0 group-hover:opacity-100 transition-opacity duration-300">{title}</span>
               </h3>
-              <p className="relative text-sm text-muted-foreground leading-relaxed">{desc}</p>
+              <p className="relative text-xs sm:text-sm text-muted-foreground leading-relaxed">{desc}</p>
             </Reveal>
           ))}
         </div>
