@@ -139,4 +139,11 @@
   }
   .scrollbar-thin::-webkit-scrollbar { height: 6px; }
   .scrollbar-thin::-webkit-scrollbar-thumb { background: hsl(217 91% 60% / 0.3); border-radius: 3px; }
-}
+  .marquee-track {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
