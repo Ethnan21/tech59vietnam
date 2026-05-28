@@ -15,8 +15,8 @@ export const Venue = () => {
   return (
   <section id="venue" className="py-24 relative">
     <div className="container">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <Reveal variant="left" className="order-1 lg:order-1">
+      <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+        <Reveal variant="left" className="order-2 lg:order-1">
           <a
             href="https://www.google.com/maps/place/The+Sentry+Q/@10.8541176,106.6266831,19z/data=!4m6!3m5!1s0x31752bfeccec4c8f:0x7016c09c7a7134a3!8m2!3d10.8541178!4d106.6267169!16s%2Fg%2F11xmnv6w1b?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
@@ -33,8 +33,8 @@ export const Venue = () => {
             </div>
           </a>
         </Reveal>
-        <div className="order-2 lg:order-2">
-          <Reveal>
+        <div className="contents lg:block lg:order-2">
+          <Reveal className="order-1 lg:order-none">
             <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Venue</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-5">
               Vietnam's <span className="text-gradient-animated">tech capital</span>.
@@ -43,7 +43,7 @@ export const Venue = () => {
               QTSC IT Park · Orbital 2.0 Tower. Where Vietnam builds.
             </p>
           </Reveal>
-          <div className="space-y-3 mb-8">
+          <div className="space-y-3 mb-8 order-3 lg:order-none">
             {facts.map(({ icon: Icon, k, v }, i) => (
               <Reveal key={k} delay={i * 90} className="flex items-center gap-4 glass rounded-xl p-4 hover:border-primary/40 hover:translate-x-1 transition-all">
                 <span className="h-10 w-10 rounded-lg bg-brand grid place-items-center shrink-0">
@@ -56,7 +56,7 @@ export const Venue = () => {
               </Reveal>
             ))}
           </div>
-          <Reveal>
+          <Reveal className="order-4 lg:order-none">
             <Button variant="hero" size="lg" asChild>
               <a href="https://lu.ma/bde1n8vo" target="_blank" rel="noopener noreferrer">Register Now <ArrowRight className="h-5 w-5" /></a>
             </Button>
@@ -64,6 +64,7 @@ export const Venue = () => {
         </div>
 
       </div>
+
     </div>
   </section>
   );
