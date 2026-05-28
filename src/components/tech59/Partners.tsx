@@ -133,14 +133,14 @@ const rowA = allLogos.slice(0, mid);
 const rowB = allLogos.slice(mid);
 
 const LogoRow = ({ items }: { items: typeof allLogos }) => (
-  <div className="flex shrink-0 items-center gap-12 pr-12">
+  <div className="flex shrink-0 items-center gap-6 sm:gap-12 pr-6 sm:pr-12">
     {items.map((l, i) => (
-      <div key={i} className="flex h-20 items-center justify-center">
+      <div key={i} className="flex h-12 sm:h-20 items-center justify-center">
         <img
           src={l.src}
           alt={l.alt}
           loading="lazy"
-          className="max-h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+          className="max-h-9 sm:max-h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
         />
       </div>
     ))}
