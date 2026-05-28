@@ -18,7 +18,7 @@ export const Venue = () => {
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         <Reveal variant="left" className="order-1 lg:order-1">
           <a
-            href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn"
+            href="https://www.google.com/maps/place/The+Sentry+Q/@10.8541176,106.6266831,19z/data=!4m6!3m5!1s0x31752bfeccec4c8f:0x7016c09c7a7134a3!8m2!3d10.8541178!4d106.6267169!16s%2Fg%2F11xmnv6w1b?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="relative block rounded-3xl overflow-hidden glass-strong group"
