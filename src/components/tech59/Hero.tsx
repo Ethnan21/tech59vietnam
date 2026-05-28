@@ -21,14 +21,14 @@ export const Hero = () => {
 
     <div className="container relative z-10">
       <div className="max-w-5xl">
-        <div className="inline-flex flex-wrap items-center gap-3 md:gap-5 glass rounded-2xl md:rounded-full pl-4 pr-4 md:pl-5 md:pr-5 py-2.5 mb-8 animate-fade-in max-w-full">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Powered by</span>
-          <span className="hidden md:inline-block h-4 w-px bg-border" />
-          <img src={logoSentry} alt="The Sentry" className="h-5 md:h-7 w-auto object-contain opacity-90" />
-          <span className="hidden md:inline-block h-4 w-px bg-border" />
-          <img src={logoSpark} alt="SPARK Hub" className="h-5 md:h-7 w-auto object-contain opacity-90" />
-          <span className="hidden md:inline-block h-4 w-px bg-border" />
-          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-5 md:h-7 w-auto object-contain opacity-90" />
+        <div className="inline-flex flex-nowrap items-center gap-2 md:gap-5 glass rounded-full pl-3 pr-3 md:pl-5 md:pr-5 py-2 md:py-2.5 mb-8 animate-fade-in max-w-full">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.25em] text-muted-foreground shrink-0">Powered by</span>
+          <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
+          <img src={logoSentry} alt="The Sentry" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
+          <img src={logoSpark} alt="SPARK Hub" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
+          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
         </div>
 
 
