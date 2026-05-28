@@ -133,14 +133,14 @@ const rowA = allLogos.slice(0, mid);
 const rowB = allLogos.slice(mid);
 
 const LogoRow = ({ items }: { items: typeof allLogos }) => (
-  <div className="flex shrink-0 items-center gap-12 pr-12">
+  <div className="flex shrink-0 items-center gap-6 sm:gap-12 pr-6 sm:pr-12">
     {items.map((l, i) => (
-      <div key={i} className="flex h-20 items-center justify-center">
+      <div key={i} className="flex h-12 sm:h-20 items-center justify-center">
         <img
           src={l.src}
           alt={l.alt}
           loading="lazy"
-          className="max-h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+          className="max-h-9 sm:max-h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
         />
       </div>
     ))}
@@ -173,16 +173,16 @@ export const Partners = () => (
       </div>
 
       <Reveal className="mt-16">
-        <div className="glass rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent text-center mb-8">Featured in</p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-10 items-center justify-items-center">
+        <div className="glass rounded-2xl p-4 sm:p-8 md:p-12 max-w-6xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent text-center mb-6 sm:mb-8">Featured in</p>
+          <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-8 gap-x-3 gap-y-5 sm:gap-x-8 sm:gap-y-10 items-center justify-items-center">
             {pressLogos.map((p, i) => (
               <img
                 key={i}
                 src={p.src}
                 alt={p.alt}
                 loading="lazy"
-                className="max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-7 sm:max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             ))}
           </div>

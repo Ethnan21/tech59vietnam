@@ -16,7 +16,7 @@ export const Venue = () => {
   <section id="venue" className="py-24 relative">
     <div className="container">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <Reveal variant="left" className="order-2 lg:order-1">
+        <Reveal variant="left" className="order-1 lg:order-1">
           <a
             href="https://www.google.com/maps/search/?api=1&query=10.8541178%2C106.62671689999999&query_place_id=ChIJj0zszP4rdTERozRxepzAFn"
             target="_blank"
@@ -33,7 +33,7 @@ export const Venue = () => {
             </div>
           </a>
         </Reveal>
-        <div className="order-1 lg:order-2">
+        <div className="order-2 lg:order-2">
           <Reveal>
             <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Venue</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-5">
