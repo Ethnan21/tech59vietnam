@@ -19,14 +19,16 @@ export const StickyCTA = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Register for TECH59 Summit"
-      className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 bg-brand text-primary-foreground font-semibold rounded-full px-4 py-3 md:px-6 md:py-4 text-sm md:text-base shadow-[0_0_50px_hsl(258_90%_66%/0.7)] animate-pulse-glow transition-all duration-500 hover:scale-110 ${
+      style={{ animationDuration: "6s", animationTimingFunction: "ease-in-out" }}
+      className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 inline-flex items-center gap-2 bg-brand text-primary-foreground font-semibold rounded-full px-4 py-3 md:px-6 md:py-4 text-sm md:text-base shadow-[0_0_50px_hsl(258_90%_66%/0.5)] animate-pulse-glow transition-all duration-500 hover:scale-110 ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
       }`}
     >
       <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full rounded-full bg-primary-foreground/70 animate-pulse-ring" />
+        <span style={{ animationDuration: "4s" }} className="absolute inline-flex h-full w-full rounded-full bg-primary-foreground/70 animate-pulse-ring" />
         <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground" />
       </span>
+
       Get Your Pass
       <ArrowRight className="h-4 w-4" />
     </a>
