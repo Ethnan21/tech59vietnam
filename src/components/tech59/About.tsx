@@ -30,7 +30,7 @@ const quotes = [
     text: (
       <>
         Great event! Thank you for having me and the opportunity to{" "}
-        <span className="text-gradient-animated italic">
+        <span className="text-gradient-animated text-slate-50 italic">
           voice a perspective from a cybersecurity angle
         </span>{" "}
         and contrast the differences in working cultures between Vietnam and USA.
