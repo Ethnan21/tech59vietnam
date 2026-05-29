@@ -42,7 +42,7 @@ export const Experience = () => (
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Experience</p>
         <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
           <span>Four formats</span><br />
-          <span className="text-gradient-animated">One summit</span>
+          <span className="text-gradient-animated text-slate-50">One summit</span>
         </h2>
       </Reveal>
 
