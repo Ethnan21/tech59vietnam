@@ -17,7 +17,7 @@ const Index = () => {
   useEffect(() => {
     document.title = "TECH59 Summit 2026 — Vietnam's Premier Tech Conference";
     const meta = document.querySelector('meta[name="description"]') ?? document.head.appendChild(Object.assign(document.createElement('meta'), { name: 'description' }));
-    (meta as HTMLMetaElement).content = "Join 2,000+ founders, investors & innovators at TECH59 Summit 2026 in Ho Chi Minh City. 23–24 July 2026.";
+    (meta as HTMLMetaElement).content = "Join 500+ founders, investors & innovators and 20+ speakers at TECH59 Summit 2026 in Ho Chi Minh City. 16–17 July 2026.";
   }, []);
 
   return (
