@@ -53,7 +53,7 @@ export const About = () => {
         <Reveal>
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ About Us</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
-            What is <span className="text-gradient-animated">Tech59</span>?
+            What is <span className="text-gradient-animated text-slate-50">Tech59</span>?
           </h2>
           <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
             <p>
