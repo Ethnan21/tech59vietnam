@@ -35,31 +35,31 @@ const workshopStage: Slot[] = [
     start: "09:45",
     tag: "Workshop 1",
     title: "Tech Talent Development & Recruiting",
-    description: "How to attract, hire and retain top engineering talent in Vietnam.",
+    description: "Attract, hire and retain top talent in Vietnam.",
   },
   {
     start: "11:00",
     tag: "Workshop 2",
     title: "Building Software Teams",
-    description: "Lessons on scaling high-performing product and engineering teams.",
+    description: "Lessons on scaling high-performing product and teams.",
   },
   {
     start: "13:15",
     tag: "Workshop 3",
     title: "To be announced soon",
-    description: "Topic and speaker reveal coming shortly.",
+    description: "",
   },
   {
     start: "14:20",
     tag: "Workshop 4",
     title: "To be announced soon",
-    description: "Topic and speaker reveal coming shortly.",
+    description: "",
   },
   {
     start: "15:30",
     tag: "Workshop 5",
     title: "To be announced soon",
-    description: "Topic and speaker reveal coming shortly.",
+    description: "",
   },
 ];
 
