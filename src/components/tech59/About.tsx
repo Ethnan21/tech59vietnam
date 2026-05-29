@@ -77,7 +77,7 @@ export const About = () => {
             <div className="relative flex gap-4 md:gap-5 min-h-[360px]">
               <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
               <div className="flex-1 flex flex-col">
-                <span aria-hidden="true" className="font-display text-6xl md:text-7xl leading-none text-gradient-animated -mt-1 mb-1 select-none">“</span>
+                <span aria-hidden="true" className="font-display text-6xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
                 <div className="flex-1 flex items-center">
                   <p key={i} className="font-sans text-base md:text-lg font-medium leading-relaxed text-foreground/90 animate-fade-in">
                     {cur.text}
