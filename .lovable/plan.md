@@ -1,16 +1,24 @@
-## Plan
+## 1. Replace Enterprise image
 
-### Program Day 2 — Track dot swap
-In `src/components/tech59/Programme.tsx`, the `TrackHeader` calls for Main Stage and WORKSHOPS currently use different accent classes. Swap them so:
-- **Main Stage** gets the brighter, more prominent dot style (`bg-accent` + cyan glow).
-- **WORKSHOPS** gets the less prominent dot style (`bg-primary` + blue glow).
+- Copy the uploaded `Picture9.jpg` into `src/assets/audience-enterprise-new.jpg`.
+- In `src/components/tech59/Audience.tsx`, swap the `audienceEnterprise` import to point at the new file (keeping the variable name so the Enterprise tab — "Connect with Vietnam's rising tech stars." — uses it as its background).
+- Leave the existing `src/assets/audience-enterprise.jpg` untouched on disk in case it's needed later.
 
-This affects both the desktop 3:2 grid and the mobile tab view.
+## 2. Responsive audit & fixes (iPad + large mobile)
 
-### Footer — Partner links
-In `src/components/tech59/Footer.tsx`, update the attribution line:
-- Wrap **The Sentry** in an `<a>` linking to `https://thesentry.com.vn/en/`
-- Wrap **AVV** in an `<a>` linking to `https://avv.co/`
-- Keep the `·` separators and existing styling.
+Sweep the landing-page sections at the iPad portrait (~768–834px) and large-mobile (~414–480px) widths and fix any overflow / clipped content. Known candidates from the current code to verify and fix as needed:
 
-No other files need to change.
+- **Hero (`Hero.tsx`)**: the negative `md:-ml-[8%]` on the H1 + oversized logo + `md:mx-[70px]` can push the logo past the viewport on iPad portrait. Constrain so the logo never overflows, and re-check the "Powered by" pill on narrow widths.
+- **Programme (`Programme.tsx`)**: Day 2 desktop 3:2 grid kicks in at `lg`; on iPad portrait it stays in mobile-tab mode — verify the tab pills + slot cards don't overflow.
+- **Packages (`Packages.tsx`)**: comparison table is horizontally scrollable (`min-w-[760px]`) — confirm the scroll affordance + fade work on iPad and the section itself doesn't force page-level horizontal scroll.
+- **Audience (`Audience.tsx`)**: tab row wraps already; verify the big benefit text doesn't overflow at iPad portrait.
+- **Venue, About, Partners, Footer, StickyCTA, Navbar**: spot-check for any fixed widths, large headings, or absolute-positioned glows leaking horizontal scroll.
+
+Approach: load the preview at iPad portrait (768) and large mobile (414), screenshot full-page, identify overflows, then apply minimal fixes (adjust `md:` breakpoints to `lg:`, drop negative margins on smaller screens, tighten `text-7xl` to `text-6xl` where it clips, ensure containers use `overflow-x-clip` where needed). No business-logic changes — presentation only.
+
+## Files likely touched
+
+- `src/assets/audience-enterprise-new.jpg` (new)
+- `src/components/tech59/Audience.tsx`
+- `src/components/tech59/Hero.tsx` (likely)
+- Possibly `Programme.tsx`, `Packages.tsx`, `Venue.tsx` depending on what the screenshots reveal
