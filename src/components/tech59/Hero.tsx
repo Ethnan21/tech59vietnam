@@ -44,7 +44,7 @@ export const Hero = () => {
         <div className="flex flex-wrap items-center gap-3 md:gap-5 text-sm text-muted-foreground mb-10 animate-fade-in-up [animation-delay:200ms] md:mx-[25px]">
           <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> 16–17 July 2026</span>
           <span className="hidden md:inline-block h-1 w-1 rounded-full bg-border" />
-          <a href="https://www.google.com/maps/place/The+Sentry+Q/@10.8541176,106.6266831,19z/data=!4m6!3m5!1s0x31752bfeccec4c8f:0x7016c09c7a7134a3!8m2!3d10.8541178!4d106.6267169!16s%2Fg%2F11xmnv6w1b?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-start md:items-center gap-2 md:whitespace-nowrap hover:text-foreground transition-colors"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5 md:mt-0" /><span>The Sentry Q, Thành phố Hồ Chí Minh, Hồ Chí Minh</span><ArrowUpRight className="h-3.5 w-3.5 shrink-0 mt-0.5 md:mt-0" /></a>
+          <a href="https://www.google.com/maps/place/The+Sentry+Q/@10.8541176,106.6266831,19z/data=!4m6!3m5!1s0x31752bfeccec4c8f:0x7016c09c7a7134a3!8m2!3d10.8541178!4d106.6267169!16s%2Fg%2F11xmnv6w1b?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-start md:items-center gap-2 md:whitespace-nowrap hover:text-foreground transition-colors"><MapPin className="h-4 w-4 text-accent shrink-0 mt-0.5 md:mt-0" /><span>The Sentry Q, Ho Chi Minh City</span><ArrowUpRight className="h-3.5 w-3.5 shrink-0 mt-0.5 md:mt-0" /></a>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up [animation-delay:280ms] md:mx-[25px]">
