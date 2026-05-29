@@ -7,7 +7,7 @@ const quotes = [
     text: (
       <>
         We are not just building a community.{" "}
-        <span className="text-gradient-animated italic">
+        <span className="text-gradient-animated text-slate-50 italic">
           We are shaping the future of Vietnam's innovation economy.
         </span>
       </>
@@ -19,7 +19,7 @@ const quotes = [
       <>
         Huge thanks to Tech59 | Vietnam's Startup - Tech Community and The Sentry for having
         AusCham Vietnam at this fantastic event. We were proud to introduce{" "}
-        <span className="text-gradient-animated italic">FoundersCircle</span>, our new membership
+        <span className="text-gradient-animated text-slate-50 italic">FoundersCircle</span>, our new membership
         tier designed to empower early-stage founders building across the Australia-Vietnam corridor.
         Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
       </>
@@ -30,7 +30,7 @@ const quotes = [
     text: (
       <>
         Great event! Thank you for having me and the opportunity to{" "}
-        <span className="text-gradient-animated italic">
+        <span className="text-gradient-animated text-slate-50 italic">
           voice a perspective from a cybersecurity angle
         </span>{" "}
         and contrast the differences in working cultures between Vietnam and USA.
@@ -53,7 +53,7 @@ export const About = () => {
         <Reveal>
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ About Us</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
-            What is <span className="text-gradient-animated">Tech59</span>?
+            What is <span className="text-gradient-animated text-slate-50">Tech59</span>?
           </h2>
           <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
             <p>
@@ -77,7 +77,7 @@ export const About = () => {
             <div className="relative flex gap-4 md:gap-5 min-h-[360px]">
               <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
               <div className="flex-1 flex flex-col">
-                <span aria-hidden="true" className="font-display text-6xl md:text-7xl leading-none text-gradient-animated -mt-1 mb-1 select-none">“</span>
+                <span aria-hidden="true" className="font-display text-6xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
                 <div className="flex-1 flex items-center">
                   <p key={i} className="font-sans text-base md:text-lg font-medium leading-relaxed text-foreground/90 animate-fade-in">
                     {cur.text}

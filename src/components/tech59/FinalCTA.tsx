@@ -31,7 +31,7 @@ export const FinalCTA = () => {
           </Reveal>
 
           <Reveal delay={80}>
-            <h2 className="font-display text-5xl md:text-6xl font-bold mb-3 text-gradient-animated text-glow">
+            <h2 className="font-display text-5xl md:text-6xl font-bold mb-3 text-gradient-animated text-slate-50 text-glow">
               Get in touch
             </h2>
           </Reveal>
