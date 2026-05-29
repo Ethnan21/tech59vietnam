@@ -49,7 +49,7 @@ export const About = () => {
 
   return (
     <section id="about" className="pt-12 pb-24 relative">
-      <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <Reveal>
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ About Us</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
@@ -70,7 +70,7 @@ export const About = () => {
         </Reveal>
 
         <Reveal variant="scale" delay={120}>
-          <div className="relative glass-strong rounded-3xl p-6 md:p-8 overflow-hidden grain mt-6">
+          <div className="relative glass-strong rounded-3xl p-6 md:p-8 overflow-hidden grain">
             <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
             <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
             <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
