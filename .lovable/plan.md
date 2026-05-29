@@ -1,29 +1,52 @@
-## Update SEO & metadata for TECH59 Summit 2026
+## Update Day 2 programme — Main Stage + Workshop Stage
 
-The Hero already shows **16–17 July 2026**, but several metadata/SEO surfaces still carry the old "2,000+ / 23–24 July" copy. Update them to match: **Thu 16 – Fri 17 July 2026, Ho Chi Minh City, 500+ attendees, 20+ speakers**.
+Rework Day 2 in `src/components/tech59/Programme.tsx` to show two parallel tracks side-by-side on desktop and stacked (tabbed) on mobile, using the schedule from the screenshot. Day 1 (VIP Reception) stays unchanged.
 
-### Files to change
+### New Day 2 data
 
-**1. `index.html`** — JSON-LD `Event` block
-- `startDate`: `2026-07-23` → `2026-07-16`
-- `endDate`: `2026-07-24` → `2026-07-17`
-- `description`: replace "2,000+ founders…" with "500+ founders, investors, innovators and 20+ speakers gathering in Ho Chi Minh City on 16–17 July 2026."
-- Update sitewide `<meta name="description">` and `og:description`/`twitter:description` to the same new copy so Google snippet and social cards refresh.
+**Main Stage** (start derived from previous end time)
+- 08:30–09:00 · Check-in · Registration & Coffee
+- 09:00–09:10 · Opening · Opening Remarks — Introduction about TECH59
+- 09:10–09:30 · Keynote · Government Speech
+- 09:30–10:05 · Topic 1 · Gaming
+- 10:05–10:40 · Topic 2 · Corporate Diplomacy
+- 10:40–11:15 · Topic 3 · AI
+- 11:15–12:00 · Topic 4 · VC Investment
+- 12:00–13:15 · Break · Lunch & Networking
+- 13:15–13:50 · Topic 5 · Real Estate & Tech
+- 13:50–14:25 · Topic 6 · Fashion Tech
+- 14:25–15:00 · Topic 7 · Outsourcing
+- 15:00–15:45 · Topic 8 · EdTech
+- 15:45–16:00 · Closing · Conclusion & Key Takeaways
 
-**2. `src/pages/Index.tsx`**
-- Replace runtime `<meta name="description">` content: "Join 500+ founders, investors & innovators and 20+ speakers at TECH59 Summit 2026 in Ho Chi Minh City. 16–17 July 2026."
-- Keep the existing `document.title`.
+**Workshop Stage** (speakers TBC where noted)
+- 09:45–10:45 · Workshop 1 · Tech Talent Development & Recruiting — Mr. Son Le
+- 10:45–11:00 · Break
+- 11:00–12:00 · Workshop 2 · Building Software Teams — Sky Mavis
+- 12:00–13:15 · Break · Lunch & Networking
+- 13:15–14:15 · Workshop 3 · To be announced soon
+- 14:15–14:20 · Break
+- 14:20–15:20 · Workshop 4 · To be announced soon
+- 15:20–15:30 · Break
+- 15:30–16:30 · Workshop 5 · To be announced soon
 
-**3. `public/llms.txt`**
-- Replace "23–24 July 2026" → "16–17 July 2026" in the summary line.
-- Replace "2,000+ founders, investors, and innovators" → "500+ founders, investors, innovators and 20+ speakers".
+### Layout
 
-**4. `public/sitemap.xml`** — add `<lastmod>2026-05-29</lastmod>` on the home URL so crawlers know to re-fetch.
+- Show time as a **range** (e.g. `09:30–10:05`) instead of a single start time so both stages line up visually.
+- Day 2 panel renders two stacked sub-sections with a header pill labelling each track:
+  - **Desktop (`lg:`)**: two-column grid (`lg:grid-cols-2`), each track is its own timeline. Subtle vertical divider between them.
+  - **Mobile/tablet**: a small tab switcher at top of the Day 2 panel (`Main Stage` / `Workshop`) so users see one track at a time — avoids cramming two stacked timelines and keeps it scannable. Default tab: Main Stage.
+- Reuse existing `SlotList` styling (glass card, timeline rail, tag pill). Slight tweaks:
+  - Shrink time column on mobile (`md:w-[140px]` → `w-[110px]`) to fit ranges cleanly.
+  - Break/Lunch rows get a muted variant (lower opacity, smaller card) so they don't compete with sessions.
+- Day 1 keeps its current single-track layout (only 2 slots, no need for changes).
+
+### Files
+
+- `src/components/tech59/Programme.tsx` — restructure Day 2 data into `{ mainStage, workshop }`, add a small `TrackTabs` inside the Day 2 section, render two `SlotList`s. Update `Slot` type to include `endTime` (optional, only Day 2 uses it).
 
 ### Not changing
-- `Hero.tsx` already shows "16–17 July 2026" ✅
-- `Stats.tsx` is labeled "TECH59 2025 IMPACT" (historical recap of prior edition) — out of scope.
-- `Venue.tsx` "20,000+" refers to QTSC IT Park's on-site professional/student population, not summit attendees — out of scope.
 
-### After deploy
-Google's snippet (the screenshot) refreshes only on next crawl. Once changes go live, the user can request re-indexing in Search Console; social cards (LinkedIn/Slack/FB) cache aggressively — they may need to use each platform's "scrape again" / inspector tool to force a refresh.
+- Day 1 content/layout
+- Visual design tokens, accordion behaviour, animations
+- Any other section

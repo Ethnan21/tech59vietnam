@@ -2,55 +2,74 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-type Slot = { time: string; tag: string; title: string; people?: string; moderator?: string };
+type Slot = {
+  start: string;
+  end: string;
+  tag: string;
+  title: string;
+  people?: string;
+  muted?: boolean;
+};
 
 const day1: Slot[] = [
-  { time: "6:00 PM", tag: "Check-in", title: "Registration, Coffee & Networking" },
-  { time: "7:00 PM", tag: "Opening", title: "Opening Remarks, Drinks & Dinner" },
+  { start: "18:00", end: "19:00", tag: "Check-in", title: "Registration, Coffee & Networking" },
+  { start: "19:00", end: "22:00", tag: "Opening", title: "Opening Remarks, Drinks & Dinner" },
 ];
 
-const day2: Slot[] = [
-  { time: "8:00 AM", tag: "Check-in", title: "Registration & Coffee" },
-  { time: "9:00 AM", tag: "Opening Remarks", title: "Welcome to Tech59 Summit 2026" },
-  { time: "9:30 AM", tag: "Keynote", title: "Featured Speaker", people: "Speaker & topic to be announced" },
-  { time: "10:15 AM", tag: "Panel Discussion", title: "Presentation + Panel", people: "Panelists & topic to be announced" },
-  { time: "11:00 AM", tag: "Keynote", title: "Keynote Speech", people: "Speaker & topic to be announced" },
-  { time: "12:00 PM", tag: "Break", title: "Lunch & Networking" },
-  { time: "1:30 PM", tag: "Panel Discussion", title: "Presentation + Panel", people: "Panelists & topic to be announced" },
-  { time: "3:00 PM", tag: "Workshop", title: "Interactive Session", people: "Details to be announced" },
-  { time: "4:30 PM", tag: "Closing", title: "Conclusion & Key Takeaways" },
+const mainStage: Slot[] = [
+  { start: "08:30", end: "09:00", tag: "Check-in", title: "Registration & Coffee", muted: true },
+  { start: "09:00", end: "09:10", tag: "Opening", title: "Opening Remarks — Introduction to TECH59" },
+  { start: "09:10", end: "09:30", tag: "Keynote", title: "Government Speech" },
+  { start: "09:30", end: "10:05", tag: "Topic 1", title: "Gaming" },
+  { start: "10:05", end: "10:40", tag: "Topic 2", title: "Corporate Diplomacy" },
+  { start: "10:40", end: "11:15", tag: "Topic 3", title: "AI" },
+  { start: "11:15", end: "12:00", tag: "Topic 4", title: "VC Investment" },
+  { start: "12:00", end: "13:15", tag: "Break", title: "Lunch & Networking", muted: true },
+  { start: "13:15", end: "13:50", tag: "Topic 5", title: "Real Estate & Tech" },
+  { start: "13:50", end: "14:25", tag: "Topic 6", title: "Fashion Tech" },
+  { start: "14:25", end: "15:00", tag: "Topic 7", title: "Outsourcing" },
+  { start: "15:00", end: "15:45", tag: "Topic 8", title: "EdTech" },
+  { start: "15:45", end: "16:00", tag: "Closing", title: "Conclusion & Key Takeaways" },
 ];
 
-const dayList = [
-  { id: "day1" as const, label: "Day 1 — VIP Reception · Thu 16 Jul", slots: day1 },
-  { id: "day2" as const, label: "Day 2 — Main Event · Fri 17 Jul", slots: day2 },
+const workshopStage: Slot[] = [
+  { start: "09:45", end: "10:45", tag: "Workshop 1", title: "Tech Talent Development & Recruiting", people: "Mr. Son Le" },
+  { start: "10:45", end: "11:00", tag: "Break", title: "Short Break", muted: true },
+  { start: "11:00", end: "12:00", tag: "Workshop 2", title: "Building Software Teams", people: "Sky Mavis" },
+  { start: "12:00", end: "13:15", tag: "Break", title: "Lunch & Networking", muted: true },
+  { start: "13:15", end: "14:15", tag: "Workshop 3", title: "To be announced soon" },
+  { start: "14:15", end: "14:20", tag: "Break", title: "Short Break", muted: true },
+  { start: "14:20", end: "15:20", tag: "Workshop 4", title: "To be announced soon" },
+  { start: "15:20", end: "15:30", tag: "Break", title: "Short Break", muted: true },
+  { start: "15:30", end: "16:30", tag: "Workshop 5", title: "To be announced soon" },
 ];
 
 const SlotList = ({ slots }: { slots: Slot[] }) => (
-  <div className="relative pl-6 md:pl-10 mt-6">
-    <div className="absolute left-1.5 md:left-3 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
-    <div className="space-y-3">
+  <div className="relative pl-5 md:pl-8 mt-4">
+    <div className="absolute left-1 md:left-2.5 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
+    <div className="space-y-2.5">
       {slots.map((s, i) => (
-        <Reveal key={i} delay={i * 50}>
-          <article className="relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden">
-            <span className="absolute -left-[26px] md:-left-[34px] top-6 h-2.5 w-2.5 rounded-full bg-brand ring-4 ring-background shadow-[0_0_15px_hsl(258_90%_66%/0.8)]" />
+        <Reveal key={i} delay={i * 40}>
+          <article
+            className={`relative glass rounded-xl p-3 md:p-4 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden ${
+              s.muted ? "opacity-60" : ""
+            }`}
+          >
+            <span className="absolute -left-[22px] md:-left-[30px] top-5 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
-            <div className="relative grid md:grid-cols-[110px_1fr] gap-2 md:gap-5">
-              <div className="font-display text-xl md:text-2xl font-bold text-gradient-animated tabular-nums leading-none pt-0.5">
-                {s.time}
-              </div>
-              <div>
-                <span className="inline-block glass-strong rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-accent mb-2">
+            <div className="relative flex flex-col gap-1.5">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="font-display text-sm md:text-base font-bold text-gradient-animated tabular-nums leading-none">
+                  {s.start}–{s.end}
+                </span>
+                <span className="inline-block glass-strong rounded-full px-2 py-0.5 text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-accent">
                   {s.tag}
                 </span>
-                <h3 className="font-display text-base md:text-lg font-semibold leading-snug mb-1.5">{s.title}</h3>
-                {s.people && <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{s.people}</p>}
-                {s.moderator && (
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mt-1">
-                    <span className="text-foreground/80 font-medium">Moderator:</span> {s.moderator}
-                  </p>
-                )}
               </div>
+              <h4 className="font-display text-sm md:text-base font-semibold leading-snug">{s.title}</h4>
+              {s.people && (
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.people}</p>
+              )}
             </div>
           </article>
         </Reveal>
@@ -58,6 +77,75 @@ const SlotList = ({ slots }: { slots: Slot[] }) => (
     </div>
   </div>
 );
+
+const TrackHeader = ({ label, accentClass }: { label: string; accentClass: string }) => (
+  <div className="flex items-center gap-2 mb-1">
+    <span className={`h-2 w-2 rounded-full ${accentClass}`} />
+    <span className="font-display text-xs md:text-sm uppercase tracking-[0.2em] text-foreground/80">
+      {label}
+    </span>
+  </div>
+);
+
+const Day2Tracks = () => {
+  const [tab, setTab] = useState<"main" | "workshop">("main");
+
+  return (
+    <div className="mt-2">
+      {/* Mobile tabs */}
+      <div className="lg:hidden flex gap-2 mb-4 glass-strong rounded-full p-1 w-full max-w-sm">
+        {[
+          { id: "main" as const, label: "Main Stage" },
+          { id: "workshop" as const, label: "Workshop" },
+        ].map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setTab(t.id)}
+            className={`flex-1 rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-all ${
+              tab === t.id
+                ? "bg-brand text-primary-foreground shadow-[0_0_15px_hsl(258_90%_66%/0.5)]"
+                : "text-foreground/70 hover:text-foreground"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Desktop: two columns */}
+      <div className="hidden lg:grid lg:grid-cols-2 lg:gap-8">
+        <div>
+          <TrackHeader label="Main Stage" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+          <SlotList slots={mainStage} />
+        </div>
+        <div className="lg:border-l lg:border-foreground/10 lg:pl-8">
+          <TrackHeader label="Workshop Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
+          <SlotList slots={workshopStage} />
+        </div>
+      </div>
+
+      {/* Mobile: one track at a time */}
+      <div className="lg:hidden">
+        {tab === "main" ? (
+          <div>
+            <TrackHeader label="Main Stage" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+            <SlotList slots={mainStage} />
+          </div>
+        ) : (
+          <div>
+            <TrackHeader label="Workshop Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
+            <SlotList slots={workshopStage} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const dayList = [
+  { id: "day1" as const, label: "Day 1 — VIP Reception · Thu 16 Jul" },
+  { id: "day2" as const, label: "Day 2 — Main Event · Fri 17 Jul" },
+];
 
 export const Programme = () => {
   const [open, setOpen] = useState<"day1" | "day2" | null>("day1");
@@ -100,7 +188,7 @@ export const Programme = () => {
                 >
                   <div className="overflow-hidden">
                     <div className="px-4 md:px-6 pb-6">
-                      <SlotList slots={d.slots} />
+                      {d.id === "day1" ? <SlotList slots={day1} /> : <Day2Tracks />}
                     </div>
                   </div>
                 </div>
