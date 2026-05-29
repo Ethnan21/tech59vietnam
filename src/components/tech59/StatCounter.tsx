@@ -27,7 +27,7 @@ export const StatCounter = ({ end, label, suffix = "+" }: { end: number; label: 
 
   return (
     <div ref={ref} className="text-center relative group">
-      <div className="font-display text-3xl sm:text-5xl md:text-7xl font-bold text-gradient-animated tabular-nums drop-shadow-[0_0_25px_hsl(258_90%_66%/0.5)]">
+      <div className="font-display text-3xl sm:text-5xl md:text-7xl font-bold text-gradient-animated text-slate-50 tabular-nums drop-shadow-[0_0_25px_hsl(258_90%_66%/0.5)]">
         {val.toLocaleString()}{suffix}
       </div>
       <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-[0.2em]">{label}</div>
