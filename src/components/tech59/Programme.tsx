@@ -4,72 +4,95 @@ import { Reveal } from "./Reveal";
 
 type Slot = {
   start: string;
-  end: string;
   tag: string;
   title: string;
-  people?: string;
-  muted?: boolean;
+  description?: string;
 };
 
 const day1: Slot[] = [
-  { start: "18:00", end: "19:00", tag: "Check-in", title: "Registration, Coffee & Networking" },
-  { start: "19:00", end: "22:00", tag: "Opening", title: "Opening Remarks, Drinks & Dinner" },
+  { start: "18:00", tag: "Check-in", title: "Registration, Coffee & Networking" },
+  { start: "19:00", tag: "Opening", title: "Opening Remarks, Drinks & Dinner" },
 ];
 
 const mainStage: Slot[] = [
-  { start: "08:30", end: "09:00", tag: "Check-in", title: "Registration & Coffee", muted: true },
-  { start: "09:00", end: "09:10", tag: "Opening", title: "Opening Remarks — Introduction to TECH59" },
-  { start: "09:10", end: "09:30", tag: "Keynote", title: "Government Speech" },
-  { start: "09:30", end: "10:05", tag: "Topic 1", title: "Gaming" },
-  { start: "10:05", end: "10:40", tag: "Topic 2", title: "Corporate Diplomacy" },
-  { start: "10:40", end: "11:15", tag: "Topic 3", title: "AI" },
-  { start: "11:15", end: "12:00", tag: "Topic 4", title: "VC Investment" },
-  { start: "12:00", end: "13:15", tag: "Break", title: "Lunch & Networking", muted: true },
-  { start: "13:15", end: "13:50", tag: "Topic 5", title: "Real Estate & Tech" },
-  { start: "13:50", end: "14:25", tag: "Topic 6", title: "Fashion Tech" },
-  { start: "14:25", end: "15:00", tag: "Topic 7", title: "Outsourcing" },
-  { start: "15:00", end: "15:45", tag: "Topic 8", title: "EdTech" },
-  { start: "15:45", end: "16:00", tag: "Closing", title: "Conclusion & Key Takeaways" },
+  { start: "08:30", tag: "Check-in", title: "Registration & Coffee" },
+  { start: "09:00", tag: "Opening", title: "Opening Remarks — Introduction to TECH59" },
+  { start: "09:10", tag: "Keynote", title: "Government Speech" },
+  { start: "09:30", tag: "Topic 1", title: "Gaming" },
+  { start: "10:05", tag: "Topic 2", title: "Corporate Diplomacy" },
+  { start: "10:40", tag: "Topic 3", title: "AI" },
+  { start: "11:15", tag: "Topic 4", title: "VC Investment" },
+  { start: "12:00", tag: "Break", title: "Lunch & Networking" },
+  { start: "13:15", tag: "Topic 5", title: "Real Estate & Tech" },
+  { start: "13:50", tag: "Topic 6", title: "Fashion Tech" },
+  { start: "14:25", tag: "Topic 7", title: "Outsourcing" },
+  { start: "15:00", tag: "Topic 8", title: "EdTech" },
+  { start: "15:45", tag: "Closing", title: "Conclusion & Key Takeaways" },
 ];
 
 const workshopStage: Slot[] = [
-  { start: "09:45", end: "10:45", tag: "Workshop 1", title: "Tech Talent Development & Recruiting", people: "Mr. Son Le" },
-  { start: "10:45", end: "11:00", tag: "Break", title: "Short Break", muted: true },
-  { start: "11:00", end: "12:00", tag: "Workshop 2", title: "Building Software Teams", people: "Sky Mavis" },
-  { start: "12:00", end: "13:15", tag: "Break", title: "Lunch & Networking", muted: true },
-  { start: "13:15", end: "14:15", tag: "Workshop 3", title: "To be announced soon" },
-  { start: "14:15", end: "14:20", tag: "Break", title: "Short Break", muted: true },
-  { start: "14:20", end: "15:20", tag: "Workshop 4", title: "To be announced soon" },
-  { start: "15:20", end: "15:30", tag: "Break", title: "Short Break", muted: true },
-  { start: "15:30", end: "16:30", tag: "Workshop 5", title: "To be announced soon" },
+  {
+    start: "09:45",
+    tag: "Workshop 1",
+    title: "Tech Talent Development & Recruiting",
+    description: "How to attract, hire and retain top engineering talent in Vietnam.",
+  },
+  {
+    start: "11:00",
+    tag: "Workshop 2",
+    title: "Building Software Teams",
+    description: "Lessons on scaling high-performing product and engineering teams.",
+  },
+  {
+    start: "13:15",
+    tag: "Workshop 3",
+    title: "To be announced soon",
+    description: "Topic and speaker reveal coming shortly.",
+  },
+  {
+    start: "14:20",
+    tag: "Workshop 4",
+    title: "To be announced soon",
+    description: "Topic and speaker reveal coming shortly.",
+  },
+  {
+    start: "15:30",
+    tag: "Workshop 5",
+    title: "To be announced soon",
+    description: "Topic and speaker reveal coming shortly.",
+  },
 ];
 
-const SlotList = ({ slots }: { slots: Slot[] }) => (
+const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean }) => (
   <div className="relative pl-5 md:pl-8 mt-4">
     <div className="absolute left-1 md:left-2.5 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
-    <div className="space-y-2.5">
+    <div className="space-y-3">
       {slots.map((s, i) => (
         <Reveal key={i} delay={i * 40}>
-          <article
-            className={`relative glass rounded-xl p-3 md:p-4 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden ${
-              s.muted ? "opacity-60" : ""
-            }`}
-          >
-            <span className="absolute -left-[22px] md:-left-[30px] top-5 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
+          <article className="relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden">
+            <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
-            <div className="relative flex flex-col gap-1.5">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="font-display text-sm md:text-base font-bold text-gradient-animated tabular-nums leading-none">
-                  {s.start}–{s.end}
-                </span>
-                <span className="inline-block glass-strong rounded-full px-2 py-0.5 text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-accent">
+            <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
+              <span
+                className={`font-display font-bold text-gradient-animated tabular-nums leading-none shrink-0 ${
+                  compact ? "text-xl md:text-2xl md:w-[88px]" : "text-2xl md:text-3xl md:w-[110px]"
+                }`}
+              >
+                {s.start}
+              </span>
+              <div className="flex flex-col gap-1.5 min-w-0">
+                <span className="inline-block self-start glass-strong rounded-full px-2.5 py-0.5 text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-accent">
                   {s.tag}
                 </span>
+                <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
+                  {s.title}
+                </h4>
+                {s.description && (
+                  <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed">
+                    {s.description}
+                  </p>
+                )}
               </div>
-              <h4 className="font-display text-sm md:text-base font-semibold leading-snug">{s.title}</h4>
-              {s.people && (
-                <p className="text-xs text-muted-foreground leading-relaxed">{s.people}</p>
-              )}
             </div>
           </article>
         </Reveal>
@@ -112,15 +135,15 @@ const Day2Tracks = () => {
         ))}
       </div>
 
-      {/* Desktop: two columns */}
-      <div className="hidden lg:grid lg:grid-cols-2 lg:gap-8">
-        <div>
+      {/* Desktop: 3:2 split — main stage dominant */}
+      <div className="hidden lg:grid lg:grid-cols-5 lg:gap-8">
+        <div className="lg:col-span-3">
           <TrackHeader label="Main Stage" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
           <SlotList slots={mainStage} />
         </div>
-        <div className="lg:border-l lg:border-foreground/10 lg:pl-8">
+        <div className="lg:col-span-2 lg:border-l lg:border-foreground/10 lg:pl-8">
           <TrackHeader label="Workshop Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
-          <SlotList slots={workshopStage} />
+          <SlotList slots={workshopStage} compact />
         </div>
       </div>
 
