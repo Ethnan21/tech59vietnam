@@ -16,7 +16,24 @@ export const Footer = () => (
           </a>
         </div>
         <div className="tracking-wide uppercase text-muted-foreground/80 text-xs my-[8px] mt-0 mb-[10px]">
-          Powered by The Sentry · SPARK Hub · AVV
+          Powered by{" "}
+          <a
+            href="https://thesentry.com.vn/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            The Sentry
+          </a>{" "}
+          · SPARK Hub ·{" "}
+          <a
+            href="https://avv.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            AVV
+          </a>
         </div>
       </div>
     </div>
