@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import brandLogo from "@/assets/tech59-hero-logo-white.png";
+import brandLogo from "@/assets/tech59-mark.avif";
 
 const links = [
   { label: "About", href: "#about" },
