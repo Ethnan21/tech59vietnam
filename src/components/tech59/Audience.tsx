@@ -68,7 +68,7 @@ export const Audience = () => {
         <Reveal className="max-w-2xl mb-10">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Who it's for</p>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
-            Built for <span className="text-gradient-animated">you.</span>
+            Built for <span className="text-gradient-animated text-slate-50">you.</span>
           </h2>
         </Reveal>
 
