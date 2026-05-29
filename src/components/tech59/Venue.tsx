@@ -37,7 +37,7 @@ export const Venue = () => {
           <Reveal className="order-1 lg:order-none">
             <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Venue</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-5">
-              Vietnam's <span className="text-gradient-animated">tech capital</span>.
+              Vietnam's <span className="text-gradient-animated text-slate-50">tech capital</span>.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               QTSC IT Park · Orbital 2.0 Tower. Where Vietnam builds.
