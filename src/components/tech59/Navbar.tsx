@@ -19,9 +19,10 @@ export const Navbar = () => {
       <div className="container mt-4">
         <nav className="glass-strong rounded-2xl px-4 md:px-5 py-3 flex items-center justify-between gap-3">
           <a href="#" className="flex items-center gap-2 font-display font-bold text-lg shrink-0">
-            <span className="h-8 w-8 rounded-full bg-brand grid place-items-center overflow-hidden p-1">
-              <img src={brandLogo} alt="TECH59" className="h-full w-full object-contain" />
+            <span className="h-8 w-8 rounded-full overflow-hidden">
+              <img src={brandLogo} alt="TECH59" className="h-full w-full object-cover" />
             </span>
+
             <span>TECH<span className="text-gradient">59</span></span>
           </a>
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
