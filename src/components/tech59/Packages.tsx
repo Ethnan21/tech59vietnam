@@ -105,7 +105,7 @@ export const Packages = () => (
                       key={i}
                       className="px-3 py-4 sm:px-4 sm:py-5 text-center font-display font-semibold text-xs sm:text-base border-t-2 border-accent/40"
                     >
-                      <span className="text-gradient-animated">{p}</span>
+                      <span className="text-gradient-animated text-slate-50">{p}</span>
                     </td>
                   ))}
                 </tr>
