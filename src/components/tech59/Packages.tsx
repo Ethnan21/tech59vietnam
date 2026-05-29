@@ -74,7 +74,7 @@ export const Packages = () => (
                       key={c}
                       className={`text-center font-display font-semibold px-3 py-3 sm:px-4 sm:py-4 border-b border-border/60 ${
                         i === 0 || i === 1
-                          ? "text-gradient-animated"
+                          ? "text-gradient-animated text-slate-50"
                           : i === 2
                             ? "text-accent"
                             : "text-foreground/90"
