@@ -11,8 +11,10 @@ const stats = [
 export const Stats = () => (
   <section className="pt-16 pb-8 relative">
     <div className="container">
-      <Reveal className="text-center mb-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-accent">TECH59 2025 IMPACT</p>
+      <Reveal className="text-center mb-8">
+        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+          Tech59 <span className="text-gradient-animated">2025 Impact</span>
+        </h2>
       </Reveal>
       <Reveal variant="scale" className="relative glass-strong rounded-3xl p-5 sm:p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 overflow-hidden grain">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-secondary/15 blur-[120px] animate-pulse-glow pointer-events-none" />
