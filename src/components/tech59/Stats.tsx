@@ -12,7 +12,7 @@ export const Stats = () => (
   <section className="pt-16 pb-8 relative">
     <div className="container">
       <Reveal className="text-center mb-8">
-        <h2 className="font-display md:text-7xl font-bold leading-[0.9] text-slate-50 text-3xl">
+        <h2 className="font-display text-xl md:text-3xl font-semibold tracking-tight leading-tight text-slate-50/90">
           Tech59 <span className="text-gradient-animated text-slate-50">2025 Impact</span>
         </h2>
       </Reveal>
