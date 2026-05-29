@@ -74,7 +74,7 @@ const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
               <span
-                className={`font-display font-bold text-gradient-animated tabular-nums leading-none shrink-0 ${
+                className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
                   compact ? "text-xl md:text-2xl md:w-[88px]" : "text-2xl md:text-3xl md:w-[110px]"
                 }`}
               >
