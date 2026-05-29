@@ -138,11 +138,11 @@ const Day2Tracks = () => {
       {/* Desktop: 3:2 split — main stage dominant */}
       <div className="hidden lg:grid lg:grid-cols-5 lg:gap-8">
         <div className="lg:col-span-3">
-          <TrackHeader label="Main Stage" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+          <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
           <SlotList slots={mainStage} />
         </div>
         <div className="lg:col-span-2 lg:border-l lg:border-foreground/10 lg:pl-8">
-          <TrackHeader label="WORKSHOPS" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
+          <TrackHeader label="WORKSHOPS" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
           <SlotList slots={workshopStage} compact />
         </div>
       </div>
@@ -151,12 +151,12 @@ const Day2Tracks = () => {
       <div className="lg:hidden">
         {tab === "main" ? (
           <div>
-            <TrackHeader label="Main Stage" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+            <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
             <SlotList slots={mainStage} />
           </div>
         ) : (
           <div>
-            <TrackHeader label="WORKSHOPS" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
+            <TrackHeader label="WORKSHOPS" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
             <SlotList slots={workshopStage} />
           </div>
         )}
