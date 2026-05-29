@@ -7,7 +7,7 @@ const quotes = [
     text: (
       <>
         We are not just building a community.{" "}
-        <span className="text-gradient-animated italic">
+        <span className="text-gradient-animated text-slate-50 italic">
           We are shaping the future of Vietnam's innovation economy.
         </span>
       </>
