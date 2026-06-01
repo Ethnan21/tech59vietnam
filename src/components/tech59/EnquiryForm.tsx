@@ -55,7 +55,13 @@ export const EnquiryForm = () => {
       // 1. Save to DB
       const { error: dbError } = await supabase
         .from("enquiries")
-        .insert([values]);
+        .insert([{
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          enquiry_type: values.enquiry_type,
+          message: values.message,
+        }]);
 
       if (dbError) throw dbError;
 
