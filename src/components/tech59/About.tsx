@@ -68,22 +68,22 @@ export const About = () => {
           </div>
         </Reveal>
 
-        <Reveal variant="scale" delay={120}>
-          <div className="relative glass-strong rounded-3xl p-6 md:p-8 overflow-hidden grain">
+        <Reveal variant="scale" delay={120} className="min-w-0">
+          <div className="relative glass-strong rounded-3xl p-5 sm:p-6 md:p-8 overflow-hidden grain max-w-full">
             <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
             <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
             <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
-            <div className="relative flex gap-4 md:gap-5 min-h-[360px]">
+            <div className="relative flex gap-3 sm:gap-4 md:gap-5 min-h-[300px] md:min-h-[360px]">
               <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
-              <div className="flex-1 flex flex-col">
-                <span aria-hidden="true" className="font-display text-6xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
+              <div className="flex-1 min-w-0 flex flex-col">
+                <span aria-hidden="true" className="font-display text-5xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
                 <div className="flex-1 flex items-center">
-                  <p key={i} className="font-sans text-base md:text-lg font-medium leading-relaxed text-foreground/90 animate-fade-in">
+                  <p key={i} className="font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed text-foreground/90 animate-fade-in break-words">
                     {cur.text}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-2">
+                <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <button
                       onClick={prev}
                       aria-label="Previous quote"
