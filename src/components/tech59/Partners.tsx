@@ -152,8 +152,8 @@ export const Partners = () => (
     <div className="container">
       <Reveal className="text-center max-w-2xl mx-auto mb-14">
         <p className="text-xs uppercase tracking-widest text-accent mb-3">Trusted by</p>
-        <h2 className="font-display text-5xl md:text-6xl font-bold leading-[0.95]">
-          Government. Global brands. <span className="text-gradient font-extrabold text-6xl">Press</span>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[0.95]">
+          Government. Global brands. <span className="text-gradient font-extrabold text-5xl sm:text-6xl">Press</span>
         </h2>
       </Reveal>
 

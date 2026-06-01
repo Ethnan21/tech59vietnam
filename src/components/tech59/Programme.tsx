@@ -185,7 +185,7 @@ export const Programme = () => {
   return (
     <div className="mt-8 mb-24">
       <Reveal className="max-w-2xl mb-10">
-        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
           <span className="text-gradient-animated text-slate-50">Agenda</span>
         </h2>
         <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">*STAY TUNED FOR MORE SESSIONS, SPEAKERS, AND DETAILS COMING SOON!</p>
@@ -199,12 +199,12 @@ export const Programme = () => {
               <div className="glass rounded-2xl overflow-hidden">
                 <button
                   onClick={() => setOpen(isOpen ? null : d.id)}
-                  className={`w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left transition-all duration-300 ${
+                  className={`w-full flex items-center justify-between gap-3 px-4 md:px-6 py-4 md:py-5 text-left transition-all duration-300 ${
                     isOpen ? "bg-brand/10" : "hover:bg-foreground/5"
                   }`}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-display text-lg md:text-xl font-semibold tracking-tight">
+                  <span className="font-display text-sm sm:text-lg md:text-xl font-semibold tracking-tight min-w-0 break-words">
                     {d.label}
                   </span>
                   <ChevronDown

@@ -67,7 +67,7 @@ export const Audience = () => {
       <div className="container">
         <Reveal className="max-w-2xl mb-10">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Who it's for</p>
-          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
             Built for <span className="text-gradient-animated text-slate-50">you</span>
           </h2>
         </Reveal>
@@ -86,12 +86,12 @@ export const Audience = () => {
           ))}
         </div>
 
-        <div key={cur.key} className="relative glass-strong rounded-3xl p-8 md:p-14 min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain">
+        <div key={cur.key} className="relative glass-strong rounded-3xl p-6 sm:p-8 md:p-14 min-h-[260px] sm:min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain max-w-full">
           <img src={cur.image} alt="" aria-hidden="true" loading="lazy" className={`absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none ${cur.key === 'investors' ? 'object-[center_70%]' : cur.key === 'ent' ? 'object-[center_95%]' : ''}`} />
           <div className="absolute inset-0 bg-gradient-to-r from-card via-card/60 to-card/20 pointer-events-none" />
           <div className="absolute inset-0 bg-card/20 pointer-events-none" />
           <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
-          <p className="relative font-display text-3xl md:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50">
+          <p className="relative font-display text-2xl sm:text-4xl md:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50 break-words">
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
