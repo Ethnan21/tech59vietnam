@@ -109,7 +109,7 @@ export const About = () => {
                       ))}
                     </div>
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground text-right whitespace-nowrap">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground sm:text-right break-words">
                     {cur.meta}
                   </span>
                 </div>
