@@ -51,7 +51,7 @@ export const About = () => {
       <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <Reveal>
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ About Us</p>
-          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9] mb-6">
             What is <span className="text-gradient-animated text-slate-50">Tech59</span>?
           </h2>
           <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">

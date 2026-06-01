@@ -50,7 +50,7 @@ export const Packages = () => (
     <div className="container relative z-10">
       <Reveal className="max-w-2xl mb-12">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Attendee Packages</p>
-        <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9]">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
           Pick your pass
         </h2>
       </Reveal>
