@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "./Reveal";
 
@@ -165,13 +165,21 @@ const Day2Tracks = () => {
   );
 };
 
-const dayList = [
-  { id: "day1" as const, label: "Day 1 — VIP Reception · Thu 16 Jul" },
-  { id: "day2" as const, label: "Day 2 — Main Event · Fri 17 Jul" },
+const dayList: { id: "day1" | "day2"; label: React.ReactNode }[] = [
+  {
+    id: "day1",
+    label: (
+      <>
+        Day 1 — VIP Reception · Thu 16 Jul{" "}
+        <span className="text-gradient-animated">(VIP Pass Only)</span>
+      </>
+    ),
+  },
+  { id: "day2", label: "Day 2 — Main Event · Fri 17 Jul" },
 ];
 
 export const Programme = () => {
-  const [open, setOpen] = useState<"day1" | "day2" | null>("day1");
+  const [open, setOpen] = useState<"day1" | "day2" | null>("day2");
 
   return (
     <div className="mt-8 mb-24">
