@@ -86,7 +86,7 @@ export const Audience = () => {
           ))}
         </div>
 
-        <div key={cur.key} className="relative glass-strong rounded-3xl p-8 md:p-14 min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain">
+        <div key={cur.key} className="relative glass-strong rounded-3xl p-6 sm:p-8 md:p-14 min-h-[260px] sm:min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain max-w-full">
           <img src={cur.image} alt="" aria-hidden="true" loading="lazy" className={`absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none ${cur.key === 'investors' ? 'object-[center_70%]' : cur.key === 'ent' ? 'object-[center_95%]' : ''}`} />
           <div className="absolute inset-0 bg-gradient-to-r from-card via-card/60 to-card/20 pointer-events-none" />
           <div className="absolute inset-0 bg-card/20 pointer-events-none" />
