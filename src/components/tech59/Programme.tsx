@@ -179,7 +179,7 @@ const dayList: { id: "day1" | "day2"; label: React.ReactNode }[] = [
 ];
 
 export const Programme = () => {
-  const [open, setOpen] = useState<"day1" | "day2" | null>("day1");
+  const [open, setOpen] = useState<"day1" | "day2" | null>("day2");
 
   return (
     <div className="mt-8 mb-24">
