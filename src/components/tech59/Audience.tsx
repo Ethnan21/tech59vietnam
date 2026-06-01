@@ -91,7 +91,7 @@ export const Audience = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-card via-card/60 to-card/20 pointer-events-none" />
           <div className="absolute inset-0 bg-card/20 pointer-events-none" />
           <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
-          <p className="relative font-display text-3xl md:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50">
+          <p className="relative font-display text-2xl sm:text-4xl md:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50 break-words">
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
