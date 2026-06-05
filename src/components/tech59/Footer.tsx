@@ -1,62 +1,34 @@
 import heroLogo from "@/assets/tech59-hero-logo-white.png";
-import { Mail, User } from "lucide-react";
+import { Mail } from "lucide-react";
+
+const contacts = [
+  {
+    name: "Maisy Vo",
+    title: "Event Leader",
+    email: "events@thesentry.com.vn",
+  },
+  {
+    name: "Henry Nguyen",
+    title: "Leasing & Event Manager",
+    email: "henry.nguyen@thesentry.com.vn",
+  },
+  {
+    name: "General Enquiries",
+    title: "TECH59 Team",
+    email: "hello.events@thesentry.com.vn",
+  },
+];
 
 export const Footer = () => (
   <footer className="border-t border-border/50 py-16">
     <div className="container">
-      <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
-        <div className="space-y-6">
-          <img
-            src={heroLogo}
-            alt="TECH59 Summit Vietnam"
-            className="h-24 md:h-28 w-auto object-contain shrink-0 -ml-2"
-          />
-          <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-            Vietnam's premier tech gathering connecting global innovators, founders, and investors in the heart of Ho Chi Minh City.
-          </p>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-accent font-bold">Event Leadership</h4>
-            <div className="space-y-4">
-              <div className="group">
-                <p className="text-sm font-semibold flex items-center gap-2 mb-1 text-foreground/90">
-                  <User className="h-3 w-3 text-primary" /> Maisy Vo
-                </p>
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Event Leader</p>
-                <a 
-                  href="mailto:events@thesentry.com.vn" 
-                  className="text-xs text-muted-foreground hover:text-accent transition-colors flex items-center gap-1.5"
-                >
-                  <Mail className="h-3 w-3" /> events@thesentry.com.vn
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-accent font-bold">General Enquiries</h4>
-            <div className="space-y-4">
-              <div className="group">
-                <p className="text-sm font-semibold flex items-center gap-2 mb-1 text-foreground/90">
-                  <User className="h-3 w-3 text-primary" /> Henry Nguyen
-                </p>
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Leasing & Event Manager</p>
-                <a 
-                  href="mailto:henry.nguyen@thesentry.com.vn" 
-                  className="text-xs text-muted-foreground hover:text-accent transition-colors flex items-center gap-1.5"
-                >
-                  <Mail className="h-3 w-3" /> henry.nguyen@thesentry.com.vn
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-border/30 text-xs text-muted-foreground">
-        <div className="tracking-wide uppercase opacity-80">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12">
+        <img
+          src={heroLogo}
+          alt="TECH59 Summit Vietnam"
+          className="h-20 md:h-24 w-auto object-contain -ml-2"
+        />
+        <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
           Powered by{" "}
           <a
             href="https://thesentry.com.vn/en/"
@@ -76,9 +48,37 @@ export const Footer = () => (
             AVV
           </a>
         </div>
-        <div className="opacity-60">
-          © {new Date().getFullYear()} TECH59 Summit. All rights reserved.
-        </div>
+      </div>
+
+      <p className="text-muted-foreground text-sm max-w-xl leading-relaxed mb-10">
+        Vietnam's premier tech gathering connecting global innovators, founders, and investors in the heart of Ho Chi Minh City.
+      </p>
+
+      <div className="space-y-3 mb-12">
+        {contacts.map((c) => (
+          <div
+            key={c.email}
+            className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm group"
+          >
+            <span className="font-semibold text-foreground/90">{c.name}</span>
+            <span className="text-muted-foreground/60">·</span>
+            <span className="text-xs uppercase tracking-wider text-muted-foreground">
+              {c.title}
+            </span>
+            <span className="text-muted-foreground/60">·</span>
+            <a
+              href={`mailto:${c.email}`}
+              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+            >
+              <Mail className="h-3 w-3" />
+              {c.email}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div className="pt-8 border-t border-border/30 text-xs text-muted-foreground/70 text-center md:text-right">
+        © {new Date().getFullYear()} TECH59 Summit. All rights reserved.
       </div>
     </div>
   </footer>
