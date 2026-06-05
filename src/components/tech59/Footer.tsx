@@ -50,8 +50,8 @@ export const Footer = () => (
         </div>
       </div>
 
-      <p className="text-muted-foreground text-sm max-w-xl leading-relaxed mb-10">
-        Vietnam's premier tech gathering connecting global innovators, founders, and investors in the heart of Ho Chi Minh City.
+      <p className="text-muted-foreground text-sm max-w-xl leading-relaxed mb-10 whitespace-pre-line">
+        {"\n"}
       </p>
 
       <div className="space-y-3 mb-12">
