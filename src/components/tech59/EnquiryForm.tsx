@@ -102,7 +102,7 @@ export const EnquiryForm = () => {
                   <FormControl>
                     <Input 
                       placeholder="Your name" 
-                      className="bg-background/50 border-primary/20 focus:border-primary/50 transition-colors h-12" 
+                      className="bg-background/50 border-primary/20 hover:border-primary/40 focus:border-primary/60 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.12)] transition-all duration-300 h-12" 
                       {...field} 
                     />
                   </FormControl>
@@ -120,7 +120,7 @@ export const EnquiryForm = () => {
                     <Input 
                       type="email" 
                       placeholder="name@company.com" 
-                      className="bg-background/50 border-primary/20 focus:border-primary/50 transition-colors h-12" 
+                      className="bg-background/50 border-primary/20 hover:border-primary/40 focus:border-primary/60 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.12)] transition-all duration-300 h-12" 
                       {...field} 
                     />
                   </FormControl>
@@ -140,7 +140,7 @@ export const EnquiryForm = () => {
                   <FormControl>
                     <Input 
                       placeholder="+84 ..." 
-                      className="bg-background/50 border-primary/20 focus:border-primary/50 transition-colors h-12" 
+                      className="bg-background/50 border-primary/20 hover:border-primary/40 focus:border-primary/60 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.12)] transition-all duration-300 h-12" 
                       {...field} 
                     />
                   </FormControl>
@@ -156,7 +156,7 @@ export const EnquiryForm = () => {
                   <FormLabel className="text-xs uppercase tracking-widest text-foreground/70">Enquiry Type</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="bg-background/50 border-primary/20 focus:border-primary/50 transition-colors h-12">
+                      <SelectTrigger className="bg-background/50 border-primary/20 hover:border-primary/40 focus:border-primary/60 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.12)] transition-all duration-300 h-12">
                         <SelectValue placeholder="Select interest" />
                       </SelectTrigger>
                     </FormControl>
@@ -184,7 +184,7 @@ export const EnquiryForm = () => {
                 <FormControl>
                   <Textarea 
                     placeholder="Tell us more about your inquiry..." 
-                    className="bg-background/50 border-primary/20 focus:border-primary/50 transition-colors min-h-[120px] resize-none" 
+                    className="bg-background/50 border-primary/20 hover:border-primary/40 focus:border-primary/60 focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.12)] transition-all duration-300 min-h-[120px] resize-none" 
                     {...field} 
                   />
                 </FormControl>
