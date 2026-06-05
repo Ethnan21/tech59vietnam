@@ -17,6 +17,7 @@ Deno.serve(async (req) => {
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
     const submitted_at = new Date().toISOString()
@@ -26,16 +27,31 @@ Deno.serve(async (req) => {
 
     const results = await Promise.all(
       TEAM_RECIPIENTS.map(async (recipient) => {
-        const { data, error } = await supabase.functions.invoke('send-transactional-email', {
-          body: {
-            templateName: 'team-enquiry-notification',
-            recipientEmail: recipient,
-            idempotencyKey: `enquiry-${baseKey}-${recipient}`,
-            templateData,
-          },
-        })
-        if (error) console.error('send failed for', recipient, error)
-        return { recipient, ok: !error, data, error: error?.message }
+        try {
+          const res = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${supabaseAnonKey}`,
+              apikey: supabaseAnonKey,
+            },
+            body: JSON.stringify({
+              templateName: 'team-enquiry-notification',
+              recipientEmail: recipient,
+              idempotencyKey: `enquiry-${baseKey}-${recipient}`,
+              templateData,
+            }),
+          })
+          const text = await res.text()
+          if (!res.ok) {
+            console.error('send failed for', recipient, res.status, text)
+            return { recipient, ok: false, error: `${res.status}: ${text}` }
+          }
+          return { recipient, ok: true, data: text }
+        } catch (e) {
+          console.error('send threw for', recipient, e)
+          return { recipient, ok: false, error: (e as Error).message }
+        }
       })
     )
 
