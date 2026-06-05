@@ -137,11 +137,6 @@ export const template = {
   subject: (data: Props) =>
     `New TECH59 enquiry — ${data.enquiry_type ?? 'Other'} — ${data.name ?? 'Unknown'}`,
   displayName: 'Team enquiry notification',
-  to: [
-    'events@thesentry.com.vn',
-    'henry.nguyen@thesentry.com.vn',
-    'hello.events@thesentry.com.vn',
-  ],
   previewData: {
     name: 'Jane Doe',
     email: 'jane@example.com',

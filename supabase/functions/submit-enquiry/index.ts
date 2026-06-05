@@ -1,6 +1,11 @@
+import { createClient } from 'npm:@supabase/supabase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+const TEAM_RECIPIENTS = [
+  'events@thesentry.com.vn',
+  'henry.nguyen@thesentry.com.vn',
+  'hello.events@thesentry.com.vn',
+]
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -8,38 +13,39 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { name, email, phone, enquiry_type, message } = await req.json()
+    const { name, email, phone, enquiry_type, message, enquiry_id } = await req.json()
 
-    // Email to the team
-    const teamRecipients = [
-      'events@thesentry.com.vn',
-      'henry.nguyen@thesentry.com.vn',
-      'hello.events@thesentry.com.vn'
-    ]
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-    const emailContent = `
-      New Enquiry from TECH59 Website:
-      
-      Name: ${name}
-      Email: ${email}
-      Phone: ${phone}
-      Type: ${enquiry_type}
-      
-      Message:
-      ${message}
-    `
+    const submitted_at = new Date().toISOString()
+    const baseKey = enquiry_id ?? `${email}-${submitted_at}`
 
-    console.log(`Processing enquiry from ${email} for ${enquiry_type}`)
+    const templateData = { name, email, phone, enquiry_type, message, submitted_at }
 
-    // If we had a Resend key, we'd send here. 
-    // Since we don't have a verified domain yet, we'll log it.
-    // The client also saves to the DB directly.
+    const results = await Promise.all(
+      TEAM_RECIPIENTS.map(async (recipient) => {
+        const { data, error } = await supabase.functions.invoke('send-transactional-email', {
+          body: {
+            templateName: 'team-enquiry-notification',
+            recipientEmail: recipient,
+            idempotencyKey: `enquiry-${baseKey}-${recipient}`,
+            replyTo: email,
+            templateData,
+          },
+        })
+        if (error) console.error('send failed for', recipient, error)
+        return { recipient, ok: !error, data, error: error?.message }
+      })
+    )
 
     return new Response(
-      JSON.stringify({ message: 'Enquiry received' }),
+      JSON.stringify({ message: 'Enquiry processed', results }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 }
     )
   } catch (error) {
+    console.error('submit-enquiry error', error)
     return new Response(
       JSON.stringify({ error: error.message }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 400 }
