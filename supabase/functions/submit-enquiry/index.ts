@@ -28,7 +28,7 @@ Deno.serve(async (req) => {
     const results = await Promise.all(
       TEAM_RECIPIENTS.map(async (recipient) => {
         const { data, error } = await supabase.functions.invoke('send-transactional-email', {
-          headers: { Authorization: `Bearer ${supabaseServiceKey}` },
+          headers: { Authorization: `Bearer ${supabaseAnonKey}` },
           body: {
             templateName: 'team-enquiry-notification',
             recipientEmail: recipient,
