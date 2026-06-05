@@ -31,7 +31,6 @@ Deno.serve(async (req) => {
             templateName: 'team-enquiry-notification',
             recipientEmail: recipient,
             idempotencyKey: `enquiry-${baseKey}-${recipient}`,
-            replyTo: email,
             templateData,
           },
         })
