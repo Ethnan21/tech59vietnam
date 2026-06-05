@@ -86,8 +86,9 @@ export const EnquiryForm = () => {
   };
 
   return (
-    <div className="glass-strong rounded-3xl p-6 sm:p-10 border border-primary/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+    <div className="glass-strong rounded-3xl p-6 sm:p-10 border border-primary/20 relative overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-[0_20px_80px_-20px_hsl(var(--primary)/0.35)]">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none transition-opacity duration-500 group-hover:opacity-150" />
+
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative z-10">
