@@ -82,7 +82,7 @@ export const About = () => {
                 src={q.bg}
                 alt=""
                 aria-hidden="true"
-                className={`absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none transition-opacity duration-700 ease-out ${idx === i ? "opacity-30" : "opacity-0"}`}
+                className={`absolute inset-0 w-full h-full object-cover ${q.imgClass} pointer-events-none transition-opacity duration-700 ease-out ${idx === i ? "opacity-30" : "opacity-0"}`}
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-br from-card/80 via-card/60 to-card/80 pointer-events-none" />
