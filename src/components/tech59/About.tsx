@@ -22,9 +22,6 @@ const quotes = [
     bg: quoteEdwin.url,
     text: (
       <>
-        ...We were proud to introduce{" "}
-        <span className="text-gradient-animated text-slate-50 italic">FoundersCircle</span>, our new membership
-        tier designed to empower early-stage founders building across the Australia-Vietnam corridor.
         Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
       </>
     ),
