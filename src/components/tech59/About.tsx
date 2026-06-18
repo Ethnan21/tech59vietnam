@@ -9,34 +9,34 @@ const quotes = [
   {
     bg: quoteGreg.url,
     text: (
-      <>
+      <span>
         We are not just building a community.{" "}
         <span className="text-gradient-animated text-slate-50 italic">
           We are shaping the future of Vietnam's innovation economy.
         </span>
-      </>
+      </span>
     ),
     meta: "Tech59 · Est. 2024",
   },
   {
     bg: quoteEdwin.url,
     text: (
-      <>
+      <span>
         Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
-      </>
+      </span>
     ),
     meta: "Edwin H. Law · Executive Director, AusCham Vietnam",
   },
   {
     bg: quoteRui.url,
     text: (
-      <>
+      <span>
         Great event! Thank you for having me and the opportunity to{" "}
         <span className="text-gradient-animated text-slate-50 italic">
           voice a perspective from a cybersecurity angle
         </span>{" "}
         and contrast the differences in working cultures between Vietnam and USA.
-      </>
+      </span>
     ),
     meta: "Rui Maximo · VP of Security, Sky Mavis",
   },
@@ -91,8 +91,8 @@ export const About = () => {
               <div className="flex-1 min-w-0 flex flex-col">
                 <span aria-hidden="true" className="font-display text-5xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
                 <div className="flex-1 flex items-center">
-                  <p key={i} className="font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed text-foreground/90 animate-fade-in break-words">
-                    {cur.text}
+                  <p className="font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed text-foreground/90 break-words">
+                    <span key={i} className="animate-fade-in inline">{cur.text}</span>
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
