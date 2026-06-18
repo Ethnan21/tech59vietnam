@@ -8,6 +8,7 @@ import quoteRui from "@/assets/quote-rui-v2.jpg.asset.json";
 const quotes = [
   {
     bg: quoteGreg.url,
+    imgClass: "scale-105",
     text: (
       <span>
         We are not just building a community.{" "}
@@ -20,6 +21,7 @@ const quotes = [
   },
   {
     bg: quoteEdwin.url,
+    imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
         Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
@@ -29,6 +31,7 @@ const quotes = [
   },
   {
     bg: quoteRui.url,
+    imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
         Great event! Thank you for having me and the opportunity to{" "}
