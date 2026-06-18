@@ -19,6 +19,7 @@ const quotes = [
     meta: "Tech59 · Est. 2024",
   },
   {
+    bg: quoteEdwin.url,
     text: (
       <>
         ...We were proud to introduce{" "}
