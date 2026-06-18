@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import quoteGreg from "@/assets/quote-greg.jpg.asset.json";
+import quoteEdwin from "@/assets/quote-edwin.jpg.asset.json";
+import quoteRui from "@/assets/quote-rui.jpg.asset.json";
 
 const quotes = [
   {
+    bg: quoteGreg.url,
     text: (
       <>
         We are not just building a community.{" "}
