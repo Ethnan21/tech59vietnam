@@ -76,6 +76,14 @@ export const About = () => {
 
         <Reveal variant="scale" delay={120} className="min-w-0">
           <div className="relative glass-strong rounded-3xl p-5 sm:p-6 md:p-8 overflow-hidden grain max-w-full">
+            <img
+              key={cur.bg}
+              src={cur.bg}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.12] pointer-events-none animate-fade-in"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-card/85 via-card/70 to-card/85 pointer-events-none" />
             <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
             <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
             <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
