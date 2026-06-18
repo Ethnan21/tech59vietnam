@@ -31,6 +31,7 @@ const quotes = [
     meta: "Edwin H. Law · Executive Director, AusCham Vietnam",
   },
   {
+    bg: quoteRui.url,
     text: (
       <>
         Great event! Thank you for having me and the opportunity to{" "}
