@@ -24,7 +24,10 @@ const quotes = [
     imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
-        Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
+        Grateful for the partnership and the energy this community brings.{" "}
+        <span className="text-gradient-animated text-slate-50 italic">
+          Excited for what we'll build together!
+        </span>
       </span>
     ),
     meta: "Edwin H. Law · Executive Director, AusCham Vietnam",
@@ -99,7 +102,20 @@ export const About = () => {
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-                  <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground break-words order-2 sm:order-1">
+                    {cur.meta}
+                  </span>
+                  <div className="flex items-center gap-2 flex-wrap order-1 sm:order-2 sm:justify-end">
+                    <div className="flex items-center gap-1.5 mr-2">
+                      {quotes.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setI(idx)}
+                          aria-label={`Quote ${idx + 1}`}
+                          className={`h-1.5 rounded-full transition-all ${idx === i ? "w-6 bg-gradient-to-r from-primary to-accent" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
+                        />
+                      ))}
+                    </div>
                     <button
                       onClick={prev}
                       aria-label="Previous quote"
@@ -114,20 +130,7 @@ export const About = () => {
                     >
                       <ChevronRight className="h-4 w-4" />
                     </button>
-                    <div className="flex items-center gap-1.5 ml-2">
-                      {quotes.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setI(idx)}
-                          aria-label={`Quote ${idx + 1}`}
-                          className={`h-1.5 rounded-full transition-all ${idx === i ? "w-6 bg-gradient-to-r from-primary to-accent" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
-                        />
-                      ))}
-                    </div>
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground sm:text-right break-words">
-                    {cur.meta}
-                  </span>
                 </div>
               </div>
             </div>
