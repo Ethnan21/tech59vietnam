@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import quoteGreg from "@/assets/quote-greg.jpg.asset.json";
-import quoteEdwin from "@/assets/quote-edwin.jpg.asset.json";
-import quoteRui from "@/assets/quote-rui.jpg.asset.json";
+import quoteGreg from "@/assets/quote-greg-v2.jpg.asset.json";
+import quoteEdwin from "@/assets/quote-edwin-v2.jpg.asset.json";
+import quoteRui from "@/assets/quote-rui-v2.jpg.asset.json";
 
 const quotes = [
   {
     bg: quoteGreg.url,
+    imgClass: "scale-105",
     text: (
       <span>
         We are not just building a community.{" "}
@@ -20,6 +21,7 @@ const quotes = [
   },
   {
     bg: quoteEdwin.url,
+    imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
         Grateful for the partnership and the energy this community brings. Excited for what we'll build together!
@@ -29,6 +31,7 @@ const quotes = [
   },
   {
     bg: quoteRui.url,
+    imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
         Great event! Thank you for having me and the opportunity to{" "}
@@ -79,7 +82,7 @@ export const About = () => {
                 src={q.bg}
                 alt=""
                 aria-hidden="true"
-                className={`absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none transition-opacity duration-700 ease-out ${idx === i ? "opacity-30" : "opacity-0"}`}
+                className={`absolute inset-0 w-full h-full object-cover ${q.imgClass} pointer-events-none transition-opacity duration-700 ease-out ${idx === i ? "opacity-30" : "opacity-0"}`}
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-br from-card/80 via-card/60 to-card/80 pointer-events-none" />
