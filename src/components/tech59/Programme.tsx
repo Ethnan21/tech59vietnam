@@ -349,15 +349,17 @@ const SlotCard = ({
   compact,
   isOpen,
   onToggle,
+  alwaysExpanded = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
+  alwaysExpanded?: boolean;
 }) => {
   const expandable = Boolean(
     s.description || s.keynote || s.panelists || s.moderator
-  );
+  ) && !alwaysExpanded;
 
   const inner = (
     <>
@@ -390,6 +392,12 @@ const SlotCard = ({
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
           </h4>
+
+          {alwaysExpanded && s.description && (
+            <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
+              {s.description}
+            </p>
+          )}
 
           {expandable && (
             <div
@@ -447,9 +455,11 @@ const SlotCard = ({
 const SlotList = ({
   slots,
   compact = false,
+  alwaysExpanded = false,
 }: {
   slots: Slot[];
   compact?: boolean;
+  alwaysExpanded?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -464,6 +474,7 @@ const SlotList = ({
               compact={compact}
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
+              alwaysExpanded={alwaysExpanded}
             />
           </Reveal>
         ))}
@@ -482,7 +493,7 @@ const TrackHeader = ({ label, accentClass }: { label: string; accentClass: strin
 );
 
 const workshopPanelClass =
-  "rounded-2xl p-5 md:p-6 bg-gradient-to-b from-primary/[0.07] via-secondary/[0.04] to-transparent ring-1 ring-primary/15";
+  "rounded-2xl p-5 md:p-6 bg-muted ring-1 ring-primary/15";
 
 const Day2Tracks = () => {
   const [tab, setTab] = useState<"main" | "workshop">("main");
@@ -517,7 +528,7 @@ const Day2Tracks = () => {
         </div>
         <div className={`lg:col-span-2 ${workshopPanelClass}`}>
           <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-          <SlotList slots={workshopStage} compact />
+          <SlotList slots={workshopStage} compact alwaysExpanded />
         </div>
       </div>
 
@@ -531,7 +542,7 @@ const Day2Tracks = () => {
         ) : (
           <div className={workshopPanelClass}>
             <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-            <SlotList slots={workshopStage} />
+            <SlotList slots={workshopStage} alwaysExpanded />
           </div>
         )}
       </div>
