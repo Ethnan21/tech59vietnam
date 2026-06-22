@@ -496,7 +496,8 @@ const TrackHeader = ({ label, accentClass }: { label: string; accentClass: strin
 );
 
 const workshopPanelClass =
-  "rounded-2xl p-5 md:p-6 bg-gradient-to-b from-primary/[0.07] via-secondary/[0.04] to-transparent ring-1 ring-primary/15";
+  "rounded-2xl p-5 md:p-6 bg-[hsl(230_45%_12%)] ring-1 ring-primary/15";
+
 
 const Day2Tracks = () => {
   const [tab, setTab] = useState<"main" | "workshop">("main");
