@@ -164,9 +164,8 @@ const mainStage: Slot[] = [
         title: "Senior Director, Gobi Partners",
       },
       {
-        name: "Mike Maceda",
-        title:
-          "Director, Corporate Partnerships & Open Innovation APAC, Plug and Play (TBC)",
+        name: "",
+        title: "",
       },
     ],
     moderator: {
