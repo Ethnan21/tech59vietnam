@@ -393,6 +393,12 @@ const SlotCard = ({
             {s.title}
           </h4>
 
+          {alwaysExpanded && s.description && (
+            <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
+              {s.description}
+            </p>
+          )}
+
           {expandable && (
             <div
               className={`grid transition-all duration-500 ease-out ${
