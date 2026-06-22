@@ -33,35 +33,41 @@ const mainStage: Slot[] = [
 const workshopStage: Slot[] = [
   {
     start: "09:45",
-    tag: "Workshop 1",
-    title: "Tech Talent Development & Recruiting",
-    description: "Attract, hire and retain top talent in Vietnam.",
+    tag: "Osome",
+    title: "Regional Expansion & Scaling",
+    description:
+      "A practical look at the legal, financial and operational foundations for scaling a startup across new markets in Southeast Asia.",
   },
   {
     start: "11:00",
-    tag: "Workshop 2",
-    title: "Building Software Teams",
-    description: "Lessons on scaling high-performing product and teams.",
+    tag: "SkyMavis",
+    title: "Building High-Performance Software Teams",
+    description:
+      "Explore the team structures, rituals and culture that help product and engineering teams ship reliably at scale.",
   },
   {
     start: "13:15",
-    tag: "Workshop 3",
-    title: "To be announced soon",
-    description: "",
+    tag: "Qapita",
+    title: "Managing Ownership & Employee Equity for Startups",
+    description:
+      "A founder-focused session on cap tables, equity plans and employee ownership from early stage through growth.",
   },
   {
     start: "14:20",
-    tag: "Workshop 4",
-    title: "To be announced soon",
-    description: "",
+    tag: "Airwallex",
+    title: "Global Payments Made Simple",
+    description:
+      "See how modern treasury and cross-border payment tools remove friction when collecting and paying money internationally.",
   },
   {
     start: "15:30",
-    tag: "Workshop 5",
-    title: "To be announced soon",
-    description: "",
+    tag: "Alcura",
+    title: "Developing Engineering Talent",
+    description:
+      "Learn frameworks for sourcing, upskilling and retaining engineering talent in Vietnam's competitive tech market.",
   },
 ];
+
 
 const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean }) => (
   <div className="relative pl-5 md:pl-8 mt-4">
@@ -81,9 +87,10 @@ const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean
                 {s.start}
               </span>
               <div className="flex flex-col gap-1.5 min-w-0">
-                <span className="inline-block self-start glass-strong rounded-full px-2.5 py-0.5 text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-accent">
+                <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                   {s.tag}
                 </span>
+
                 <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
                   {s.title}
                 </h4>
@@ -119,7 +126,7 @@ const Day2Tracks = () => {
       <div className="lg:hidden flex gap-2 mb-4 glass-strong rounded-full p-1 w-full max-w-sm">
         {[
           { id: "main" as const, label: "Main Stage" },
-          { id: "workshop" as const, label: "Workshop" },
+          { id: "workshop" as const, label: "Workshops" },
         ].map((t) => (
           <button
             key={t.id}
@@ -142,7 +149,8 @@ const Day2Tracks = () => {
           <SlotList slots={mainStage} />
         </div>
         <div className="lg:col-span-2 lg:border-l lg:border-foreground/10 lg:pl-8">
-          <TrackHeader label="WORKSHOPS" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+          <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+
           <SlotList slots={workshopStage} compact />
         </div>
       </div>
@@ -156,7 +164,7 @@ const Day2Tracks = () => {
           </div>
         ) : (
           <div>
-            <TrackHeader label="WORKSHOPS" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+            <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
             <SlotList slots={workshopStage} />
           </div>
         )}
