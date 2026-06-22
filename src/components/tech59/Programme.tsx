@@ -359,12 +359,14 @@ const SlotCard = ({
   isOpen,
   onToggle,
   alwaysExpanded = false,
+  hideChevron = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
   alwaysExpanded?: boolean;
+  hideChevron?: boolean;
 }) => {
   const expandable = Boolean(
     s.description || s.keynote || s.panelists || s.moderator
@@ -386,10 +388,19 @@ const SlotCard = ({
         </span>
         <div className="flex flex-col gap-1.5 min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
-            <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-              {s.tag}
-            </span>
-            {expandable && (
+            {s.logo ? (
+              <img
+                src={s.logo.src}
+                alt={s.logo.alt}
+                className="self-start h-5 md:h-6 w-auto object-contain"
+                loading="lazy"
+              />
+            ) : (
+              <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                {s.tag}
+              </span>
+            )}
+            {expandable && !hideChevron && (
               <ChevronDown
                 className={`h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 mt-1 ${
                   isOpen ? "rotate-180" : ""
@@ -397,6 +408,7 @@ const SlotCard = ({
               />
             )}
           </div>
+
 
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
