@@ -157,7 +157,7 @@ const mainStage: Slot[] = [
       },
       {
         name: "Ian Kim",
-        冷静: "Investment Associate, The Ventures (TBC)",
+        title: "Investment Associate, The Ventures (TBC)",
       },
       {
         name: "Adrian Latortue",
