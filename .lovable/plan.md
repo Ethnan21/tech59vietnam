@@ -1,36 +1,25 @@
-Plan: Update the Agenda Workshops section
+## Goal
+Tighten the workshop descriptions, keep the Agenda typography consistent, and clean up the bottom-right CTA button.
 
-Scope: Only the Day 2 Workshop track in `src/components/tech59/Programme.tsx`. Main Stage and Day 1 stay untouched. No breaks will be added.
+## Changes
 
-Data changes
+### 1. Workshop descriptions (~50% shorter)
+In `src/components/tech59/Programme.tsx`, replace each `workshopStage` description with a concise one-sentence version:
 
-1. Change the workshop track header to: `WORKSHOPS (1h each)` (desktop and mobile tabs).
-2. Update `workshopStage` array with the schedule image. Replace the existing `tag: "Workshop N"` with the organiser name, and set the `title` to the workshop theme from the schedule. Add a concise one-sentence `description` per workshop.
+- **Osome** — "Legal, financial and operational foundations for scaling across Southeast Asia."
+- **SkyMavis** — "Build engineering teams that ship reliably at scale."
+- **Qapita** — "Cap tables, equity plans and employee ownership for growing startups."
+- **Airwallex** — "Simplify cross-border payments and treasury for international operations."
+- **Alcura** — "Source, upskill and retain engineering talent in Vietnam."
 
-Proposed workshop content (for your review):
+These keep the original meaning while cutting word count by roughly 40–55% per workshop.
 
-- **09:45 — Osome — Regional Expansion & Scaling**  
-  A practical look at the legal, financial and operational foundations for scaling a startup across new markets in Southeast Asia.
+### 2. Consistent Agenda typography & spacing
+Review the `SlotList` component and workshop track to ensure the font sizes, line heights, and gaps feel uniform after the text is shortened. Keep the existing token classes (`font-display`, `text-xs`, `text-sm`, `text-muted-foreground`, etc.) and glass-card styling. If anything looks too tight or loose once the descriptions shrink, adjust the vertical spacing inside the card (e.g., `gap-1` vs `gap-1.5`) and the description line height slightly, staying within the same type scale as the rest of the agenda.
 
-- **11:00 — SkyMavis — Building High-Performance Software Teams**  
-  Explore the team structures, rituals and culture that help product and engineering teams ship reliably at scale.
+### 3. Remove the pulse dot from the sticky CTA
+In `src/components/tech59/StickyCTA.tsx`, remove the two-span pulse-ring indicator that appears before the "Get Your Pass" text. Keep the wording and the right-arrow icon so the button becomes text-only plus the arrow.
 
-- **13:15 — Qapita — Managing Ownership & Employee Equity for Startups**  
-  A founder-focused session on cap tables, equity plans and employee ownership from early stage through growth.
-
-- **14:20 — Airwallex — Global Payments Made Simple**  
-  See how modern treasury and cross-border payment tools remove friction when collecting and paying money internationally.
-
-- **15:30 — Alcura — Developing Engineering Talent**  
-  Learn frameworks for sourcing, upskilling and retaining engineering talent in Vietnam's competitive tech market.
-
-Formatting changes
-
-- Keep the existing `SlotList` glass cards, timeline line and hover effects.
-- Slightly refine the organiser pill: increase horizontal padding to give the name a bit more presence, while keeping the same uppercase tracking and colour treatment so it fits the dark/glass theme.
-- Keep the time on the left, organiser pill above the title, and the one-sentence description below.
-- Ensure the mobile tab label changes to `Workshops` so the header and tab match.
-
-Verification
-
-- Open the preview and scroll to the Agenda section, check the Day 2 Workshop track for all five updated cards and consistent styling.
+## Files to edit
+- `src/components/tech59/Programme.tsx`
+- `src/components/tech59/StickyCTA.tsx`

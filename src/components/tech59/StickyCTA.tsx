@@ -24,11 +24,6 @@ export const StickyCTA = () => {
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
       }`}
     >
-      <span className="relative flex h-2 w-2">
-        <span style={{ animationDuration: "4s" }} className="absolute inline-flex h-full w-full rounded-full bg-primary-foreground/70 animate-pulse-ring" />
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground" />
-      </span>
-
       Get Your Pass
       <ArrowRight className="h-4 w-4" />
     </a>
