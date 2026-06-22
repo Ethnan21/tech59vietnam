@@ -169,54 +169,5 @@
   }
 }
 
-.agenda-panel-bg {
-  position: relative;
-  background:
-    radial-gradient(120% 80% at 0% 0%, hsl(258 65% 18% / 0.95), transparent 60%),
-    radial-gradient(120% 80% at 100% 100%, hsl(230 60% 10% / 0.95), transparent 60%),
-    linear-gradient(135deg, hsl(258 55% 14%), hsl(248 50% 11%) 45%, hsl(230 55% 8%));
-  isolation: isolate;
-}
-
-.agenda-panel-bg::before,
-.agenda-panel-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  border-radius: inherit;
-}
-
-.agenda-panel-bg::before {
-  background: radial-gradient(40% 50% at 20% 25%, hsl(var(--primary) / 0.22), transparent 70%);
-  filter: blur(40px);
-  animation: agenda-drift-a 18s ease-in-out infinite alternate;
-}
-
-.agenda-panel-bg::after {
-  background: radial-gradient(45% 55% at 80% 80%, hsl(var(--accent) / 0.18), transparent 70%);
-  filter: blur(50px);
-  animation: agenda-drift-b 22s ease-in-out infinite alternate;
-}
-
-@keyframes agenda-drift-a {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  100% { transform: translate3d(8%, 6%, 0) scale(1.15); }
-}
-
-@keyframes agenda-drift-b {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  100% { transform: translate3d(-6%, -8%, 0) scale(1.2); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .agenda-panel-bg::before,
-  .agenda-panel-bg::after {
-    animation: none;
-  }
-}
-
-
 
 
