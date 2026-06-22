@@ -349,15 +349,17 @@ const SlotCard = ({
   compact,
   isOpen,
   onToggle,
+  alwaysExpanded = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
+  alwaysExpanded?: boolean;
 }) => {
   const expandable = Boolean(
     s.description || s.keynote || s.panelists || s.moderator
-  );
+  ) && !alwaysExpanded;
 
   const inner = (
     <>
