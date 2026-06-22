@@ -566,7 +566,7 @@ const Day2Tracks = () => {
         ) : (
           <div className={workshopPanelClass}>
             <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-            <SlotList slots={workshopStage} alwaysExpanded />
+            <SlotList slots={workshopStage} hideChevron />
           </div>
         )}
       </div>
