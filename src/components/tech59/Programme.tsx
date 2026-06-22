@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "./Reveal";
+import osomeLogo from "@/assets/workshops/osome.png.asset.json";
+import skymavisLogo from "@/assets/workshops/skymavis.png.asset.json";
+import qapitaLogo from "@/assets/workshops/qapita.png.asset.json";
+import airwallexLogo from "@/assets/workshops/airwallex.png.asset.json";
 
 type Person = { name: string; title: string };
 
@@ -12,6 +16,7 @@ type Slot = {
   keynote?: Person[];
   panelists?: Person[];
   moderator?: Person;
+  logo?: { src: string; alt: string };
 };
 
 const day1: Slot[] = [
@@ -290,12 +295,14 @@ const workshopStage: Slot[] = [
     title: "Regional Expansion & Scaling",
     description:
       "Legal, financial and operational foundations for scaling across Southeast Asia.",
+    logo: { src: osomeLogo.url, alt: "Osome" },
   },
   {
     start: "11:00",
     tag: "SkyMavis",
     title: "Building High-Performance Software Teams",
     description: "Build engineering teams that ship reliably at scale.",
+    logo: { src: skymavisLogo.url, alt: "Sky Mavis" },
   },
   {
     start: "13:15",
@@ -303,6 +310,7 @@ const workshopStage: Slot[] = [
     title: "Managing Ownership & Employee Equity for Startups",
     description:
       "Cap tables, equity plans and employee ownership for growing startups.",
+    logo: { src: qapitaLogo.url, alt: "Qapita" },
   },
   {
     start: "14:20",
@@ -310,6 +318,7 @@ const workshopStage: Slot[] = [
     title: "Global Payments Made Simple",
     description:
       "Simplify cross-border payments and treasury for international operations.",
+    logo: { src: airwallexLogo.url, alt: "Airwallex" },
   },
   {
     start: "15:30",
@@ -350,12 +359,14 @@ const SlotCard = ({
   isOpen,
   onToggle,
   alwaysExpanded = false,
+  hideChevron = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
   alwaysExpanded?: boolean;
+  hideChevron?: boolean;
 }) => {
   const expandable = Boolean(
     s.description || s.keynote || s.panelists || s.moderator
@@ -377,10 +388,18 @@ const SlotCard = ({
         </span>
         <div className="flex flex-col gap-1.5 min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
-            <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-              {s.tag}
-            </span>
-            {expandable && (
+            {s.logo ? (
+              <img
+                src={s.logo.src}
+                alt={s.logo.alt}
+                className="h-5 md:h-6 w-auto object-contain self-start"
+              />
+            ) : (
+              <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                {s.tag}
+              </span>
+            )}
+            {expandable && !hideChevron && (
               <ChevronDown
                 className={`h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 mt-1 ${
                   isOpen ? "rotate-180" : ""
@@ -388,6 +407,7 @@ const SlotCard = ({
               />
             )}
           </div>
+
 
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
@@ -456,10 +476,12 @@ const SlotList = ({
   slots,
   compact = false,
   alwaysExpanded = false,
+  hideChevron = false,
 }: {
   slots: Slot[];
   compact?: boolean;
   alwaysExpanded?: boolean;
+  hideChevron?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -475,6 +497,7 @@ const SlotList = ({
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
               alwaysExpanded={alwaysExpanded}
+              hideChevron={hideChevron}
             />
           </Reveal>
         ))}
@@ -482,6 +505,7 @@ const SlotList = ({
     </div>
   );
 };
+
 
 const TrackHeader = ({ label, accentClass }: { label: string; accentClass: string }) => (
   <div className="flex items-center gap-2 mb-1">
@@ -528,7 +552,7 @@ const Day2Tracks = () => {
         </div>
         <div className={`lg:col-span-2 ${workshopPanelClass}`}>
           <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-          <SlotList slots={workshopStage} compact alwaysExpanded />
+          <SlotList slots={workshopStage} compact hideChevron />
         </div>
       </div>
 
@@ -542,7 +566,7 @@ const Day2Tracks = () => {
         ) : (
           <div className={workshopPanelClass}>
             <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-            <SlotList slots={workshopStage} alwaysExpanded />
+            <SlotList slots={workshopStage} hideChevron />
           </div>
         )}
       </div>
