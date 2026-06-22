@@ -160,8 +160,8 @@ const mainStage: Slot[] = [
         title: "Investment Associate, The Ventures (TBC)",
       },
       {
-        name: "Navvin Kumar Kirupanandan",
-        title: "Senior Director, Gobi Partners",
+        name: "Adrian Latortue",
+        title: "Partner, Ascend Vietnam Ventures (AVV)",
       },
       {
         name: "",
