@@ -87,9 +87,10 @@ const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean
                 {s.start}
               </span>
               <div className="flex flex-col gap-1.5 min-w-0">
-                <span className="inline-block self-start glass-strong rounded-full px-2.5 py-0.5 text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-accent">
+                <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                   {s.tag}
                 </span>
+
                 <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
                   {s.title}
                 </h4>
