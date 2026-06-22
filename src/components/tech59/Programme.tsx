@@ -33,35 +33,41 @@ const mainStage: Slot[] = [
 const workshopStage: Slot[] = [
   {
     start: "09:45",
-    tag: "Workshop 1",
-    title: "Tech Talent Development & Recruiting",
-    description: "Attract, hire and retain top talent in Vietnam.",
+    tag: "Osome",
+    title: "Regional Expansion & Scaling",
+    description:
+      "A practical look at the legal, financial and operational foundations for scaling a startup across new markets in Southeast Asia.",
   },
   {
     start: "11:00",
-    tag: "Workshop 2",
-    title: "Building Software Teams",
-    description: "Lessons on scaling high-performing product and teams.",
+    tag: "SkyMavis",
+    title: "Building High-Performance Software Teams",
+    description:
+      "Explore the team structures, rituals and culture that help product and engineering teams ship reliably at scale.",
   },
   {
     start: "13:15",
-    tag: "Workshop 3",
-    title: "To be announced soon",
-    description: "",
+    tag: "Qapita",
+    title: "Managing Ownership & Employee Equity for Startups",
+    description:
+      "A founder-focused session on cap tables, equity plans and employee ownership from early stage through growth.",
   },
   {
     start: "14:20",
-    tag: "Workshop 4",
-    title: "To be announced soon",
-    description: "",
+    tag: "Airwallex",
+    title: "Global Payments Made Simple",
+    description:
+      "See how modern treasury and cross-border payment tools remove friction when collecting and paying money internationally.",
   },
   {
     start: "15:30",
-    tag: "Workshop 5",
-    title: "To be announced soon",
-    description: "",
+    tag: "Alcura",
+    title: "Developing Engineering Talent",
+    description:
+      "Learn frameworks for sourcing, upskilling and retaining engineering talent in Vietnam's competitive tech market.",
   },
 ];
+
 
 const SlotList = ({ slots, compact = false }: { slots: Slot[]; compact?: boolean }) => (
   <div className="relative pl-5 md:pl-8 mt-4">

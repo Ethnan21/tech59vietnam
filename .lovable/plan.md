@@ -1,5 +1,36 @@
-1. **Quotebox bottom row swap** (`src/components/tech59/About.tsx`): Move the navigation arrows (Prev / Next / dots) to the right side and the quote attribution (`cur.meta`) to the left side of the bottom flex row.
+Plan: Update the Agenda Workshops section
 
-2. **Edwin quote highlight** (`src/components/tech59/About.tsx`): Wrap "Excited for what we'll build together!" in the same animated gradient + italic styling used on the other highlighted quote fragments (`text-gradient-animated text-slate-50 italic`).
+Scope: Only the Day 2 Workshop track in `src/components/tech59/Programme.tsx`. Main Stage and Day 1 stay untouched. No breaks will be added.
 
-3. **Enterprise photo shift** (`src/components/tech59/Audience.tsx`): Adjust the Enterprise tab background image object position to shift the subject further downward (increase the existing `object-[center_95%]` downward offset).
+Data changes
+
+1. Change the workshop track header to: `WORKSHOPS (1h each)` (desktop and mobile tabs).
+2. Update `workshopStage` array with the schedule image. Replace the existing `tag: "Workshop N"` with the organiser name, and set the `title` to the workshop theme from the schedule. Add a concise one-sentence `description` per workshop.
+
+Proposed workshop content (for your review):
+
+- **09:45 — Osome — Regional Expansion & Scaling**  
+  A practical look at the legal, financial and operational foundations for scaling a startup across new markets in Southeast Asia.
+
+- **11:00 — SkyMavis — Building High-Performance Software Teams**  
+  Explore the team structures, rituals and culture that help product and engineering teams ship reliably at scale.
+
+- **13:15 — Qapita — Managing Ownership & Employee Equity for Startups**  
+  A founder-focused session on cap tables, equity plans and employee ownership from early stage through growth.
+
+- **14:20 — Airwallex — Global Payments Made Simple**  
+  See how modern treasury and cross-border payment tools remove friction when collecting and paying money internationally.
+
+- **15:30 — Alcura — Developing Engineering Talent**  
+  Learn frameworks for sourcing, upskilling and retaining engineering talent in Vietnam's competitive tech market.
+
+Formatting changes
+
+- Keep the existing `SlotList` glass cards, timeline line and hover effects.
+- Slightly refine the organiser pill: increase horizontal padding to give the name a bit more presence, while keeping the same uppercase tracking and colour treatment so it fits the dark/glass theme.
+- Keep the time on the left, organiser pill above the title, and the one-sentence description below.
+- Ensure the mobile tab label changes to `Workshops` so the header and tab match.
+
+Verification
+
+- Open the preview and scroll to the Agenda section, check the Day 2 Workshop track for all five updated cards and consistent styling.
