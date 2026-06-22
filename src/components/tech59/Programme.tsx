@@ -36,35 +36,34 @@ const workshopStage: Slot[] = [
     tag: "Osome",
     title: "Regional Expansion & Scaling",
     description:
-      "A practical look at the legal, financial and operational foundations for scaling a startup across new markets in Southeast Asia.",
+      "Legal, financial and operational foundations for scaling across Southeast Asia.",
   },
   {
     start: "11:00",
     tag: "SkyMavis",
     title: "Building High-Performance Software Teams",
-    description:
-      "Explore the team structures, rituals and culture that help product and engineering teams ship reliably at scale.",
+    description: "Build engineering teams that ship reliably at scale.",
   },
   {
     start: "13:15",
     tag: "Qapita",
     title: "Managing Ownership & Employee Equity for Startups",
     description:
-      "A founder-focused session on cap tables, equity plans and employee ownership from early stage through growth.",
+      "Cap tables, equity plans and employee ownership for growing startups.",
   },
   {
     start: "14:20",
     tag: "Airwallex",
     title: "Global Payments Made Simple",
     description:
-      "See how modern treasury and cross-border payment tools remove friction when collecting and paying money internationally.",
+      "Simplify cross-border payments and treasury for international operations.",
   },
   {
     start: "15:30",
     tag: "Alcura",
     title: "Developing Engineering Talent",
     description:
-      "Learn frameworks for sourcing, upskilling and retaining engineering talent in Vietnam's competitive tech market.",
+      "Source, upskill and retain engineering talent in Vietnam.",
   },
 ];
 
