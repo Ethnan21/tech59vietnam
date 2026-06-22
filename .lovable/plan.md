@@ -1,33 +1,19 @@
-## Workshop section refinements
+## Workshop Layout Fix
 
-### 1. Upload the 4 company logos as CDN assets
-Use `lovable-assets` to upload each PNG from `/mnt/user-uploads/` (Osome, SkyMavis, Qapita, Airwallex) → `src/assets/workshops/<name>.png.asset.json`. The raw PNGs are not added to the repo.
+### Problem
+Workshop slots with logos currently render in a 3-part horizontal row: time (left) | logo (middle, large with empty padding) | title (right). The logo image has built-in transparent padding on all sides, wasting space and pushing the title far to the right.
 
-### 2. Extend the `Slot` data shape (workshops only)
-Add an optional `logo?: { src: string; alt: string }` field on the workshop entries in `workshopStage`:
-- 09:45 → Osome logo
-- 11:00 → SkyMavis logo
-- 13:15 → Qapita logo
-- 14:20 → Airwallex logo
-- 15:30 → keep `tag: "Alcura"` text (no logo)
+### Solution
+Restructure the `SlotCard` layout for logo-bearing workshop slots so that:
+1. The **time remains in the left column** (unchanged width/alignment).
+2. The **logo moves into the main content column**, positioned at the top.
+3. The **title sits directly beneath the logo**, allowing text to overlap/nest into the logo's padded empty space.
+4. The logo image uses a negative margin or tighter bounding to visually remove the excess padding.
 
-### 3. Render the logo in place of the tag pill in `SlotCard`
-Where the `tag` chip currently renders, branch:
-- If `s.logo` exists → render `<img src={s.logo.src} alt={s.logo.alt} className="h-5 md:h-6 w-auto object-contain" />` (no pill background, so the white-on-dark logos read cleanly).
-- Else → keep the existing tag pill.
+This collapses the previous 3-column feel into a cleaner 2-column layout: time on the left, everything else on the right.
 
-Sizing tuned so logos sit at the same visual height as the existing uppercase tag chip; spacing/alignment unchanged so main stage formatting is untouched.
+### File to Change
+- `src/components/tech59/Programme.tsx` — `SlotCard` component markup and Tailwind classes for logo slots.
 
-### 4. Make workshop cards expandable on click (no chevron)
-Currently workshops use `alwaysExpanded` (description always visible, not clickable). Switch the workshop `SlotList` calls (both mobile and desktop, lines 531 & 545) from `alwaysExpanded` to the normal expandable mode, but hide the chevron globally for workshops via a new prop `hideChevron`:
-- `SlotList` and `SlotCard` get an optional `hideChevron?: boolean` prop, threaded through.
-- In `SlotCard`, when `hideChevron` is true, do not render the `<ChevronDown>` icon, but keep `expandable` true so the whole card is a clickable button that toggles the description open/closed (same animation as the main stage).
-- Remove the `alwaysExpanded` usages from the two workshop `SlotList` instances.
-
-Result: workshop card shows time + logo (or "Alcura" text) + title. Click anywhere on the card → description slides open, same as main stage cards. No chevron icon.
-
-### Files touched
-- `src/components/tech59/Programme.tsx` — data updates, `Slot` type, `SlotCard`/`SlotList` props, two call sites.
-- `src/assets/workshops/osome.png.asset.json`, `skymavis.png.asset.json`, `qapita.png.asset.json`, `airwallex.png.asset.json` — new asset pointers.
-
-No changes to main stage behavior, background, or any other section.
+### Visual Reference
+See attached screenshot — the Osome logo sits in a large padded box between the time and the title text.

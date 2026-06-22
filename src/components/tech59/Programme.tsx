@@ -377,35 +377,16 @@ const SlotCard = ({
       <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
       <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
-        {s.logo ? (
-          <div className="flex items-start gap-3 shrink-0">
-            <span
-              className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none ${
-                compact
-                  ? "text-xl md:text-2xl"
-                  : "text-2xl md:text-3xl"
-              }`}
-            >
-              {s.start}
-            </span>
-            <img
-              src={s.logo.src}
-              alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain"
-            />
-          </div>
-        ) : (
-          <span
-            className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
-              compact
-                ? "text-xl md:text-2xl md:w-[88px]"
-                : "text-2xl md:text-3xl md:w-[110px]"
-            }`}
-          >
-            {s.start}
-          </span>
-        )}
-        <div className="flex flex-col gap-1.5 min-w-0 flex-1">
+        <span
+          className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
+            compact
+              ? "text-xl md:text-2xl md:w-[88px]"
+              : "text-2xl md:text-3xl md:w-[110px]"
+          }`}
+        >
+          {s.start}
+        </span>
+        <div className="flex flex-col min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
             {!s.logo && (
               <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
@@ -421,8 +402,15 @@ const SlotCard = ({
             )}
           </div>
 
+          {s.logo && (
+            <img
+              src={s.logo.src}
+              alt={s.logo.alt}
+              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+            />
+          )}
 
-          <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
+          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
             {s.title}
           </h4>
 
@@ -431,6 +419,7 @@ const SlotCard = ({
               {s.description}
             </p>
           )}
+
 
           {expandable && (
             <div
