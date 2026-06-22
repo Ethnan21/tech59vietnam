@@ -477,10 +477,12 @@ const SlotList = ({
   slots,
   compact = false,
   alwaysExpanded = false,
+  hideChevron = false,
 }: {
   slots: Slot[];
   compact?: boolean;
   alwaysExpanded?: boolean;
+  hideChevron?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -496,10 +498,12 @@ const SlotList = ({
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
               alwaysExpanded={alwaysExpanded}
+              hideChevron={hideChevron}
             />
           </Reveal>
         ))}
       </div>
+
     </div>
   );
 };
