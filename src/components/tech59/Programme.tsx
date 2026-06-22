@@ -457,9 +457,11 @@ const SlotCard = ({
 const SlotList = ({
   slots,
   compact = false,
+  forceStatic = false,
 }: {
   slots: Slot[];
   compact?: boolean;
+  forceStatic?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -474,6 +476,7 @@ const SlotList = ({
               compact={compact}
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
+              forceStatic={forceStatic}
             />
           </Reveal>
         ))}
@@ -481,6 +484,7 @@ const SlotList = ({
     </div>
   );
 };
+
 
 const TrackHeader = ({ label, accentClass }: { label: string; accentClass: string }) => (
   <div className="flex items-center gap-2 mb-1">
