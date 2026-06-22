@@ -392,7 +392,7 @@ const SlotCard = ({
               <img
                 src={s.logo.src}
                 alt={s.logo.alt}
-                className="h-14 md:h-[4.5rem] w-auto object-contain self-start"
+                className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain self-start"
               />
             ) : (
               <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
