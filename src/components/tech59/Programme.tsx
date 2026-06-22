@@ -350,15 +350,17 @@ const SlotCard = ({
   compact,
   isOpen,
   onToggle,
+  forceStatic = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
+  forceStatic?: boolean;
 }) => {
-  const expandable = Boolean(
-    s.description || s.keynote || s.panelists || s.moderator
-  );
+  const expandable =
+    !forceStatic &&
+    Boolean(s.description || s.keynote || s.panelists || s.moderator);
 
   const inner = (
     <>
@@ -391,6 +393,12 @@ const SlotCard = ({
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
           </h4>
+
+          {forceStatic && s.description && (
+            <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-0.5">
+              {s.description}
+            </p>
+          )}
 
           {expandable && (
             <div
@@ -444,6 +452,7 @@ const SlotCard = ({
     </button>
   );
 };
+
 
 const SlotList = ({
   slots,
