@@ -511,7 +511,7 @@ const Day2Tracks = () => {
       </div>
 
       {/* Desktop: 3:2 split — main stage dominant */}
-      <div className="hidden lg:grid lg:grid-cols-5 lg:gap-8">
+      <div className="hidden lg:grid lg:grid-cols-5 lg:gap-8 lg:items-start">
         <div className="lg:col-span-3">
           <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
           <SlotList slots={mainStage} />
