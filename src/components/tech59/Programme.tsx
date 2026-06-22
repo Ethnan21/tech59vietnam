@@ -146,18 +146,18 @@ const mainStage: Slot[] = [
       "Investors on where capital is flowing and what makes Vietnam stand out.",
     keynote: [
       {
-        name: "Navvin Kumar Kirupanandan",
-        title: "Senior Director, Gobi Partners",
+        name: "Adrian Latortue",
+        title: "Partner, Ascend Vietnam Ventures (AVV)",
       },
     ],
     panelists: [
       {
-        name: "Eddie Thai",
-        title: "General Partner, Ascend Vietnam Ventures (AVV)",
+        name: "Navvin Kumar Kirupanandan",
+        title: "Senior Director, Gobi Partners",
       },
       {
         name: "Ian Kim",
-        title: "Investment Associate, The Ventures (TBC)",
+        冷静: "Investment Associate, The Ventures (TBC)",
       },
       {
         name: "Adrian Latortue",
