@@ -608,7 +608,7 @@ export const Programme = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-4 md:px-6 pb-6">
+                    <div className="agenda-panel-bg px-4 md:px-6 pt-4 pb-6">
                       {d.id === "day1" ? <SlotList slots={day1} /> : <Day2Tracks />}
                     </div>
                   </div>
