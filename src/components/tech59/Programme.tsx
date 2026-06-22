@@ -455,9 +455,11 @@ const SlotCard = ({
 const SlotList = ({
   slots,
   compact = false,
+  alwaysExpanded = false,
 }: {
   slots: Slot[];
   compact?: boolean;
+  alwaysExpanded?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -472,6 +474,7 @@ const SlotList = ({
               compact={compact}
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
+              alwaysExpanded={alwaysExpanded}
             />
           </Reveal>
         ))}
