@@ -241,8 +241,8 @@ const mainStage: Slot[] = [
     keynote: [{ name: "Tuong Hoang", title: "COO, Rue Miche" }],
     panelists: [
       {
-        name: "Kathy Pham",
-        title: "Business Development Manager, CLO Virtual Fashion (TBC)",
+        name: "Marvelous Studio (TBC)\u00a0",
+        title: "\u00a0",
       },
       { name: "Kyle Lam", title: "Founder, Saigonmade & Daspace" },
       { name: "Coolmate Representative", title: "(TBC)" },
