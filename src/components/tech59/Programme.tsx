@@ -126,7 +126,7 @@ const Day2Tracks = () => {
       <div className="lg:hidden flex gap-2 mb-4 glass-strong rounded-full p-1 w-full max-w-sm">
         {[
           { id: "main" as const, label: "Main Stage" },
-          { id: "workshop" as const, label: "Workshop" },
+          { id: "workshop" as const, label: "Workshops" },
         ].map((t) => (
           <button
             key={t.id}
