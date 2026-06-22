@@ -292,6 +292,7 @@ const workshopStage: Slot[] = [
   {
     start: "09:45",
     tag: "Osome",
+    logo: { src: osomeLogo.url, alt: "Osome" },
     title: "Regional Expansion & Scaling",
     description:
       "Legal, financial and operational foundations for scaling across Southeast Asia.",
@@ -299,12 +300,14 @@ const workshopStage: Slot[] = [
   {
     start: "11:00",
     tag: "SkyMavis",
+    logo: { src: skymavisLogo.url, alt: "Sky Mavis" },
     title: "Building High-Performance Software Teams",
     description: "Build engineering teams that ship reliably at scale.",
   },
   {
     start: "13:15",
     tag: "Qapita",
+    logo: { src: qapitaLogo.url, alt: "Qapita" },
     title: "Managing Ownership & Employee Equity for Startups",
     description:
       "Cap tables, equity plans and employee ownership for growing startups.",
@@ -312,6 +315,7 @@ const workshopStage: Slot[] = [
   {
     start: "14:20",
     tag: "Airwallex",
+    logo: { src: airwallexLogo.url, alt: "Airwallex" },
     title: "Global Payments Made Simple",
     description:
       "Simplify cross-border payments and treasury for international operations.",
