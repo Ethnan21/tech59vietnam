@@ -36,7 +36,7 @@ export const Venue = () => {
         <div className="contents lg:block lg:order-2">
           <Reveal className="order-1 lg:order-none">
             <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ The Venue</p>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9] mb-5">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9] mb-5 whitespace-nowrap">
               Vietnam's <span className="text-gradient-animated text-slate-50">tech capital</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
