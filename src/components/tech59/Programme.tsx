@@ -350,15 +350,17 @@ const SlotCard = ({
   compact,
   isOpen,
   onToggle,
+  forceStatic = false,
 }: {
   s: Slot;
   compact: boolean;
   isOpen: boolean;
   onToggle: () => void;
+  forceStatic?: boolean;
 }) => {
-  const expandable = Boolean(
-    s.description || s.keynote || s.panelists || s.moderator
-  );
+  const expandable =
+    !forceStatic &&
+    Boolean(s.description || s.keynote || s.panelists || s.moderator);
 
   const inner = (
     <>
@@ -391,6 +393,12 @@ const SlotCard = ({
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
           </h4>
+
+          {forceStatic && s.description && (
+            <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-0.5">
+              {s.description}
+            </p>
+          )}
 
           {expandable && (
             <div
@@ -445,12 +453,15 @@ const SlotCard = ({
   );
 };
 
+
 const SlotList = ({
   slots,
   compact = false,
+  forceStatic = false,
 }: {
   slots: Slot[];
   compact?: boolean;
+  forceStatic?: boolean;
 }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
@@ -465,6 +476,7 @@ const SlotList = ({
               compact={compact}
               isOpen={openIdx === i}
               onToggle={() => setOpenIdx(openIdx === i ? null : i)}
+              forceStatic={forceStatic}
             />
           </Reveal>
         ))}
@@ -472,6 +484,7 @@ const SlotList = ({
     </div>
   );
 };
+
 
 const TrackHeader = ({ label, accentClass }: { label: string; accentClass: string }) => (
   <div className="flex items-center gap-2 mb-1">
@@ -483,7 +496,8 @@ const TrackHeader = ({ label, accentClass }: { label: string; accentClass: strin
 );
 
 const workshopPanelClass =
-  "rounded-2xl p-5 md:p-6 bg-gradient-to-b from-primary/[0.07] via-secondary/[0.04] to-transparent ring-1 ring-primary/15";
+  "rounded-2xl p-5 md:p-6 bg-[hsl(230_45%_12%)] ring-1 ring-primary/15";
+
 
 const Day2Tracks = () => {
   const [tab, setTab] = useState<"main" | "workshop">("main");
@@ -518,7 +532,7 @@ const Day2Tracks = () => {
         </div>
         <div className={`lg:col-span-2 ${workshopPanelClass}`}>
           <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-          <SlotList slots={workshopStage} compact />
+          <SlotList slots={workshopStage} compact forceStatic />
         </div>
       </div>
 
@@ -532,7 +546,7 @@ const Day2Tracks = () => {
         ) : (
           <div className={workshopPanelClass}>
             <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
-            <SlotList slots={workshopStage} />
+            <SlotList slots={workshopStage} forceStatic />
           </div>
         )}
       </div>
@@ -594,7 +608,7 @@ export const Programme = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-4 md:px-6 pb-6">
+                    <div className="agenda-panel-bg px-4 md:px-6 pt-4 pb-6">
                       {d.id === "day1" ? <SlotList slots={day1} /> : <Day2Tracks />}
                     </div>
                   </div>
