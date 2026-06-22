@@ -38,7 +38,7 @@ const mainStage: Slot[] = [
   },
   {
     start: "09:10",
-    tag: "Welcoming Remarks",
+    tag: "WELCOME REMARKS",
     title: "Government HCMC Welcome",
     description: "Official welcome from Ho Chi Minh City government leadership.",
     keynote: [
@@ -47,7 +47,7 @@ const mainStage: Slot[] = [
   },
   {
     start: "09:15",
-    tag: "Welcoming Remarks",
+    tag: "WELCOME REMARKS",
     title: "Welcome Address from QTSC IT Park",
     description: "A welcome from Vietnam's flagship software park host.",
     keynote: [
