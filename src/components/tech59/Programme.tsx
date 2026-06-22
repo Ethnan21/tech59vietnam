@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "./Reveal";
+import osomeLogo from "@/assets/workshops/osome.png.asset.json";
+import skymavisLogo from "@/assets/workshops/skymavis.png.asset.json";
+import qapitaLogo from "@/assets/workshops/qapita.png.asset.json";
+import airwallexLogo from "@/assets/workshops/airwallex.png.asset.json";
 
 type Person = { name: string; title: string };
 
@@ -12,6 +16,7 @@ type Slot = {
   keynote?: Person[];
   panelists?: Person[];
   moderator?: Person;
+  logo?: { src: string; alt: string };
 };
 
 const day1: Slot[] = [
