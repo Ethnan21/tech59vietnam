@@ -149,7 +149,8 @@ const Day2Tracks = () => {
           <SlotList slots={mainStage} />
         </div>
         <div className="lg:col-span-2 lg:border-l lg:border-foreground/10 lg:pl-8">
-          <TrackHeader label="WORKSHOPS" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+          <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
+
           <SlotList slots={workshopStage} compact />
         </div>
       </div>
