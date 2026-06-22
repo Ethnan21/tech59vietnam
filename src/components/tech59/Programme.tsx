@@ -588,9 +588,7 @@ export const Programme = () => {
               <div className="glass rounded-2xl overflow-hidden">
                 <button
                   onClick={() => setOpen(isOpen ? null : d.id)}
-                  className={`w-full flex items-center justify-between gap-3 px-4 md:px-6 py-4 md:py-5 text-left transition-all duration-300 ${
-                    isOpen ? "bg-brand/10" : "hover:bg-foreground/5"
-                  }`}
+                  className="w-full flex items-center justify-between gap-3 px-4 md:px-6 py-4 md:py-5 text-left transition-all duration-300 agenda-panel-bg hover:brightness-110"
                   aria-expanded={isOpen}
                 >
                   <span className="font-display text-sm sm:text-lg md:text-xl font-semibold tracking-tight min-w-0 break-words">
