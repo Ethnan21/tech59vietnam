@@ -374,7 +374,7 @@ const SlotCard = ({
 
   const inner = (
     <>
-      <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
+      <span className="absolute -left-[20px] md:-left-[26px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
       <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
         <span
