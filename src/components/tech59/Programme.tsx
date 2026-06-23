@@ -403,16 +403,21 @@ const SlotCard = ({
           </div>
 
           {s.logo && (
-            <img
-              src={s.logo.src}
-              alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
-            />
+            <div className="flex items-center justify-start h-16 md:h-20 w-full mt-1 mb-2">
+              <img
+                src={s.logo.src}
+                alt={s.logo.alt}
+                className="max-h-full max-w-[180px] w-auto object-contain object-left"
+              />
+            </div>
           )}
 
-          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
+          <h4 className={`font-display font-semibold leading-snug mt-1 text-left ${
+            s.logo ? "text-base md:text-lg" : "text-sm md:text-base"
+          }`}>
             {s.title}
           </h4>
+
 
           {alwaysExpanded && s.description && (
             <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
