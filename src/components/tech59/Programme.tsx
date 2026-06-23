@@ -374,29 +374,21 @@ const SlotCard = ({
 
   const inner = (
     <>
-      <span className="absolute -left-[19px] md:-left-[27px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
+      <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
       <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
         <span
-          className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 pt-1 ${
+          className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
             compact
-              ? "text-xl md:text-2xl md:w-[78px]"
-              : "text-2xl md:text-3xl md:w-[100px]"
+              ? "text-xl md:text-2xl md:w-[88px]"
+              : "text-2xl md:text-3xl md:w-[110px]"
           }`}
         >
           {s.start}
         </span>
         <div className="flex flex-col min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
-            {s.logo ? (
-              <div className="flex items-center h-10 md:h-12">
-                <img
-                  src={s.logo.src}
-                  alt={s.logo.alt}
-                  className="max-h-10 md:max-h-12 w-auto max-w-[180px] md:max-w-[200px] object-contain object-left"
-                />
-              </div>
-            ) : (
+            {!s.logo && (
               <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                 {s.tag}
               </span>
@@ -410,7 +402,15 @@ const SlotCard = ({
             )}
           </div>
 
-          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-2">
+          {s.logo && (
+            <img
+              src={s.logo.src}
+              alt={s.logo.alt}
+              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+            />
+          )}
+
+          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
             {s.title}
           </h4>
 
@@ -489,7 +489,7 @@ const SlotList = ({
 
   return (
     <div className="relative pl-5 md:pl-8 mt-4">
-      <div className="absolute left-[4px] md:left-[8px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
+      <div className="absolute left-1 md:left-2.5 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
       <div className="space-y-3">
         {slots.map((s, i) => (
           <Reveal key={i} delay={i * 40}>
