@@ -374,7 +374,7 @@ const SlotCard = ({
 
   const inner = (
     <>
-      <span className="absolute -left-[20px] md:-left-[32px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
+      <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
       <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
         <span
@@ -403,22 +403,16 @@ const SlotCard = ({
           </div>
 
           {s.logo && (
-            <div className="flex items-center justify-start h-28 md:h-36 w-full mt-1 mb-2">
-              <img
-                src={s.logo.src}
-                alt={s.logo.alt}
-                className="max-h-full max-w-[320px] w-auto object-contain object-left"
-              />
-            </div>
+            <img
+              src={s.logo.src}
+              alt={s.logo.alt}
+              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+            />
           )}
 
-
-          <h4 className={`font-display font-semibold leading-snug mt-1 text-left ${
-            s.logo ? "text-base md:text-lg" : "text-sm md:text-base"
-          }`}>
+          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
             {s.title}
           </h4>
-
 
           {alwaysExpanded && s.description && (
             <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
@@ -495,7 +489,7 @@ const SlotList = ({
 
   return (
     <div className="relative pl-5 md:pl-8 mt-4">
-      <div className="absolute left-1 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
+      <div className="absolute left-1 md:left-2.5 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
       <div className="space-y-3">
         {slots.map((s, i) => (
           <Reveal key={i} delay={i * 40}>
