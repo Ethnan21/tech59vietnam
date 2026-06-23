@@ -376,41 +376,31 @@ const SlotCard = ({
     <>
       <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
-      <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
-        <span
-          className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
-            compact
-              ? "text-xl md:text-2xl md:w-[88px]"
-              : "text-2xl md:text-3xl md:w-[110px]"
-          }`}
-        >
-          {s.start}
-        </span>
-        <div className="flex flex-col min-w-0 flex-1">
-          <div className="flex items-start justify-between gap-3">
-            {!s.logo && (
-              <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-                {s.tag}
-              </span>
-            )}
+
+      {s.logo ? (
+        <div className="relative flex flex-col gap-1">
+          <div className="flex items-center gap-3">
+            <span
+              className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
+                compact ? "text-xl md:text-2xl" : "text-2xl md:text-3xl"
+              }`}
+            >
+              {s.start}
+            </span>
+            <img
+              src={s.logo.src}
+              alt={s.logo.alt}
+              className="h-16 md:h-20 w-auto max-w-[70%] object-contain object-left -my-3"
+            />
             {expandable && !hideChevron && (
               <ChevronDown
-                className={`h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 mt-1 ${
+                className={`ml-auto h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
             )}
           </div>
-
-          {s.logo && (
-            <img
-              src={s.logo.src}
-              alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
-            />
-          )}
-
-          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
+          <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
           </h4>
 
@@ -419,7 +409,6 @@ const SlotCard = ({
               {s.description}
             </p>
           )}
-
 
           {expandable && (
             <div
@@ -434,29 +423,85 @@ const SlotCard = ({
                       {s.description}
                     </p>
                   )}
-                  {s.keynote && (
-                    <PeopleBlock
-                      label={s.keynote.length > 1 ? "Speakers" : "Keynote"}
-                      people={s.keynote}
-                    />
-                  )}
-                  {s.panelists && (
-                    <PeopleBlock label="Panelists" people={s.panelists} />
-                  )}
-                  {s.moderator && (
-                    <PeopleBlock label="Moderator" people={[s.moderator]} />
-                  )}
                 </div>
               </div>
             </div>
           )}
         </div>
-      </div>
+      ) : (
+        <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
+          <span
+            className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
+              compact
+                ? "text-xl md:text-2xl md:w-[88px]"
+                : "text-2xl md:text-3xl md:w-[110px]"
+            }`}
+          >
+            {s.start}
+          </span>
+          <div className="flex flex-col min-w-0 flex-1">
+            <div className="flex items-start justify-between gap-3">
+              <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+                {s.tag}
+              </span>
+              {expandable && !hideChevron && (
+                <ChevronDown
+                  className={`h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 mt-1 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
+              )}
+            </div>
+
+            <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
+              {s.title}
+            </h4>
+
+            {alwaysExpanded && s.description && (
+              <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
+                {s.description}
+              </p>
+            )}
+
+            {expandable && (
+              <div
+                className={`grid transition-all duration-500 ease-out ${
+                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="pt-1">
+                    {s.description && (
+                      <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed">
+                        {s.description}
+                      </p>
+                    )}
+                    {s.keynote && (
+                      <PeopleBlock
+                        label={s.keynote.length > 1 ? "Speakers" : "Keynote"}
+                        people={s.keynote}
+                      />
+                    )}
+                    {s.panelists && (
+                      <PeopleBlock label="Panelists" people={s.panelists} />
+                    )}
+                    {s.moderator && (
+                      <PeopleBlock label="Moderator" people={[s.moderator]} />
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 
-  const baseClass =
-    "relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden w-full text-left";
+  const baseClass = s.logo
+    ? "relative glass rounded-xl px-4 py-3 md:px-4 md:py-3 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden w-full text-left"
+    : "relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden w-full text-left";
+
 
   if (!expandable) {
     return <article className={baseClass}>{inner}</article>;
