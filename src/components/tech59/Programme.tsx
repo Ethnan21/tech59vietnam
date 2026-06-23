@@ -489,7 +489,7 @@ const SlotList = ({
 
   return (
     <div className="relative pl-5 md:pl-8 mt-4">
-      <div className="absolute left-1 md:left-2.5 top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
+      <div className="absolute left-[2px] md:left-[6px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary/50 via-secondary/50 to-accent/50" />
       <div className="space-y-3">
         {slots.map((s, i) => (
           <Reveal key={i} delay={i * 40}>
