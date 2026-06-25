@@ -406,7 +406,7 @@ const SlotCard = ({
             <img
               src={s.logo.src}
               alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+              className="h-[11rem] md:h-[14rem] w-auto object-contain object-left -ml-6 md:-ml-10 -mt-6 md:-mt-10 -mb-6 md:-mb-10"
             />
           )}
 
