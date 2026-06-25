@@ -376,43 +376,42 @@ const SlotCard = ({
     <>
       <span className="absolute -left-[22px] md:-left-[30px] top-6 h-2 w-2 rounded-full bg-brand ring-4 ring-background shadow-[0_0_12px_hsl(258_90%_66%/0.7)]" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
-      <div className="relative flex flex-col md:flex-row md:items-start gap-2 md:gap-5">
-        <span
-          className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
-            compact
-              ? "text-xl md:text-2xl md:w-[88px]"
-              : "text-2xl md:text-3xl md:w-[110px]"
-          }`}
-        >
-          {s.start}
-        </span>
-        <div className="flex flex-col min-w-0 flex-1">
-          <div className="flex items-start justify-between gap-3">
-            {!s.logo && (
-              <span className="inline-block self-start glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
-                {s.tag}
-              </span>
-            )}
-            {expandable && !hideChevron && (
-              <ChevronDown
-                className={`h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 mt-1 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              />
-            )}
-          </div>
-
-          {s.logo && (
+      <div className="relative flex flex-col gap-2">
+        <div className="flex flex-row items-center gap-4 md:gap-5">
+          <span
+            className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
+              compact
+                ? "text-xl md:text-2xl md:w-[88px]"
+                : "text-2xl md:text-3xl md:w-[110px]"
+            }`}
+          >
+            {s.start}
+          </span>
+          {s.logo ? (
             <img
               src={s.logo.src}
               alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+              className="h-12 md:h-16 w-auto object-contain"
+            />
+          ) : (
+            <span className="inline-block self-center glass-strong rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+              {s.tag}
+            </span>
+          )}
+          {expandable && !hideChevron && (
+            <ChevronDown
+              className={`ml-auto h-4 w-4 text-foreground/70 transition-transform duration-300 shrink-0 ${
+                isOpen ? "rotate-180" : ""
+              }`}
             />
           )}
+        </div>
 
-          <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
+        <div className="flex flex-col min-w-0 flex-1">
+          <h4 className="font-display text-sm md:text-base font-semibold leading-snug">
             {s.title}
           </h4>
+
 
           {alwaysExpanded && s.description && (
             <p className="text-xs md:text-[13px] text-muted-foreground leading-relaxed mt-1">
