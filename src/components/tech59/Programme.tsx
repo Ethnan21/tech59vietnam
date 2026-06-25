@@ -381,12 +381,13 @@ const SlotCard = ({
           <span
             className={`font-display font-bold text-gradient-animated text-slate-50 tabular-nums leading-none shrink-0 ${
               compact
-                ? "text-xl md:text-2xl"
-                : "text-2xl md:text-3xl"
+                ? `text-xl md:text-2xl${s.logo ? "" : " md:w-[88px]"}`
+                : `text-2xl md:text-3xl${s.logo ? "" : " md:w-[110px]"}`
             }`}
           >
             {s.start}
           </span>
+
 
           {s.logo ? (
             <img
