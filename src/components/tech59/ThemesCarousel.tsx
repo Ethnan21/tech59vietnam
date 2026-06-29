@@ -45,7 +45,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
         ref={scrollerRef}
         role="region"
         aria-label="Core themes"
-        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory py-8 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory pt-8 pb-4 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {themes.map((t, i) => (
           <Reveal
