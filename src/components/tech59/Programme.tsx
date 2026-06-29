@@ -5,6 +5,7 @@ import osomeLogo from "@/assets/workshops/osome.png.asset.json";
 import skymavisLogo from "@/assets/workshops/skymavis.png.asset.json";
 import qapitaLogo from "@/assets/workshops/qapita.png.asset.json";
 import airwallexLogo from "@/assets/workshops/airwallex.png.asset.json";
+import sixonefourLogo from "@/assets/workshops/sixonefour.png.asset.json";
 
 type Person = { name: string; title: string };
 
@@ -109,7 +110,7 @@ const mainStage: Slot[] = [
     panelists: [
       { name: "Jeffrey Zirlin", title: "Co-Founder, Sky Mavis" },
       { name: "Kevin Duong", title: "CTO, GAMOTA" },
-      { name: "TBC Representatives", title: "" },
+      { name: "Dru Nguyen", title: "Co-founder, GAM Entertainment" },
     ],
     moderator: {
       name: "Josh Warland",
@@ -205,10 +206,6 @@ const mainStage: Slot[] = [
       { name: "Kai Yong", title: "Partner & Co-Founder, GenAI" },
       { name: "Johnny Le", title: "CEO, DigiEX" },
       { name: "Dr. Miro Nguyen", title: "Co-founder, VanguardX" },
-      {
-        name: "Peter Dang",
-        title: "Senior Solutions Architect, Alibaba Cloud",
-      },
       { name: "Dr. Michael Liebmann", title: "Co-Founder, CEO, Dream Lab AI" },
     ],
     moderator: {
@@ -247,7 +244,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "14:40",
+    start: "14:45",
     tag: "Outsourcing & Talent",
     title:
       "Beyond Outsourcing: Vietnam's Journey Toward a World-Class Technology & Talent Hub",
@@ -274,7 +271,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "15:20",
+    start: "15:25",
     tag: "Conclusion & Takeaways",
     title: "Key Insights, Future Outlook & Closing Remarks",
   },
@@ -284,7 +281,7 @@ const workshopStage: Slot[] = [
   {
     start: "09:45",
     tag: "Osome",
-    title: "Regional Expansion & Scaling",
+    title: "Singapore Incorporation Masterclass: Business beyond borders",
     description:
       "Legal, financial and operational foundations for scaling across Southeast Asia.",
     logo: { src: osomeLogo.url, alt: "Osome" },
@@ -299,7 +296,7 @@ const workshopStage: Slot[] = [
   {
     start: "13:15",
     tag: "Qapita",
-    title: "Managing Ownership & Employee Equity for Startups",
+    title: "Managing Everything Related To Ownership & Employee Equity for Start Ups",
     description:
       "Cap tables, equity plans and employee ownership for growing startups.",
     logo: { src: qapitaLogo.url, alt: "Qapita" },
@@ -307,16 +304,17 @@ const workshopStage: Slot[] = [
   {
     start: "14:20",
     tag: "Airwallex",
-    title: "Global Payments Made Simple",
+    title: "Global Payments Made Simple: Connecting Businesses Across Borders",
     description:
       "Simplify cross-border payments and treasury for international operations.",
     logo: { src: airwallexLogo.url, alt: "Airwallex" },
   },
   {
-    start: "15:30",
-    tag: "Alcura",
+    start: "15:25",
+    tag: "sixonefour labs",
     title: "Developing Engineering Talent",
     description: "Source, upskill and retain engineering talent in Vietnam.",
+    logo: { src: sixonefourLogo.url, alt: "sixonefour labs" },
   },
 ];
 
