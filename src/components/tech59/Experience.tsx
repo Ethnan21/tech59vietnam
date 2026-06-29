@@ -74,17 +74,20 @@ export const Experience = () => (
     </div>
 
     {/* Core Themes — purple/blue panel */}
-    <div className="relative pt-20 pb-10 mt-8">
+    <div className="relative pt-20 pb-10 mt-8 overflow-hidden grain">
       {/* Background layers */}
-      <div className="absolute inset-0 overflow-hidden grain pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(258_90%_18%)_0%,hsl(224_60%_12%)_50%,hsl(217_91%_22%)_100%)]" />
-        <div className="absolute inset-0 grid-bg opacity-60" />
-        <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] rounded-full bg-secondary/40 blur-[140px] animate-pulse-glow" />
-        <div className="absolute bottom-0 -right-32 w-[600px] h-[600px] rounded-full bg-primary/35 blur-[140px] animate-float" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(258_85%_32%)_0%,hsl(232_70%_22%)_45%,hsl(217_91%_38%)_100%)]" />
+        <div className="absolute inset-0 bg-hero opacity-80" />
+        <div className="absolute inset-0 grid-bg opacity-50" />
+        <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] rounded-full bg-secondary/60 blur-[140px] animate-pulse-glow" />
+        <div className="absolute bottom-0 -right-32 w-[600px] h-[600px] rounded-full bg-primary/50 blur-[140px] animate-float" />
         {/* Smooth gradient transitions into surrounding black */}
         <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-background to-transparent" />
         <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
+
+
 
       <div className="container relative z-10">
         <Reveal className="max-w-2xl mb-10">
