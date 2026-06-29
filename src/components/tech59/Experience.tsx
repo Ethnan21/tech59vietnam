@@ -74,9 +74,9 @@ export const Experience = () => (
     </div>
 
     {/* Core Themes — purple/blue panel */}
-    <div className="relative pt-20 pb-10 mt-8 overflow-hidden grain">
-      {/* Background layers */}
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="relative z-10 pt-20 pb-4 mt-8 grain">
+      {/* Background layers (clipped so gradient stays inside the panel) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(258_85%_32%)_0%,hsl(232_70%_22%)_45%,hsl(217_91%_38%)_100%)]" />
         <div className="absolute inset-0 bg-hero opacity-80" />
         <div className="absolute inset-0 grid-bg opacity-50" />

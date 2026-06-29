@@ -45,15 +45,15 @@ export const ThemesCarousel = ({ themes }: Props) => {
         ref={scrollerRef}
         role="region"
         aria-label="Core themes"
-        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory py-12 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory py-8 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {themes.map((t, i) => (
           <Reveal
             key={t.title}
             delay={i * 60}
-            className="snap-center shrink-0 w-[64vw] sm:w-[240px] md:w-[230px] lg:w-[250px] h-[300px] sm:h-[320px] md:h-[340px]"
+            className="snap-center shrink-0 w-[64vw] sm:w-[240px] md:w-[230px] lg:w-[250px] h-[270px] sm:h-[290px] md:h-[310px]"
           >
-            <article className="relative h-full w-full rounded-2xl overflow-hidden glass ring-1 ring-border hover:ring-accent/60 hover:scale-[1.02] hover:shadow-[0_30px_70px_-20px_hsl(187_92%_53%/0.55)] transition-all duration-500 group cursor-default">
+            <article className="relative h-full w-full rounded-2xl overflow-hidden glass ring-1 ring-border hover:ring-accent/60 hover:scale-[1.02] hover:shadow-[0_20px_45px_-12px_hsl(187_92%_53%/0.40)] transition-all duration-500 group cursor-default">
               <img
                 src={t.bg}
                 alt=""
@@ -62,7 +62,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
                 draggable={false}
                 width={768}
                 height={1024}
-                className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-70 group-hover:scale-110 transition-all duration-[1500ms] ease-out pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-80 group-hover:scale-110 transition-all duration-[1500ms] ease-out pointer-events-none"
               />
               {/* Readability scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/10 pointer-events-none" />
