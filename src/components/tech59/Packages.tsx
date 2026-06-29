@@ -58,7 +58,7 @@ export const Packages = () => (
             </ul>
 
             <Button variant="outline" size="lg" asChild className="w-full">
-              <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">
+              <a href="#contact">
                 Request VIP Access <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
@@ -73,11 +73,11 @@ export const Packages = () => (
             </span>
 
             <header className="mb-8">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-gradient-animated mb-3">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-3">
                 Standard Pass
               </h3>
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
-                <span className="font-display text-4xl sm:text-5xl font-bold text-foreground">FREE</span>
+                <span className="font-display text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[hsl(217_91%_70%)] via-[hsl(258_90%_75%)] to-[hsl(187_92%_70%)] bg-clip-text text-transparent">FREE</span>
                 <span className="text-sm font-medium text-muted-foreground tracking-wider">till July 17</span>
               </div>
             </header>
