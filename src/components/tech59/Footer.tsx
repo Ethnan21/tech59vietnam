@@ -39,10 +39,10 @@ export const Footer = () => (
                 <span className="text-muted-foreground/60">·</span>
                 <a
                   href={`mailto:${c.email}`}
-                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors break-all [overflow-wrap:anywhere] max-w-full"
                 >
-                  <Mail className="h-3 w-3" />
-                  {c.email}
+                  <Mail className="h-3 w-3 shrink-0" />
+                  <span className="break-all [overflow-wrap:anywhere]">{c.email}</span>
                 </a>
               </div>
             ))}
