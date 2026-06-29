@@ -393,7 +393,7 @@ const SlotCard = ({
           </div>
 
           {s.logo && (
-            <div className="relative inline-flex items-center justify-start h-14 md:h-18 pl-5 md:pl-7 pr-[0.875rem] md:pr-[1.225rem] rounded-full glass-strong ring-1 ring-accent/30 shadow-[0_0_20px_hsl(var(--accent)/0.15)] isolate">
+            <div className="relative inline-flex items-center justify-start h-14 md:h-18 pl-5 md:pl-7 pr-[0.525rem] md:pr-[0.735rem] rounded-full glass-strong ring-1 ring-accent/30 shadow-[0_0_20px_hsl(var(--accent)/0.15)] isolate">
               <img
                 src={s.logo.src}
                 alt={s.logo.alt}
