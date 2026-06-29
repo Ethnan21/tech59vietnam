@@ -74,23 +74,21 @@ export const Experience = () => (
     </div>
 
     {/* Core Themes — purple/blue panel */}
-    <div className="relative z-10 pt-20 pb-2 mt-8 grain">
+    <div className="relative z-20 pt-16 pb-0 mt-8 grain">
       {/* Background layers (clipped so gradient stays inside the panel) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(258_85%_32%)_0%,hsl(232_70%_22%)_45%,hsl(217_91%_38%)_100%)]" />
         <div className="absolute inset-0 bg-hero opacity-80" />
         <div className="absolute inset-0 grid-bg opacity-50" />
-        <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] rounded-full bg-secondary/60 blur-[140px] animate-pulse-glow" />
-        <div className="absolute bottom-0 -right-32 w-[600px] h-[600px] rounded-full bg-primary/50 blur-[140px] animate-float" />
+        <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] rounded-full bg-secondary/60 blur-[140px] motion-safe:animate-pulse-glow" />
+        <div className="absolute bottom-0 -right-32 w-[600px] h-[600px] rounded-full bg-primary/50 blur-[140px] motion-safe:animate-float" />
         {/* Smooth gradient transitions into surrounding black */}
         <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-background to-transparent" />
         <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-
-
       <div className="container relative z-10">
-        <Reveal className="max-w-2xl mb-10">
+        <Reveal className="max-w-2xl mb-6">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Core Themes</p>
           <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
             Ten tracks,<br />
