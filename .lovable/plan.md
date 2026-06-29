@@ -23,3 +23,4 @@ Single-file edits in `src/components/tech59/Programme.tsx`, plus a new logo asse
 
 ### Out of scope
 - No layout, styling, or component changes — only text/data and the one added logo asset import.
+- Change "(VIP Pass Only)" to "(By Invitation Only)" in the Day 1 label.

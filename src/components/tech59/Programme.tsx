@@ -579,7 +579,7 @@ const dayList: { id: "day1" | "day2"; label: React.ReactNode }[] = [
     label: (
       <span>
         <span>Day 1 — VIP Reception </span>
-        <span className="text-gradient-animated">(VIP Pass Only)</span>
+        <span className="text-gradient-animated">(By Invitation Only)</span>
         <span>  · Thu 16 Jul</span>
       </span>
     ),
