@@ -89,6 +89,11 @@ export default {
           "0%, 100%": { transform: "scale(1)", opacity: "0.2" },
           "50%": { transform: "scale(1.02)", opacity: "0.35" },
         },
+        "nudge-x": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(4px)" },
+        },
+
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
