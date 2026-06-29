@@ -1,35 +1,39 @@
-## Refinements
+# Core Themes → Horizontal Scroll Row
 
-### 1. Workshop logo centering (`src/components/tech59/Programme.tsx`, ~lines 397–406)
-The pill is positioned with hard-coded `top-[45%] left-[20%] w-[47%] h-[55%]` and the logo uses `object-left` plus negative margins. Each logo's aspect ratio is different, so the pill never aligns consistently.
+Replace the current 2-3-5 column grid in `src/components/tech59/Experience.tsx` with a single-row, horizontally scrollable showcase inspired by the attached reference (tall portrait cards, large title text over high-opacity imagery on dark background).
 
-Replace with a self-sizing container:
-- Wrapper: `relative inline-flex items-center justify-center px-5 md:px-7 h-12 md:h-14 rounded-full glass-strong ring-1 ring-accent/30 shadow-[0_0_20px_hsl(var(--accent)/0.15)]`
-- Logo inside: `relative h-7 md:h-9 w-auto object-contain` (no negative margins, no `object-left`)
+## What changes
 
-This makes the pill wrap the logo with equal padding on all sides — every logo (Osome, SkyMavis, Qapita, Airwallex) becomes perfectly centered regardless of aspect ratio.
+**Location:** Bottom of `src/components/tech59/Experience.tsx` (the `themes` block). Text content, theme list, images, and section heading ("Ten tracks, Endless deals") stay exactly as they are.
 
-### 2. Core Themes carousel (`src/components/tech59/ThemesCarousel.tsx`)
+**New layout — single horizontal row:**
+- One row of tall portrait cards (~280px wide × ~440px tall on desktop, ~220×360 on mobile), `flex-nowrap`, native scroll-snap.
+- Cards are taller than current (current ~160px → new ~440px) to match the reference proportions.
+- Background image opacity raised from `opacity-15` → `opacity-70` (hover `opacity-85`).
+- New readability layer: stronger bottom-anchored gradient (`from-black/90 via-black/40 to-transparent`) so the large white display title stays legible against the brighter imagery.
+- Title moves to the bottom of the card with a larger display font (similar to reference); theme number badge sits top-left; short desc sits under the title.
 
-**Remove swipe hint pill** (lines ~74–84) entirely — drop the `showHint` state, the scroll listener `useEffect`, and the `ArrowLeft/ArrowRight` `Swipe to see more` block.
+**Scroll affordance — "Swipe to see more":**
+- Small pill above the row, left-aligned: animated arrows (`←  Swipe to see more  →`) using a gentle horizontal nudge animation (Tailwind keyframe).
+- Subtle left + right edge fade masks on the scroll container so cards bleed off-screen, signalling more content.
+- Hides automatically once the user has scrolled to the end (simple scroll listener).
 
-**Remove side gradient masks** (the two `pointer-events-none absolute ... bg-gradient-to-r/l from-background` divs) — these are the "weird black gradient line" on the section's left/right edges.
+**Dynamic / sleek effects:**
+- Smooth native scroll with `scroll-smooth`, `snap-x snap-mandatory`, `snap-center` per card, momentum scroll on touch.
+- Per-card hover: slight scale (`hover:scale-[1.03]`), image zoom (`group-hover:scale-110`), light-streak sweep (already in project), accent ring glow.
+- Subtle parallax: background image translates a few px opposite to card hover tilt (CSS only, no JS lib).
+- Reveal-on-enter stagger using the existing `Reveal` component.
+- Drag-to-scroll on desktop (pointer events) so users can grab and fling, in addition to wheel/trackpad.
+- Hide scrollbar (`scrollbar-hide` utility via inline style) for a clean look while keeping scroll behavior.
 
-**Make arrow buttons actually scroll** — they already call `nudge()`, but make them more prominent and always visible (also show on mobile):
-- Change `hidden md:grid` → `grid` so they appear on all viewports
-- Keep `onClick={() => nudge(-1)}` / `nudge(1)` — already wired
-- Add `disabled` state when at scroll start/end using a small `canPrev`/`canNext` state updated on scroll
+## Technical notes
 
-**Reduce card size:**
-- Card width: `w-[72vw] sm:w-[300px] md:w-[280px] lg:w-[300px]` → `w-[60vw] sm:w-[220px] md:w-[210px] lg:w-[220px]`
-- Card height: `h-[440px] sm:h-[460px] md:h-[480px]` → `h-[300px] sm:h-[320px] md:h-[330px]`
-- Title: `text-2xl sm:text-3xl` → `text-lg sm:text-xl`
-- Desc: `text-sm` → `text-xs`
-- Theme badge: keep `text-[10px]` but tighten padding to `px-2 py-0.5`
-- Inner padding: `p-5 sm:p-6` → `p-4`
+- New small component: `src/components/tech59/ThemesCarousel.tsx` holding the row + drag logic + swipe hint, imported into `Experience.tsx` to keep `Experience.tsx` lean.
+- No new dependencies — pure Tailwind + a few inline keyframes (extend `tailwind.config.ts` with `marquee-hint` if needed) and a ~30-line pointer-drag handler.
+- Mobile: cards shrink, swipe hint stays, snap-center keeps each card aligned.
+- Accessibility: row is `role="region"` with `aria-label="Core themes, scroll horizontally"`; cards remain keyboard focusable; arrow keys scroll the container.
 
-**Reduce background image opacity:** `opacity-70 group-hover:opacity-85` → `opacity-55 group-hover:opacity-70`. Slightly soften the scrim too (`from-black/95 via-black/55` → `from-black/90 via-black/45`) so the reduced-opacity image still reads behind the title.
+## Out of scope
 
-### Out of scope
-- No changes to theme list, copy, images, or section heading.
-- No changes to other sections, fonts, or color tokens.
+- No changes to theme names, descriptions, image assets, or the section heading.
+- No changes to other sections.
