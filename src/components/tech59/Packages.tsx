@@ -15,7 +15,7 @@ const vipIncludes = [
   "VIP / Speaker Lounge",
   "Up to 5 Workshops",
   "Priority Check-in",
-  "VIP Reception (Night Before)",
+  "VIP Reception (16 July)",
 ];
 
 export const Packages = () => (
@@ -69,7 +69,7 @@ export const Packages = () => (
         <Reveal delay={180}>
           <article className="group relative h-full flex flex-col p-8 rounded-3xl glass-strong border border-accent/30 ring-1 ring-accent/20 shadow-[0_20px_60px_-20px_hsl(187_92%_53%/0.35)] transition-all duration-500 motion-safe:hover:-translate-y-1 hover:ring-accent/50 hover:shadow-[0_30px_70px_-15px_hsl(187_92%_53%/0.5)] focus-within:ring-2 focus-within:ring-accent">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand text-[10px] font-bold tracking-[0.2em] uppercase text-background shadow-[0_0_24px_hsl(187_92%_53%/0.5)]">
-              <Sparkles className="h-3 w-3" /> Most Popular
+              <Sparkles className="h-3 w-3" /> MOST POPULAR
             </span>
 
             <header className="mb-8">
