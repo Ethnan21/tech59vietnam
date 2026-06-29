@@ -68,6 +68,9 @@ export const Experience = () => (
             </div>
           </Reveal>
         ))}
+      </div>
+
+      <Programme />
     </div>
 
     {/* Core Themes — purple/blue panel */}
@@ -94,8 +97,6 @@ export const Experience = () => (
         <ThemesCarousel themes={themes} />
       </div>
     </div>
-
-
-    </div>
   </section>
 );
+
