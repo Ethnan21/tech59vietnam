@@ -1,39 +1,28 @@
-# Core Themes → Horizontal Scroll Row
+# Core Themes Carousel — Polish Pass
 
-Replace the current 2-3-5 column grid in `src/components/tech59/Experience.tsx` with a single-row, horizontally scrollable showcase inspired by the attached reference (tall portrait cards, large title text over high-opacity imagery on dark background).
+Tighten `src/components/tech59/ThemesCarousel.tsx` (and minor `Experience.tsx` margin tweak if needed). No other sections touched.
 
-## What changes
+## Changes
 
-**Location:** Bottom of `src/components/tech59/Experience.tsx` (the `themes` block). Text content, theme list, images, and section heading ("Ten tracks, Endless deals") stay exactly as they are.
+1. **Remove "Swipe to see more" pill** — delete the hint block and the `showHint` state/scroll listener entirely. Left/right arrow buttons communicate scrollability.
 
-**New layout — single horizontal row:**
-- One row of tall portrait cards (~280px wide × ~440px tall on desktop, ~220×360 on mobile), `flex-nowrap`, native scroll-snap.
-- Cards are taller than current (current ~160px → new ~440px) to match the reference proportions.
-- Background image opacity raised from `opacity-15` → `opacity-70` (hover `opacity-85`).
-- New readability layer: stronger bottom-anchored gradient (`from-black/90 via-black/40 to-transparent`) so the large white display title stays legible against the brighter imagery.
-- Title moves to the bottom of the card with a larger display font (similar to reference); theme number badge sits top-left; short desc sits under the title.
+2. **Make arrow buttons functional and visible on all viewports** — keep existing `nudge()` handler, drop the `hidden md:grid` restriction so the buttons also appear on mobile (still tappable). Keep glass styling.
 
-**Scroll affordance — "Swipe to see more":**
-- Small pill above the row, left-aligned: animated arrows (`←  Swipe to see more  →`) using a gentle horizontal nudge animation (Tailwind keyframe).
-- Subtle left + right edge fade masks on the scroll container so cards bleed off-screen, signalling more content.
-- Hides automatically once the user has scrolled to the end (simple scroll listener).
+3. **Reduce card size** (supporting content, not hero):
+   - Height: `440/460/480px` → `300/320/340px`.
+   - Width: `72vw / 300 / 280 / 300` → `64vw / 240 / 230 / 250`.
+   - Title font: `text-2xl sm:text-3xl` → `text-lg sm:text-xl`.
+   - Theme badge + description stay, slightly tighter padding (`p-4`).
 
-**Dynamic / sleek effects:**
-- Smooth native scroll with `scroll-smooth`, `snap-x snap-mandatory`, `snap-center` per card, momentum scroll on touch.
-- Per-card hover: slight scale (`hover:scale-[1.03]`), image zoom (`group-hover:scale-110`), light-streak sweep (already in project), accent ring glow.
-- Subtle parallax: background image translates a few px opposite to card hover tilt (CSS only, no JS lib).
-- Reveal-on-enter stagger using the existing `Reveal` component.
-- Drag-to-scroll on desktop (pointer events) so users can grab and fling, in addition to wheel/trackpad.
-- Hide scrollbar (`scrollbar-hide` utility via inline style) for a clean look while keeping scroll behavior.
+4. **Reduce background image opacity** — `opacity-70 → opacity-55`, hover `opacity-85 → opacity-70`.
 
-## Technical notes
+5. **Remove the side black gradient masks** — delete the two `bg-gradient-to-r/l from-background` fade overlays. They are what's producing the "weird black gradient line" visible in the screenshot.
 
-- New small component: `src/components/tech59/ThemesCarousel.tsx` holding the row + drag logic + swipe hint, imported into `Experience.tsx` to keep `Experience.tsx` lean.
-- No new dependencies — pure Tailwind + a few inline keyframes (extend `tailwind.config.ts` with `marquee-hint` if needed) and a ~30-line pointer-drag handler.
-- Mobile: cards shrink, swipe hint stays, snap-center keeps each card aligned.
-- Accessibility: row is `role="region"` with `aria-label="Core themes, scroll horizontally"`; cards remain keyboard focusable; arrow keys scroll the container.
+6. **Fix hover clipping + nested scroll + cursor**:
+   - Remove `hover:-translate-y-1` so cards no longer rise into the section's top edge (keep `hover:scale-[1.02]`, ring glow, image zoom, light streak — hover still feels alive).
+   - Add vertical breathing room on the scroller (`py-6`) and `overflow-y-visible` so any residual hover transform isn't clipped.
+   - Remove `tabIndex={0}` from the scroll container so it no longer becomes a separately focusable/scrollable region (prevents the "small card section scroll" the user is seeing). Arrow buttons + native horizontal wheel still work.
+   - Change cursor: drop `cursor-grab active:cursor-grabbing` and the pointer-drag handlers, so the cards don't read as clickable/grabbable. Scrolling stays via wheel/trackpad/touch + arrow buttons.
 
 ## Out of scope
-
-- No changes to theme names, descriptions, image assets, or the section heading.
-- No changes to other sections.
+- No copy changes, no asset changes, no changes to other sections.
