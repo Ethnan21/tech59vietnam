@@ -403,11 +403,14 @@ const SlotCard = ({
           </div>
 
           {s.logo && (
-            <img
-              src={s.logo.src}
-              alt={s.logo.alt}
-              className="h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
-            />
+            <div className="relative inline-block isolate">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[62%] h-[24%] rounded-full bg-primary/25 border border-primary/30 shadow-[0_0_20px_hsl(var(--primary)/0.15)]" />
+              <img
+                src={s.logo.src}
+                alt={s.logo.alt}
+                className="relative h-[6.3rem] md:h-[8.1rem] w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6"
+              />
+            </div>
           )}
 
           <h4 className="font-display text-sm md:text-base font-semibold leading-snug mt-1.5">
