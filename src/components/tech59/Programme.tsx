@@ -33,12 +33,11 @@ const mainStage: Slot[] = [
   {
     start: "09:00",
     tag: "Opening Remarks",
-    title: "Introduction to TECH59 and Vietnam's Innovation Ecosystem",
+    title: "Opening morning address and welcome",
     description:
       "Setting the stage for the day and TECH59's role in Vietnam's tech rise.",
     keynote: [
       { name: "Greg Ohan", title: "CEO, Co-Founder, TECH59" },
-      { name: "Thuy Hoang", title: "COO, Co-Founder, TECH59" },
     ],
   },
   {
@@ -75,7 +74,7 @@ const mainStage: Slot[] = [
   },
   {
     start: "09:40",
-    tag: "Corporate Diplomacy",
+    tag: "Corporate & Tech Diplomacy",
     title:
       "Navigating Trade, Investment & Vietnam's Next Growth Chapter",
     description:
@@ -101,7 +100,7 @@ const mainStage: Slot[] = [
     moderator: { name: "Hang Vu", title: "Managing Partner, Minh Triet Capital" },
   },
   {
-    start: "10:05",
+    start: "10:20",
     tag: "Gaming",
     title: "Beyond Entertainment: Gaming as a New Economic Engine",
     description:
@@ -109,11 +108,8 @@ const mainStage: Slot[] = [
     keynote: [{ name: "Jeffrey Zirlin", title: "Co-Founder, Sky Mavis" }],
     panelists: [
       { name: "Jeffrey Zirlin", title: "Co-Founder, Sky Mavis" },
-      {
-        name: "Batuhan Avucan",
-        title: "Founder & Managing Director, Mobidictum (TBC)",
-      },
-      { name: "Chance Chong", title: "Singapore FinTech Festival (TBC)" },
+      { name: "Kevin Duong", title: "CTO, GAMOTA" },
+      { name: "TBC Representatives", title: "" },
     ],
     moderator: {
       name: "Josh Warland",
@@ -122,7 +118,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "10:40",
+    start: "10:55",
     tag: "EdTech",
     title:
       "Learning in the Age of AI: Reimagining Education for the Future Workforce",
@@ -135,7 +131,7 @@ const mainStage: Slot[] = [
       { name: "Andre Lim", title: "CEO, Pallo" },
       { name: "Tuong Cat Tran", title: "Country Director, HEX" },
       { name: "Nazreen Coupland", title: "Assistant Manager, SMU IIE" },
-      { name: "Jana Marlé-Zizková", title: "Founder & CEO, She Loves Data" },
+      { name: "Sumona BasuMajumdar", title: "Chapter Lead (Vietnam), She Loves Data" },
     ],
     moderator: {
       name: "Rusydi Khairul",
@@ -143,7 +139,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "11:15",
+    start: "11:35",
     tag: "Venture Capital",
     title:
       "The Future of Venture Capital in Southeast Asia: Why Vietnam Matters",
@@ -151,14 +147,14 @@ const mainStage: Slot[] = [
       "Investors on where capital is flowing and what makes Vietnam stand out.",
     keynote: [
       {
-        name: "Adrian Latortue",
-        title: "Partner, Ascend Vietnam Ventures (AVV)",
+        name: "Navvin Kumar Kirupanandan",
+        title: "Senior Director, Gobi Partners",
       },
     ],
     panelists: [
       {
-        name: "Navvin Kumar Kirupanandan",
-        title: "Senior Director, Gobi Partners",
+        name: "Adrian Latortue",
+        title: "Partner, Ascend Vietnam Ventures (AVV)",
       },
       {
         name: "Ian Kim",
@@ -166,11 +162,7 @@ const mainStage: Slot[] = [
       },
       {
         name: "Navvin Kumar Kirupanandan",
-        title: "Navvin Kumar Kirupanandan",
-      },
-      {
-        name: "",
-        title: "",
+        title: "Senior Director, Gobi Partners",
       },
     ],
     moderator: {
@@ -179,9 +171,25 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "12:00",
-    tag: "Lunch Break",
-    title: "Networking Lunch & Partner Exhibition",
+    start: "12:15",
+    tag: "Keynote: HCMC & Global Tech Ecosystems",
+    title: "Global Tech Ecosystems & Vietnam: HCMC as a Magnetic City",
+    description:
+      "Positioning Ho Chi Minh City within the global innovation map.",
+    keynote: [
+      {
+        name: "Dan Herma",
+        title: "Executive Advisor, Innovation Policy & Global Ecosystems",
+      },
+    ],
+  },
+  {
+    start: "13:00",
+    tag: "Welcome back Remarks",
+    title: "Afternoon address and Welcome back",
+    keynote: [
+      { name: "Thuy Hoang", title: "COO, Co-Founder, TECH59" },
+    ],
   },
   {
     start: "13:15",
@@ -190,15 +198,18 @@ const mainStage: Slot[] = [
       "From Generative AI to Agentic AI: How AI is Transforming Business & Society",
     description:
       "From generative to agentic AI — what's real, what's next, and what to build.",
-    keynote: [{ name: "Kai Yong", title: "Partner & Co-Founder, GenAI" }],
+    keynote: [
+      { name: "Dr. Michael Liebmann", title: "Co-Founder, CEO, Dream Lab AI" },
+    ],
     panelists: [
       { name: "Kai Yong", title: "Partner & Co-Founder, GenAI" },
       { name: "Johnny Le", title: "CEO, DigiEX" },
+      { name: "Dr. Miro Nguyen", title: "Co-founder, VanguardX" },
       {
         name: "Peter Dang",
         title: "Senior Solutions Architect, Alibaba Cloud",
       },
-      { name: "Angel Hsu", title: "Bitdeer AI (TBC)" },
+      { name: "Dr. Michael Liebmann", title: "Co-Founder, CEO, Dream Lab AI" },
     ],
     moderator: {
       name: "Sam Waldo",
@@ -206,8 +217,8 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "13:50",
-    tag: "Real Estate & Tech",
+    start: "14:00",
+    tag: "PropTech",
     title:
       "Building for Innovation: What Technology Companies Need from the Next Generation Workplace",
     description:
@@ -223,7 +234,7 @@ const mainStage: Slot[] = [
         name: "Marc Townsend",
         title: "Senior Advisor, Asia Green Real Estate",
       },
-      { name: "John Zhao", title: "Founder, Tonomo (TBC)" },
+      { name: "John Zhao", title: "Founder, Tonomo" },
       {
         name: "Le Viet Hieu",
         title: "Permanent Deputy CEO, Hoa Binh Construction",
@@ -236,26 +247,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "14:25",
-    tag: "Fashion Tech",
-    title:
-      "From Factory to Consumer: How Technology is Transforming Global Fashion",
-    description:
-      "How tech is rewiring fashion from factory floors to direct-to-consumer.",
-    keynote: [{ name: "Tuong Hoang", title: "COO, Rue Miche" }],
-    panelists: [
-      {
-        name: "Marvelous Studio (TBC)\u00a0",
-        title: "\u00a0",
-      },
-      { name: "Kyle Lam", title: "Founder, Saigonmade & Daspace" },
-      { name: "Coolmate Representative", title: "(TBC)" },
-      { name: "Tuong Hoang", title: "COO, Rue Miche" },
-    ],
-    moderator: { name: "Khanh Le", title: "Founder & CEO, Inflow" },
-  },
-  {
-    start: "15:00",
+    start: "14:40",
     tag: "Outsourcing & Talent",
     title:
       "Beyond Outsourcing: Vietnam's Journey Toward a World-Class Technology & Talent Hub",
@@ -272,7 +264,7 @@ const mainStage: Slot[] = [
       },
       {
         name: "Tran Nhan Quy",
-        title: "General Manager, Zühlke Vietnam",
+        title: "CEO, Zühlke Vietnam",
       },
       { name: "Hai Le", title: "CTO, EmbedIT Vietnam" },
     ],
@@ -282,7 +274,7 @@ const mainStage: Slot[] = [
     },
   },
   {
-    start: "15:45",
+    start: "15:20",
     tag: "Conclusion & Takeaways",
     title: "Key Insights, Future Outlook & Closing Remarks",
   },
