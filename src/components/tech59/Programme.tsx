@@ -593,7 +593,7 @@ export const Programme = () => {
   return (
     <div className="mt-8 mb-24">
       <Reveal className="max-w-2xl mb-10">
-        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9]">
           <span className="text-gradient-animated text-slate-50">Agenda</span>
         </h2>
         <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">*STAY TUNED FOR MORE SESSIONS, SPEAKERS, AND DETAILS COMING SOON!</p>
