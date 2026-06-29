@@ -14,6 +14,8 @@ import themeFashion from "@/assets/theme-fashion.jpg";
 import themeWorkshop from "@/assets/theme-workshop.jpg";
 import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
+import { ThemesCarousel } from "./ThemesCarousel";
+
 
 const items = [
   { img: keynote, title: "Keynote Speeches & Panel", desc: "Insights from industry leaders and expert panels." },
@@ -78,31 +80,8 @@ export const Experience = () => (
         </h2>
       </Reveal>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
-        {themes.map((t, i) => (
-          <Reveal
-            key={t.title}
-            delay={i * 60}
-            className="relative glass rounded-2xl p-4 sm:p-6 hover:border-accent/60 hover:-translate-y-1 hover:shadow-[0_20px_50px_-15px_hsl(187_92%_53%/0.5)] transition-all duration-500 cursor-default group overflow-hidden"
-          >
-            <img
-              src={t.bg}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              width={768}
-              height={768}
-              className="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-card/40 pointer-events-none" />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 light-streak pointer-events-none" />
-            <span className="relative text-[10px] uppercase tracking-[0.2em] text-accent">Theme {String(i + 1).padStart(2, "0")}</span>
-            <h3 className="relative font-display text-base sm:text-xl font-semibold mt-2 mb-2 group-hover:text-gradient-animated transition-all leading-tight">{t.title}</h3>
-            <p className="relative text-xs sm:text-sm text-muted-foreground">{t.desc}</p>
+      <ThemesCarousel themes={themes} />
 
-          </Reveal>
-        ))}
-      </div>
     </div>
   </section>
 );
