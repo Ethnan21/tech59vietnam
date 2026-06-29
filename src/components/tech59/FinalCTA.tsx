@@ -5,11 +5,11 @@ import { EnquiryForm } from "./EnquiryForm";
 
 export const FinalCTA = () => {
   return (
-    <section id="contact" className="py-32 relative overflow-hidden grain">
+    <section id="contact" className="py-20 sm:py-24 md:py-32 relative overflow-hidden grain">
       <div className="absolute inset-0 bg-hero opacity-90" />
       <div className="absolute inset-0 grid-bg" />
       <div className="absolute inset-0 light-streak pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-secondary/25 blur-[160px] animate-pulse-glow" />
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -20,7 +20,7 @@ export const FinalCTA = () => {
             </Reveal>
 
             <Reveal delay={80}>
-              <h2 className="font-display text-5xl md:text-6xl font-bold mb-3 text-gradient-animated text-slate-50 text-glow">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-3 text-gradient-animated text-slate-50 text-glow">
                 Get in touch
               </h2>
             </Reveal>

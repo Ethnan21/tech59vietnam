@@ -68,7 +68,7 @@ export const Audience = () => {
       <div className="container">
         <Reveal className="max-w-2xl mb-10">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Who it's for</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9]">
             Built for <span className="text-gradient-animated text-slate-50">you</span>
           </h2>
         </Reveal>
@@ -78,7 +78,7 @@ export const Audience = () => {
             <button
               key={t.key}
               onClick={() => setActive(t.key)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-3 min-h-[44px] rounded-full text-sm font-medium transition-all duration-300 ${
                 active === t.key
                   ? "bg-brand text-primary-foreground shadow-[0_0_40px_hsl(258_90%_66%/0.6)] scale-105"
                   : "glass text-muted-foreground hover:text-foreground hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[0_8px_30px_-10px_hsl(187_92%_53%/0.5)]"
@@ -87,12 +87,12 @@ export const Audience = () => {
           ))}
         </div>
 
-        <div key={cur.key} className="relative glass-strong rounded-3xl p-6 sm:p-8 md:p-14 min-h-[260px] sm:min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain max-w-full">
+        <div key={cur.key} className="relative glass-strong rounded-3xl p-6 sm:p-8 md:p-12 lg:p-14 min-h-[260px] sm:min-h-[280px] md:min-h-[320px] animate-fade-in overflow-hidden grain max-w-full">
           <img src={cur.image} alt="" aria-hidden="true" loading="lazy" className={`absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none ${cur.key === 'investors' ? 'object-[center_70%]' : cur.key === 'ent' ? 'object-center' : ''}`} />
           <div className="absolute inset-0 bg-gradient-to-r from-card via-card/60 to-card/20 pointer-events-none" />
           <div className="absolute inset-0 bg-card/20 pointer-events-none" />
-          <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
-          <p className="relative font-display text-2xl sm:text-4xl md:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50 break-words">
+          <div className="absolute -top-20 -right-20 w-[60vw] h-[60vw] max-w-[400px] max-h-[400px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
+          <p className="relative font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] pb-2 mb-8 max-w-3xl text-gradient-animated text-slate-50 break-words">
             {cur.benefit}
           </p>
           <Button variant="hero" size="lg" asChild className="relative">
