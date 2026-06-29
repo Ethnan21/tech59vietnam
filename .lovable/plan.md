@@ -1,49 +1,31 @@
-## Streamline Packages to Standard + VIP
+## Plan: Refine Attendee Packages Section
 
-Replace the current 5-column comparison table in `src/components/tech59/Packages.tsx` with a compact two-card layout based on the chosen "Glass duo-tier cards" direction, using the existing dark/cyan design tokens (no hardcoded colors).
+### Scope
+Single-file update to `src/components/tech59/Packages.tsx`.
 
-### Layout
+### Changes
 
-- Section keeps existing background (hero gradient, grid, light streak, pulse glow) and heading "Pick your pass".
-- Two cards in a responsive grid (`grid md:grid-cols-2 gap-6`), stacked on mobile, side-by-side on md+.
-- Max width ~5xl so the section is noticeably shorter than the current table.
+1. **Center-align the section header**
+   - Change the `Reveal` wrapper around the heading from left-aligned to `mx-auto text-center`.
+   - Keep both labels: `⚡ Attendee Packages` and `Pick your pass`.
 
-### Standard Pass card
+2. **Swap card positions**
+   - Render **VIP Pass** first (left column) and **Standard Pass** second (right column) in the `md:grid-cols-2` grid.
 
-- Subtle glass: `glass` with low-opacity border.
-- Title "Standard Pass" (muted), price "500,000 VND" (display font, large).
-- 3 grouped inclusion bullets with cyan check icons:
-  - Main Stage Keynotes & Panels
-  - Coworking Lounge Access
-  - Up to 5 workshops
-- Secondary CTA button "Register" → `https://lu.ma/bde1n8vo`.
+3. **Make Standard Pass the hero card**
+   - Apply the current VIP styling to Standard: `glass-strong`, accent ring + glow shadow, gradient title text, "Most Popular" badge at top-center, hero variant CTA button.
+   - Change price to **FREE** with a smaller sub-line: **"till July 17"**.
 
-### VIP Pass card
+4. **Mute the VIP card**
+   - Move it to the `glass` subtle styling, no badge, no gradient text, no strong glow.
+   - Keep price as **"Invitation Only"**.
+   - Use an outline or secondary CTA button instead of the hero button.
 
-- `glass-strong` with accent ring + soft glow shadow, "Most Popular" pill at top-center using `text-gradient-animated` style.
-- Title "VIP Pass" with gradient text, price "Invitation Only".
-- 2-column inclusion grid (collapses to 1 col on small) using `Check` icons:
-  - Priority Seating 
-  - VIP / Speaker Lounge
-  - Up to 5 Workshops
-  - Priority Check-in
-  - VIP Reception (Night Before)
-- Primary CTA button (hero variant) "Get VIP Access" → `https://lu.ma/bde1n8vo`.
-
-### Footer
-
-- Keep small note: "*Pricing and inclusions subject to change" centered below.
-- Remove the separate big Register button block (each card now has its own CTA).
-
-### Technical notes
-
-- Single file change: `src/components/tech59/Packages.tsx` (full rewrite of the inner content).
-- Use existing tokens / utilities: `glass`, `glass-strong`, `text-accent`, `text-gradient-animated`, `bg-brand`, `Button` `variant="hero"`, `Reveal` for entry animations.
-- Use `lucide-react` `Check` and `ArrowRight` icons (already imported).
-- Remove unused `X` import and the `rows`/`prices`/`renderCell` table code.
-- Accessibility: each card is a `<article>` with an `<h3>`, lists use `<ul>/<li>`, CTAs are real `<a>` anchors with `target="_blank" rel="noopener noreferrer"`.
-- Motion respects existing `motion-safe` patterns; hover lift + ring intensify on VIP only.
+5. **Preserve accessibility & motion**
+   - Each card remains an `<article>` with `<h3>`.
+   - Lists stay `<ul>/<li>`.
+   - CTAs remain real `<a>` anchors with `target="_blank" rel="noopener noreferrer"`.
+   - Keep `motion-safe` hover lift and `focus-within` ring.
 
 ### Result
-
-Section height drops roughly in half versus the current scrollable table, content is scannable at a glance, and VIP is visually the clear premium choice.
+The section will read as a centered, two-tier offer where the free Standard Pass is the clear call-to-action, while the invitation-only VIP Pass sits beside it in a more reserved style.
