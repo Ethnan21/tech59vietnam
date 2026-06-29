@@ -54,7 +54,7 @@ const tabs = [
 ];
 
 const whyItems = [
-  { icon: Network, title: "Meet investors", desc: "1,800+ funds. One room." },
+  { icon: Network, title: "Meet investors", desc: "Multiple funds. One room." },
   { icon: TrendingUp, title: "Build your network", desc: "Meet the people building the future." },
   { icon: Cpu, title: "See what's next", desc: "Before everyone else." },
   { icon: Globe2, title: "Own Southeast Asia", desc: "Vietnam is the gateway." },
