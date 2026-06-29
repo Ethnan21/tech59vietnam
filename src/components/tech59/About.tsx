@@ -119,14 +119,14 @@ export const About = () => {
                     <button
                       onClick={prev}
                       aria-label="Previous quote"
-                      className="h-9 w-9 rounded-full glass grid place-items-center text-muted-foreground hover:text-foreground hover:border-accent/60 transition-all"
+                      className="h-11 w-11 rounded-full glass grid place-items-center text-muted-foreground hover:text-foreground hover:border-accent/60 transition-all"
                     >
                       <ChevronLeft className="h-4 w-4" />
                     </button>
                     <button
                       onClick={next}
                       aria-label="Next quote"
-                      className="h-9 w-9 rounded-full glass grid place-items-center text-muted-foreground hover:text-foreground hover:border-accent/60 transition-all"
+                      className="h-11 w-11 rounded-full glass grid place-items-center text-muted-foreground hover:text-foreground hover:border-accent/60 transition-all"
                     >
                       <ChevronRight className="h-4 w-4" />
                     </button>
