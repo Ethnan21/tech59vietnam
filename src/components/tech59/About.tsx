@@ -89,8 +89,8 @@ export const About = () => {
               />
             ))}
             <div className="absolute inset-0 bg-gradient-to-br from-card/80 via-card/60 to-card/80 pointer-events-none" />
-            <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
-            <div className="absolute -bottom-24 -left-24 w-[360px] h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
+            <div className="absolute -top-24 -right-24 w-[60vw] h-[60vw] max-w-[420px] max-h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none animate-pulse-glow" />
+            <div className="absolute -bottom-24 -left-24 w-[55vw] h-[55vw] max-w-[360px] max-h-[360px] rounded-full bg-accent/15 blur-[120px] pointer-events-none" />
             <div className="absolute inset-0 light-streak opacity-40 pointer-events-none" />
             <div className="relative flex gap-3 sm:gap-4 md:gap-5 min-h-[300px] md:min-h-[360px]">
               <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
