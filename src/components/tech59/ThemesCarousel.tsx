@@ -28,7 +28,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
         type="button"
         aria-label="Scroll left"
         onClick={() => nudge(-1)}
-        className="grid absolute -left-3 top-1/2 -translate-y-1/2 z-20 h-10 w-10 place-items-center rounded-full glass ring-1 ring-accent/30 hover:ring-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
+        className="grid absolute left-1 md:-left-3 top-1/2 -translate-y-1/2 z-20 h-11 w-11 place-items-center rounded-full glass ring-1 ring-accent/30 hover:ring-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
       >
         <ArrowLeft className="h-4 w-4" />
       </button>
@@ -36,7 +36,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
         type="button"
         aria-label="Scroll right"
         onClick={() => nudge(1)}
-        className="grid absolute -right-3 top-1/2 -translate-y-1/2 z-20 h-10 w-10 place-items-center rounded-full glass ring-1 ring-accent/30 hover:ring-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
+        className="grid absolute right-1 md:-right-3 top-1/2 -translate-y-1/2 z-20 h-11 w-11 place-items-center rounded-full glass ring-1 ring-accent/30 hover:ring-accent/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background transition"
       >
         <ArrowRight className="h-4 w-4" />
       </button>
