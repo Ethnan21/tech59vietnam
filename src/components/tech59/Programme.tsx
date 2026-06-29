@@ -404,7 +404,7 @@ const SlotCard = ({
 
           {s.logo && (
             <div className="relative inline-block isolate">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[42%] rounded-full bg-primary/20 border border-primary/20 shadow-[0_0_20px_hsl(var(--primary)/0.15)]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[62%] h-[24%] rounded-full bg-primary/25 border border-primary/30 shadow-[0_0_20px_hsl(var(--primary)/0.15)]" />
               <img
                 src={s.logo.src}
                 alt={s.logo.alt}
