@@ -22,7 +22,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative px-2 sm:px-6">
       {/* Arrow buttons */}
       <button
         type="button"
@@ -45,7 +45,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
         ref={scrollerRef}
         role="region"
         aria-label="Core themes"
-        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory py-6 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex flex-nowrap gap-4 sm:gap-5 overflow-x-auto overflow-y-visible scroll-smooth snap-x snap-mandatory py-12 -mx-4 px-4 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {themes.map((t, i) => (
           <Reveal

@@ -71,17 +71,32 @@ export const Experience = () => (
       </div>
 
       <Programme />
+    </div>
 
-      <Reveal className="max-w-2xl mb-12">
-        <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Core Themes</p>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
-          Ten tracks,<br />
-          <span className="text-gradient-animated text-slate-50">Endless deals</span>
-        </h2>
-      </Reveal>
+    {/* Core Themes — purple/blue panel */}
+    <div className="relative py-24 mt-12">
+      {/* Background layers */}
+      <div className="absolute inset-0 overflow-hidden grain pointer-events-none">
+        <div className="absolute inset-0 bg-hero opacity-90" />
+        <div className="absolute inset-0 grid-bg" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/20 blur-[160px] animate-pulse-glow" />
+        {/* Smooth gradient transitions into surrounding black */}
+        <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background to-transparent" />
+      </div>
 
-      <ThemesCarousel themes={themes} />
+      <div className="container relative z-10">
+        <Reveal className="max-w-2xl mb-12">
+          <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Core Themes</p>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
+            Ten tracks,<br />
+            <span className="text-gradient-animated text-slate-50">Endless deals</span>
+          </h2>
+        </Reveal>
 
+        <ThemesCarousel themes={themes} />
+      </div>
     </div>
   </section>
 );
+
