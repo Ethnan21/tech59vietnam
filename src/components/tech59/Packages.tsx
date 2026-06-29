@@ -23,12 +23,12 @@ export const Packages = () => (
     <div className="absolute inset-0 bg-hero opacity-90" />
     <div className="absolute inset-0 grid-bg" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-secondary/20 blur-[160px] motion-safe:animate-pulse-glow" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] rounded-full bg-secondary/20 blur-[160px] motion-safe:animate-pulse-glow" />
 
     <div className="container relative z-10">
       <Reveal className="max-w-2xl mx-auto mb-12 text-center">
         <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Attendee Packages</p>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-[0.9]">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9]">
           Pick your pass
         </h2>
       </Reveal>
