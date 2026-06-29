@@ -95,7 +95,7 @@ export const About = () => {
             <div className="relative flex gap-3 sm:gap-4 md:gap-5 min-h-[300px] md:min-h-[360px]">
               <div className="shrink-0 w-[3px] rounded-full bg-gradient-to-b from-primary via-secondary to-accent" />
               <div className="flex-1 min-w-0 flex flex-col">
-                <span aria-hidden="true" className="font-display text-5xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
+                <span aria-hidden="true" className="font-display text-5xl sm:text-6xl md:text-7xl leading-none text-gradient-animated text-slate-50 -mt-1 mb-1 select-none">“</span>
                 <div className="flex-1 flex items-center">
                   <p className="font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed text-foreground/90 break-words">
                     <span key={i} className="animate-fade-in inline">{cur.text}</span>
