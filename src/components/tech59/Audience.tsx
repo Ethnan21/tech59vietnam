@@ -64,7 +64,7 @@ export const Audience = () => {
   const [active, setActive] = useState(tabs[0].key);
   const cur = tabs.find(t => t.key === active)!;
   return (
-    <section id="audience" className="py-24 relative">
+    <section id="audience" className="pt-12 pb-24 relative">
       <div className="container">
         <Reveal className="max-w-2xl mb-10">
           <p className="text-xs uppercase tracking-widest text-accent mb-3 animate-flicker">⚡ Who it's for</p>
