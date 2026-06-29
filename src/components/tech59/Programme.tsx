@@ -393,15 +393,14 @@ const SlotCard = ({
           </div>
 
           {s.logo && (
-            <div className="relative inline-block isolate">
-              <div className="absolute top-[45%] left-[20%] -translate-x-1/2 -translate-y-1/2 w-[45%] h-[55%] rounded-full glass-strong ring-1 ring-accent/30 shadow-[0_0_20px_hsl(var(--accent)/0.15)]" />
+            <div className="relative inline-flex items-center justify-start h-12 md:h-16 px-5 md:px-7 rounded-full glass-strong ring-1 ring-accent/30 shadow-[0_0_20px_hsl(var(--accent)/0.15)] isolate">
               <img
                 src={s.logo.src}
                 alt={s.logo.alt}
-                className={`relative w-auto object-contain object-left -ml-4 md:-ml-6 -mt-4 md:-mt-6 -mb-4 md:-mb-6 ${
+                className={`relative w-auto object-contain ${
                   s.logo.alt === "sixonefour labs"
-                    ? "h-[5.04rem] md:h-[6.48rem]"
-                    : "h-[6.3rem] md:h-[8.1rem]"
+                    ? "h-6 md:h-8"
+                    : "h-10 md:h-14"
                 }`}
               />
             </div>
