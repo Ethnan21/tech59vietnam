@@ -78,7 +78,7 @@ export const Audience = () => {
             <button
               key={t.key}
               onClick={() => setActive(t.key)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-3 min-h-[44px] rounded-full text-sm font-medium transition-all duration-300 ${
                 active === t.key
                   ? "bg-brand text-primary-foreground shadow-[0_0_40px_hsl(258_90%_66%/0.6)] scale-105"
                   : "glass text-muted-foreground hover:text-foreground hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[0_8px_30px_-10px_hsl(187_92%_53%/0.5)]"
