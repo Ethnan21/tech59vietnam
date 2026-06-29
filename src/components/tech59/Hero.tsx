@@ -16,8 +16,8 @@ export const Hero = () => {
     <img ref={bgRef} src={heroBg} alt="" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen will-change-transform" width={1920} height={1080} />
     <div ref={gridRef} className="absolute inset-0 grid-bg will-change-transform" />
     <div className="absolute inset-0 light-streak pointer-events-none" />
-    <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
-    <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/15 blur-[140px] animate-pulse-glow [animation-delay:1.5s]" />
+    <div className="absolute -top-40 -left-40 w-[60vw] max-w-[500px] aspect-square rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
+    <div className="absolute -bottom-40 -right-40 w-[70vw] max-w-[600px] aspect-square rounded-full bg-accent/15 blur-[140px] animate-pulse-glow [animation-delay:1.5s]" />
 
     <div className="container relative z-10">
       <div className="max-w-5xl">
