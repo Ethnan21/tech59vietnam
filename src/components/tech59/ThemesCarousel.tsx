@@ -22,7 +22,7 @@ export const ThemesCarousel = ({ themes }: Props) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative px-2 sm:px-6">
       {/* Arrow buttons */}
       <button
         type="button"
