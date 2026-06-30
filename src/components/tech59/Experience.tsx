@@ -10,7 +10,6 @@ import themeAi from "@/assets/theme-ai.jpg";
 import themeGov from "@/assets/theme-gov.jpg";
 import themeVc from "@/assets/theme-vc.jpg";
 import themeRealEstate from "@/assets/theme-real-estate.jpg";
-import themeFashion from "@/assets/theme-fashion.jpg";
 import themeWorkshop from "@/assets/theme-workshop.jpg";
 import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
