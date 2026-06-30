@@ -32,7 +32,6 @@ const themes = [
   { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making.", bg: themeGov },
   { title: "Venture Capital & Investment", desc: "Find the next unicorn.", bg: themeVc },
   { title: "Real Estate & Tech", desc: "Proptech meets capital.", bg: themeRealEstate },
-  { title: "Fashion Tech", desc: "Where style meets software.", bg: themeFashion },
   { title: "Hot Topic Workshops", desc: "Hands-on, off-record.", bg: themeWorkshop },
 ];
 
