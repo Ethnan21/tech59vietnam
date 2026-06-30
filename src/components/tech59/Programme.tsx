@@ -453,7 +453,8 @@ const SlotCard = ({
   );
 
   const baseClass =
-    "relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden w-full text-left";
+    "relative glass rounded-xl p-4 md:p-5 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-500 group overflow-hidden w-full text-left " +
+    (compact ? "min-h-[112px]" : "min-h-[120px]");
 
   if (!expandable) {
     return <article className={baseClass}>{inner}</article>;
