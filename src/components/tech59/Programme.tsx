@@ -550,7 +550,7 @@ const Day2Tracks = () => {
           <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
           <SlotList slots={mainStage} />
         </div>
-        <div className={`xl:col-span-2 xl:sticky xl:top-24 xl:self-start xl:max-h-[calc(100vh-7rem)] xl:overflow-y-auto ${workshopPanelClass}`}>
+        <div className={`xl:col-span-2 ${workshopPanelClass}`}>
           <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
           <SlotList slots={workshopStage} compact hideChevron />
         </div>
