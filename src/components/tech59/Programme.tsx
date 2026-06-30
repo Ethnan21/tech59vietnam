@@ -523,8 +523,8 @@ const Day2Tracks = () => {
 
   return (
     <div className="mt-2">
-      {/* Mobile tabs */}
-      <div className="lg:hidden flex gap-2 mb-4 glass-strong rounded-full p-1 w-full max-w-sm">
+      {/* Mobile + small-laptop tabs (below xl: 1280px) */}
+      <div className="xl:hidden flex gap-2 mb-4 glass-strong rounded-full p-1 w-full max-w-sm">
         {[
           { id: "main" as const, label: "Main Stage" },
           { id: "workshop" as const, label: "Workshops" },
@@ -543,20 +543,20 @@ const Day2Tracks = () => {
         ))}
       </div>
 
-      {/* Desktop: 3:2 split — main stage dominant */}
-      <div className="hidden lg:grid lg:grid-cols-5 lg:gap-8 lg:items-start">
-        <div className="lg:col-span-3">
+      {/* Large desktop (>=1280): 3:2 split with sticky workshop panel */}
+      <div className="hidden xl:grid xl:grid-cols-5 xl:gap-8 xl:items-start">
+        <div className="xl:col-span-3">
           <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
           <SlotList slots={mainStage} />
         </div>
-        <div className={`lg:col-span-2 ${workshopPanelClass}`}>
+        <div className={`xl:col-span-2 xl:sticky xl:top-24 xl:self-start xl:max-h-[calc(100vh-7rem)] xl:overflow-y-auto ${workshopPanelClass}`}>
           <TrackHeader label="WORKSHOPS (1h each)" accentClass="bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
           <SlotList slots={workshopStage} compact hideChevron />
         </div>
       </div>
 
-      {/* Mobile: one track at a time */}
-      <div className="lg:hidden">
+      {/* Below xl: one track at a time */}
+      <div className="xl:hidden">
         {tab === "main" ? (
           <div>
             <TrackHeader label="Main Stage" accentClass="bg-accent shadow-[0_0_10px_hsl(var(--accent))]" />
