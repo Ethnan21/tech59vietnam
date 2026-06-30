@@ -10,7 +10,6 @@ import themeAi from "@/assets/theme-ai.jpg";
 import themeGov from "@/assets/theme-gov.jpg";
 import themeVc from "@/assets/theme-vc.jpg";
 import themeRealEstate from "@/assets/theme-real-estate.jpg";
-import themeFashion from "@/assets/theme-fashion.jpg";
 import themeWorkshop from "@/assets/theme-workshop.jpg";
 import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
@@ -33,7 +32,6 @@ const themes = [
   { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making.", bg: themeGov },
   { title: "Venture Capital & Investment", desc: "Find the next unicorn.", bg: themeVc },
   { title: "Real Estate & Tech", desc: "Proptech meets capital.", bg: themeRealEstate },
-  { title: "Fashion Tech", desc: "Where style meets software.", bg: themeFashion },
   { title: "Hot Topic Workshops", desc: "Hands-on, off-record.", bg: themeWorkshop },
 ];
 
