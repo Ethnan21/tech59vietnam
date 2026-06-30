@@ -173,16 +173,16 @@ export const Partners = () => (
       </div>
 
       <Reveal className="mt-16">
-        <div className="glass rounded-2xl p-4 sm:p-8 md:p-12 max-w-6xl mx-auto">
+        <div className="glass rounded-2xl p-3 sm:p-8 md:p-12 max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-accent text-center mb-6 sm:mb-8">Featured in</p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-x-3 gap-y-5 sm:gap-x-8 sm:gap-y-10 items-center justify-items-center">
+          <div className="grid grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-x-2 gap-y-4 sm:gap-x-8 sm:gap-y-10 items-center justify-items-center">
             {pressLogos.map((p, i) => (
               <img
                 key={i}
                 src={p.src}
                 alt={p.alt}
                 loading="lazy"
-                className="max-h-7 sm:max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-6 sm:max-h-12 md:max-h-14 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             ))}
           </div>
