@@ -175,7 +175,7 @@ export const Partners = () => (
       <Reveal className="mt-16">
         <div className="glass rounded-2xl p-4 sm:p-8 md:p-12 max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-accent text-center mb-6 sm:mb-8">Featured in</p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-x-3 gap-y-5 sm:gap-x-8 sm:gap-y-10 items-center justify-items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8 gap-x-3 gap-y-5 sm:gap-x-8 sm:gap-y-10 items-center justify-items-center">
             {pressLogos.map((p, i) => (
               <img
                 key={i}

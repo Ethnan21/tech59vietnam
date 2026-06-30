@@ -1,64 +1,46 @@
-## Goal
+# Laptop Viewport Polish
 
-Make the entire Tech59 site feel intentional and tight on mobile, tablet, and desktop. No horizontal spill, no abrupt type jumps, no sub-44px touch targets, no oversized padding on phones.
+Goal: make the landing page look consistent and glitch-free across all common laptop sizes (1280, 1366, 1440, 1536, 1680, 1920 wide). Specifically fix the Agenda Day-2 row where Main Stage and Workshop cards sit at uneven heights.
 
-## Global hardening
+## Root cause of the Agenda glitch
 
-- **Page root overflow guard** — add `overflow-x-hidden` to the page wrapper in `src/pages/Index.tsx` so any stray absolute/translate element can never produce a horizontal scrollbar.
-- **Smoother type scale** — wherever sections jump from `text-4xl`/`text-5xl` straight to `text-7xl` at `md`, insert a `sm:` step (`sm:text-5xl` / `sm:text-6xl`) and a `lg:text-7xl` tier so the scale never doubles in one breakpoint.
+In `Programme.tsx`, Day-2 uses `lg:grid lg:grid-cols-5 lg:gap-8 lg:items-start` with Main Stage (`col-span-3`) and Workshops (`col-span-2`). Each track is an independent `SlotList` with its own timeline rail, and the workshop panel has its own background (`workshopPanelClass`). Because the two columns have different numbers of slots and different per-card heights, slots never line up by time, which reads as "some high, some low".
 
-## Per-section fixes
+Two issues to address:
+1. The two columns should not pretend to be time-synchronized — visually separate them so unequal heights look intentional.
+2. The workshop panel's background currently stops at its own content height while Main Stage runs longer, leaving a large empty gap on laptops. Pin the panel so it stays visually anchored.
 
-**Hero (`Hero.tsx`)**
-- Replace `pt-28` with `pt-20 sm:pt-24 md:pt-28` so the fold breathes on small phones.
-- Add an `sm:mx-` step on the hero logo so it isn't edge-tight between mobile and `md`.
+## Changes
 
-**Navbar + StickyCTA**
-- Keep both fixed, but add `safe-area` aware bottom spacing on `StickyCTA` (`pb-[calc(env(safe-area-inset-bottom)+0.75rem)]`) and ensure the bottom CTA doesn't overlap the footer's last CTA on short viewports.
-- No nav change for the hidden Register button (intentional — burger covers it).
+### 1. `src/components/tech59/Programme.tsx`
+- Day-2 desktop grid: keep `lg:grid-cols-5` but switch ratio to `3 / 2` only at `xl`; on `lg` (1024–1279, common 13" laptops) drop to single column tabs-style or stacked tracks to avoid cramped 3-col cards. Use `hidden xl:grid` for the split, and reuse the mobile tabbed layout for `lg` only.
+- Add `xl:sticky xl:top-24 xl:self-start` to the Workshops panel so it stays visible while scrolling the longer Main Stage list — removes the "floating short box next to a tall box" feel.
+- Cap workshop panel height with `xl:max-h-[calc(100vh-8rem)] xl:overflow-y-auto` and a subtle scrollbar style.
+- Inside `SlotCard`: enforce consistent vertical rhythm — `min-h-[112px]` on compact (workshop) cards and `min-h-[128px]` on main cards so neighbouring cards don't visually jitter.
+- Logo pill (selected element): constrain to `max-w-[180px] md:max-w-[220px]` so the pill never stretches past the card on wider laptop breakpoints.
+- Tighten `gap-5` → `gap-4 xl:gap-6` on the time/content row to recover horizontal space at 1280–1440.
+- Day header label: add `xl:text-xl` cap so the long Day-1 string doesn't wrap awkwardly at 1366.
 
-**Packages / Experience / Programme / FinalCTA / About headings**
-- Standardize the section heading scale to `text-4xl sm:text-5xl md:text-6xl lg:text-7xl`.
-- Cap decorative blur orbs (`w-[800px]`, `w-[600px]`) with responsive sizes: `w-[60vw] max-w-[800px]` so they never dominate small viewports.
+### 2. Global laptop spacing pass (no content changes)
+Adjust only `lg:`/`xl:` utility values; keep mobile/tablet as-is.
+- `Hero.tsx`: cap hero inner max-width at `xl:max-w-7xl`, ensure `lg:pt-28` not larger; verify CTA row doesn't wrap at 1280.
+- `Stats.tsx` / `StatCounter.tsx`: enforce equal column gaps at `lg:gap-8 xl:gap-12`, add `tabular-nums` if missing (prevents number jitter on counter tick — matches the session-replay flicker).
+- `About.tsx`: quote card grid — set `lg:grid-cols-[1.1fr_1fr] xl:grid-cols-2` so portrait + text don't fight at 1280.
+- `Experience.tsx` / `ThemesCarousel.tsx`: arrow buttons absolute-positioned — pull to `lg:-left-4 lg:-right-4` so they don't overlap card content on narrower laptops; ensure carousel container has `lg:px-8`.
+- `Packages.tsx`: 3-card row — add `lg:gap-6 xl:gap-8` and `min-h-` on the price card body to equalize heights (currently varies with bullet count).
+- `Audience.tsx`: tab panel — cap image column with `lg:max-w-[520px]` to prevent the image dominating the row at 1280.
+- `Venue.tsx`: verify map/info two-column at `lg`, add `lg:items-stretch`.
+- `Partners.tsx`: press grid — set `lg:grid-cols-6 xl:grid-cols-8` for cleaner laptop rhythm.
+- `FinalCTA.tsx`: cap `lg:py-24 xl:py-32`.
+- `Navbar.tsx`: ensure nav links don't collide with logo at 1280 — add `lg:gap-6 xl:gap-8`.
 
-**FinalCTA (`FinalCTA.tsx`)**
-- Replace `py-32` with `py-20 sm:py-24 md:py-32` — recovers a third of the mobile viewport.
-
-**About (`About.tsx`)**
-- Quote nav buttons `h-9 w-9` → `h-11 w-11` (44px minimum touch target).
-- Quote glyph: add `sm:text-6xl` between `text-5xl` and `md:text-7xl`.
-
-**Audience (`Audience.tsx`)**
-- Tab buttons: `py-2.5` → `py-3` (≥44px tap area), keep visual weight by trimming horizontal padding slightly on mobile.
-- Panel padding: smoother ramp `p-6 sm:p-8 md:p-12 lg:p-14`.
-
-**ThemesCarousel (`ThemesCarousel.tsx`)**
-- Arrow buttons `h-10 w-10` → `h-11 w-11` and reposition from `-left-3/-right-3` to `left-1` / `right-1` on mobile so they aren't clipped, restoring negative offset at `md`.
-- Verify card `w-[64vw]` works down to 320px — likely fine, no change.
-
-**Programme (`Programme.tsx`)**
-- Heading scale fix (above).
-- Verify time column doesn't wrap awkwardly on small phones; add `min-w-` only if needed after visual check.
-
-**Partners (`Partners.tsx`)**
-- Press logo grid: bump base columns to `grid-cols-3 sm:grid-cols-4 lg:grid-cols-8` so logos stay legible on 320–375px phones.
-
-**StatCounter / Stats**
-- Counter scale: `text-3xl sm:text-4xl md:text-6xl lg:text-7xl` so 4-digit values fit comfortably in 2-col mobile grid.
-
-**Footer (`Footer.tsx`)**
-- Add `break-words` / `overflow-wrap: anywhere` on the contact row so long email addresses can't push past the container.
-
-## Verification
-
-After edits, drive Playwright at viewports 375px, 768px, 1024px, 1440px:
-- Assert `document.documentElement.scrollWidth === clientWidth` on each (no horizontal overflow).
-- Screenshot each section at 375 + 768 to eyeball spacing and type rhythm.
-- Confirm tap targets ≥44px on Audience tabs, About quote nav, ThemesCarousel arrows.
+### 3. Verification (Playwright, headless)
+Drive `http://localhost:8080` at four laptop widths: 1280×800, 1366×768, 1440×900, 1920×1080. For each:
+- Assert `document.documentElement.scrollWidth === clientWidth` (no horizontal scroll).
+- Open Day-2 of the Agenda, screenshot the split view, verify Workshops panel is sticky and the two columns do not have a visible empty-gap mismatch.
+- Screenshot Hero, Packages, Partners, About to confirm no overlap or wrap glitches.
 
 ## Out of scope
-
-- No content/copy changes.
-- No color/typography system changes.
-- No new components or sections.
-- No business-logic or backend touches.
+- No content, copy, color, or component-API changes.
+- Mobile/tablet styles untouched.
+- No new components or libraries.

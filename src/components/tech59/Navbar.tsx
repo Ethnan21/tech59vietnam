@@ -24,7 +24,7 @@ export const Navbar = () => {
             </span>
             <span>TECH<span className="text-gradient">59</span></span>
           </a>
-          <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+          <ul className="hidden md:flex items-center gap-5 lg:gap-7 text-sm text-muted-foreground">
             {links.map(l => (
               <li key={l.href}><a href={l.href} className="hover:text-foreground transition-colors">{l.label}</a></li>
             ))}
