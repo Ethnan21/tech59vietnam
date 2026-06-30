@@ -33,7 +33,7 @@ export const Packages = () => (
         </h2>
       </Reveal>
 
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
         {/* VIP Pass — muted, left */}
         <Reveal delay={100}>
           <article className="group relative h-full flex flex-col p-8 rounded-3xl glass border border-border/40 transition-all duration-500 motion-safe:hover:-translate-y-1 hover:border-border/70 focus-within:ring-2 focus-within:ring-accent/50">
