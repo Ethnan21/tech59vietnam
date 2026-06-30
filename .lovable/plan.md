@@ -1,36 +1,24 @@
-## Goal
+# Mobile fixes
 
-Revert Day-2 Workshops to scroll together with Main Stage (side-by-side, shared page scroll), then verify laptop viewports remain clean.
+## 1. Venue section overflow (`src/components/tech59/Venue.tsx`)
+The `<h2>` uses `whitespace-nowrap` so "Vietnam's tech capital" runs past the viewport on small phones (visible in the screenshot — "capit…" clipped on the right). Fix:
+- Remove `whitespace-nowrap` from the h2.
+- Allow wrapping on mobile, keep single-line look only from `lg:` up (`lg:whitespace-nowrap`).
+- Tighten the mobile size: `text-[2.25rem]` → `sm:text-5xl` → `lg:text-[clamp(2rem,3.25vw,3rem)]` to prevent the gradient word ("tech") from being clipped on 360–390px viewports.
 
-## Changes
+## 2. Featured-in press grid (`src/components/tech59/Partners.tsx`)
+8 press logos in a 3-col mobile grid leave 2 orphaned bottom-left. Change to a clean 4×2:
+- Grid classes: `grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8`.
+- Reduce mobile logo cap so 4-up fits comfortably: `max-h-6 sm:max-h-12 md:max-h-14`.
+- Tighten mobile gaps: `gap-x-2 gap-y-4 sm:gap-x-8 sm:gap-y-10`.
+- Reduce wrapper padding on phones: `p-3 sm:p-8 md:p-12`.
 
-### 1. `src/components/tech59/Programme.tsx` — Day2Tracks desktop grid
-
-Remove the sticky / independent-scroll behavior on the workshop panel so both columns share the page scroll.
-
-- In the `xl:` two-column grid, change the workshop column wrapper from:
-  `xl:col-span-2 xl:sticky xl:top-24 xl:self-start xl:max-h-[calc(100vh-7rem)] xl:overflow-y-auto`
-  to simply:
-  `xl:col-span-2`
-- Keep `xl:items-start` on the grid so columns top-align (matches the prior look).
-- Leave the `workshopPanelClass` styling (muted background + ring) untouched.
-- Keep the mobile/small-laptop tab UI (`xl:hidden`) as-is.
-
-No other component logic, content, or styling changes.
-
-### 2. Laptop viewport re-check (no code changes unless a defect is found)
-
-Drive Playwright at 1280×800, 1366×768, 1440×900, 1920×1080 against `http://localhost:8080`:
-
-- Assert `document.documentElement.scrollWidth === clientWidth` (no horizontal overflow).
-- Open Agenda → Day 2; screenshot the split layout to confirm:
-  - Main Stage and Workshops sit side-by-side.
-  - Both scroll together with the page (no inner scrollbar on the workshop panel).
-  - Column tops align; no awkward height glitch.
-- Spot-check Hero, Stats, Experience, Packages, Partners, FinalCTA at each width for overlap/wrap issues.
-
-If any defect surfaces, fix it with a minimal `lg:`/`xl:` utility tweak in the affected component only.
+## 3. Landing-page mobile sweep (verification only)
+Run Playwright at 390×844 and 360×800 against `http://localhost:8080`:
+- Assert `document.documentElement.scrollWidth === clientWidth` (no horizontal scroll).
+- Screenshot each section (Hero, Stats, About, Experience, Programme, Audience, Packages, Venue, Partners, FinalCTA, Footer) and visually confirm no text clipping, no awkward orphan rows, CTA/sticky bar don't cover content.
+- Only patch additional sections if the screenshots reveal a real issue; report findings before editing further.
 
 ## Out of scope
-
-Mobile/tablet styles, content, copy, colors, component APIs.
+- Desktop/laptop styles (already tuned in prior turn).
+- Copy, colors, animations, component APIs.
