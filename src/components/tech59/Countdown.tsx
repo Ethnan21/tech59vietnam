@@ -39,7 +39,7 @@ export const Countdown = ({ compact = false }: { compact?: boolean }) => {
   }, []);
   const items: Array<[string, number]> = [["Days", t.d], ["Hours", t.h], ["Min", t.m], ["Sec", t.s]];
   return (
-    <div className={`grid grid-cols-4 gap-2 sm:gap-3 ${compact ? "max-w-md" : "max-w-xl"}`}>
+    <div ref={wrapRef} className={`grid grid-cols-4 gap-2 sm:gap-3 ${compact ? "max-w-md" : "max-w-xl"}`}>
       {items.map(([label, val]) => (
         <div key={label} className="glass rounded-xl px-2 py-3 sm:px-4 sm:py-4 text-center">
           <div className="font-display text-2xl sm:text-4xl font-bold text-gradient tabular-nums">
