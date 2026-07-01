@@ -53,11 +53,11 @@ const mainStage: Slot[] = [
   {
     start: "09:15",
     tag: "WELCOME REMARKS",
-    title: "Welcome Address from QTS IT Park",
+    title: "Welcome Address from QTSC IT Park",
     description: "A welcome from Vietnam's flagship software park host.",
     keynote: [
       {
-        name: "QTS Representative",
+        name: "QTSC Representative",
         title: "Quality Tech Solution Complex CEO / Chairman",
       },
     ],
