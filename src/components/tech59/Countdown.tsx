@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TARGET = new Date("2026-07-17T09:00:00+07:00").getTime();
 
