@@ -13,9 +13,29 @@ const calc = () => {
 
 export const Countdown = ({ compact = false }: { compact?: boolean }) => {
   const [t, setT] = useState(calc());
+  const wrapRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const i = setInterval(() => setT(calc()), 1000);
-    return () => clearInterval(i);
+    const el = wrapRef.current;
+    let interval: ReturnType<typeof setInterval> | null = null;
+    const start = () => {
+      if (interval) return;
+      setT(calc());
+      interval = setInterval(() => setT(calc()), 1000);
+    };
+    const stop = () => {
+      if (interval) { clearInterval(interval); interval = null; }
+    };
+    if (!el || typeof IntersectionObserver === "undefined") {
+      start();
+      return () => stop();
+    }
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) start(); else stop();
+    }, { threshold: 0 });
+    io.observe(el);
+    const onVis = () => { if (document.hidden) stop(); else if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) start(); };
+    document.addEventListener("visibilitychange", onVis);
+    return () => { io.disconnect(); document.removeEventListener("visibilitychange", onVis); stop(); };
   }, []);
   const items: Array<[string, number]> = [["Days", t.d], ["Hours", t.h], ["Min", t.m], ["Sec", t.s]];
   return (
