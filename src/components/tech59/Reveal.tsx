@@ -24,6 +24,25 @@ const initial = (v: Variant, y: number): CSSProperties => {
   }
 };
 
+// One shared observer for every Reveal on the page. Cheaper than one-per-element.
+type Cb = (visible: boolean) => void;
+const callbacks = new WeakMap<Element, Cb>();
+let sharedObserver: IntersectionObserver | null = null;
+
+const getObserver = () => {
+  if (sharedObserver || typeof IntersectionObserver === "undefined") return sharedObserver;
+  sharedObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const cb = callbacks.get(entry.target);
+        if (cb) cb(entry.isIntersecting);
+      }
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+  );
+  return sharedObserver;
+};
+
 export const Reveal = ({
   children,
   variant = "up",
@@ -32,7 +51,7 @@ export const Reveal = ({
   className,
   as: Tag = "div",
   once = true,
-  threshold = 0.15,
+  threshold: _threshold,
   y = 32,
 }: RevealProps) => {
   const ref = useRef<HTMLElement>(null);
@@ -41,21 +60,27 @@ export const Reveal = ({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (typeof IntersectionObserver === "undefined") { setShown(true); return; }
+    const obs = getObserver();
+    if (!obs) { setShown(true); return; }
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) { setShown(true); return; }
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-          if (once) io.disconnect();
-        } else if (!once) setShown(false);
-      },
-      { threshold, rootMargin: "0px 0px -8% 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [once, threshold]);
+    callbacks.set(el, (visible) => {
+      if (visible) {
+        setShown(true);
+        if (once) {
+          obs.unobserve(el);
+          callbacks.delete(el);
+        }
+      } else if (!once) {
+        setShown(false);
+      }
+    });
+    obs.observe(el);
+    return () => {
+      obs.unobserve(el);
+      callbacks.delete(el);
+    };
+  }, [once]);
 
   const style: CSSProperties = shown
     ? { opacity: 1, transform: "translate3d(0,0,0) scale(1)", transition: `opacity ${duration}ms cubic-bezier(0.22,1,0.36,1) ${delay}ms, transform ${duration}ms cubic-bezier(0.22,1,0.36,1) ${delay}ms` }

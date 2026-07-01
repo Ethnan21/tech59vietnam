@@ -1,17 +1,17 @@
+import { lazy, Suspense, useEffect } from "react";
 import { Navbar } from "@/components/tech59/Navbar";
 import { Hero } from "@/components/tech59/Hero";
 import { Stats } from "@/components/tech59/Stats";
 import { About } from "@/components/tech59/About";
-
 import { Audience } from "@/components/tech59/Audience";
 import { Experience } from "@/components/tech59/Experience";
 import { Packages } from "@/components/tech59/Packages";
-import { Venue } from "@/components/tech59/Venue";
-import { Partners } from "@/components/tech59/Partners";
-import { FinalCTA } from "@/components/tech59/FinalCTA";
-import { Footer } from "@/components/tech59/Footer";
 import { StickyCTA } from "@/components/tech59/StickyCTA";
-import { useEffect } from "react";
+
+const Venue = lazy(() => import("@/components/tech59/Venue").then(m => ({ default: m.Venue })));
+const Partners = lazy(() => import("@/components/tech59/Partners").then(m => ({ default: m.Partners })));
+const FinalCTA = lazy(() => import("@/components/tech59/FinalCTA").then(m => ({ default: m.FinalCTA })));
+const Footer = lazy(() => import("@/components/tech59/Footer").then(m => ({ default: m.Footer })));
 
 const Index = () => {
   useEffect(() => {
@@ -26,14 +26,15 @@ const Index = () => {
       <Hero />
       <Stats />
       <About />
-      
       <Experience />
       <Audience />
       <Packages />
-      <Venue />
-      <Partners />
-      <FinalCTA />
-      <Footer />
+      <Suspense fallback={null}>
+        <Venue />
+        <Partners />
+        <FinalCTA />
+        <Footer />
+      </Suspense>
       <StickyCTA />
     </main>
   );

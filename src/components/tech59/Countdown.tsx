@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TARGET = new Date("2026-07-17T09:00:00+07:00").getTime();
 
@@ -13,13 +13,33 @@ const calc = () => {
 
 export const Countdown = ({ compact = false }: { compact?: boolean }) => {
   const [t, setT] = useState(calc());
+  const wrapRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const i = setInterval(() => setT(calc()), 1000);
-    return () => clearInterval(i);
+    const el = wrapRef.current;
+    let interval: ReturnType<typeof setInterval> | null = null;
+    const start = () => {
+      if (interval) return;
+      setT(calc());
+      interval = setInterval(() => setT(calc()), 1000);
+    };
+    const stop = () => {
+      if (interval) { clearInterval(interval); interval = null; }
+    };
+    if (!el || typeof IntersectionObserver === "undefined") {
+      start();
+      return () => stop();
+    }
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) start(); else stop();
+    }, { threshold: 0 });
+    io.observe(el);
+    const onVis = () => { if (document.hidden) stop(); else if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) start(); };
+    document.addEventListener("visibilitychange", onVis);
+    return () => { io.disconnect(); document.removeEventListener("visibilitychange", onVis); stop(); };
   }, []);
   const items: Array<[string, number]> = [["Days", t.d], ["Hours", t.h], ["Min", t.m], ["Sec", t.s]];
   return (
-    <div className={`grid grid-cols-4 gap-2 sm:gap-3 ${compact ? "max-w-md" : "max-w-xl"}`}>
+    <div ref={wrapRef} className={`grid grid-cols-4 gap-2 sm:gap-3 ${compact ? "max-w-md" : "max-w-xl"}`}>
       {items.map(([label, val]) => (
         <div key={label} className="glass rounded-xl px-2 py-3 sm:px-4 sm:py-4 text-center">
           <div className="font-display text-2xl sm:text-4xl font-bold text-gradient tabular-nums">
