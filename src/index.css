@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Fonts are loaded via <link rel="preload"> in index.html (non-blocking). */
 
 @layer base {
   html, body { overflow-x: hidden; }
@@ -168,6 +168,38 @@
     border-radius: 0.5rem;
   }
 }
+
+/* ============================================================
+   Mobile performance overrides
+   Keep the visual identity intact but drop the most expensive
+   filters/animations for narrow viewports (phones), where LCP
+   & main-thread cost are most visible.
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Cheaper glass: no backdrop blur on phones (very expensive to composite) */
+  .glass,
+  .glass-strong {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: hsl(224 40% 10% / 0.85);
+  }
+  /* Drop grain overlay & shimmer streaks on mobile */
+  .grain::after { display: none; }
+  .light-streak { animation: none; background: none; }
+  /* Kill continuous background-position animation on mobile text */
+  .text-gradient-animated { animation: none; background-size: 100% 100%; }
+  /* Simplify glow shadows */
+  .text-glow { text-shadow: none; }
+  .glow-blue, .glow-neon, .glow-cyan { box-shadow: none; }
+  /* Tame heavy blurred blob decorations */
+  [class*="blur-["] { filter: blur(40px) !important; }
+  /* Stop infinite decorative keyframes on mobile */
+  .animate-pulse-glow,
+  .animate-flicker,
+  .animate-breathe,
+  .motion-safe\:animate-breathe { animation: none !important; }
+}
+
 
 
 

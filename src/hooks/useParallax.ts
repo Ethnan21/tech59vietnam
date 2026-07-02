@@ -48,6 +48,10 @@ export const useParallax = <T extends HTMLElement = HTMLElement>(speed = 0.2) =>
     if (!el) return;
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
+    // Skip parallax entirely on small screens — scroll-linked transforms
+    // are a major source of mobile jank and offer little visual payoff.
+    if (window.matchMedia?.("(max-width: 767px)").matches) return;
+
 
     const entry: Entry = { el, speed };
     entries.push(entry);
