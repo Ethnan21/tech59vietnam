@@ -3,9 +3,7 @@ import { Navbar } from "@/components/tech59/Navbar";
 import { Hero } from "@/components/tech59/Hero";
 import { Stats } from "@/components/tech59/Stats";
 import { About } from "@/components/tech59/About";
-import { Audience } from "@/components/tech59/Audience";
 import { Experience } from "@/components/tech59/Experience";
-import { Packages } from "@/components/tech59/Packages";
 import { StickyCTA } from "@/components/tech59/StickyCTA";
 
 const Venue = lazy(() => import("@/components/tech59/Venue").then(m => ({ default: m.Venue })));
@@ -27,8 +25,6 @@ const Index = () => {
       <Stats />
       <About />
       <Experience />
-      <Audience />
-      <Packages />
       <Suspense fallback={null}>
         <Venue />
         <Partners />
