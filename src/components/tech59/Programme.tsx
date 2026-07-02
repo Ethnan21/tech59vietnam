@@ -592,7 +592,7 @@ export const Programme = () => {
   const [open, setOpen] = useState<"day1" | "day2" | null>("day2");
 
   return (
-    <div className="mt-8 mb-24">
+    <div id="agenda" className="mt-8 mb-24 scroll-mt-24">
       <Reveal className="max-w-2xl mb-10">
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9]">
           <span className="text-gradient-animated text-slate-50">Agenda</span>

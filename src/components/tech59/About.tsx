@@ -102,11 +102,11 @@ export const About = () => {
                   </p>
                 </div>
                 <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground break-words order-2 sm:order-1">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground break-words order-2 sm:order-1 sm:flex-1 sm:min-w-0 sm:pr-2 leading-relaxed">
                     {cur.meta}
                   </span>
-                  <div className="flex items-center gap-2 flex-wrap order-1 sm:order-2 sm:justify-end">
-                    <div className="flex items-center gap-1.5 mr-2">
+                  <div className="flex items-center gap-2 flex-nowrap shrink-0 order-1 sm:order-2 sm:justify-end">
+                    <div className="flex items-center gap-1.5 mr-2 shrink-0">
                       {quotes.map((_, idx) => (
                         <button
                           key={idx}
