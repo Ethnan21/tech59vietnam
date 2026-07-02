@@ -6,7 +6,7 @@ import brandLogo from "@/assets/tech59-hero-logo-white.png";
 const links = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Audience", href: "#audience" },
+  
   { label: "Packages", href: "#packages" },
   { label: "Venue", href: "#venue" },
   { label: "Contact", href: "#contact" },
