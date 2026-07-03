@@ -131,7 +131,7 @@ const mainStage: Slot[] = [
     panelists: [
       { name: "Andre Lim", title: "CEO, Pallo" },
       { name: "Tuong Cat Tran", title: "Country Director, HEX" },
-      { name: "", title: "\u00a0" },
+      { name: "", title: "" },
       { name: "Sumona BasuMajumdar", title: "Chapter Lead (Vietnam), She Loves Data" },
     ],
     moderator: {
