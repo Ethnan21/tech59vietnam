@@ -35,7 +35,7 @@ export const Hero = () => {
         <h1 className="mb-6 animate-fade-in-up md:-ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
           <div className="relative inline-block max-w-full">
-            <img src={heroLogo} alt="TECH59 Summit Vietnam" fetchPriority="high" decoding="async" loading="eager" width={1200} height={400} className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px] motion-safe:animate-breathe" />
+            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px] motion-safe:animate-breathe" />
           </div>
         </h1>
 
