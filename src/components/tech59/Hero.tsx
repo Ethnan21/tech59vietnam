@@ -13,7 +13,7 @@ export const Hero = () => {
   const gridRef = useParallax<HTMLDivElement>(0.1);
   return (
   <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 md:pt-28 pb-16 overflow-x-clip overflow-hidden bg-hero grain">
-    <img ref={bgRef} src={heroBg} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen" width={1920} height={1080} />
+    <img ref={bgRef} src={heroBg} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen" width={1920} height={1080} />
     <div ref={gridRef} className="absolute inset-0 grid-bg" />
 
     <div className="absolute inset-0 light-streak pointer-events-none" />
@@ -37,7 +37,7 @@ export const Hero = () => {
         <h1 className="mb-6 animate-fade-in-up md:-ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
           <div className="relative inline-block max-w-full">
-            <img src={heroLogo} alt="TECH59 Summit Vietnam" width={900} height={300} fetchPriority="high" decoding="async" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px]" />
+            <img src={heroLogo} alt="TECH59 Summit Vietnam" width={900} height={300} decoding="async" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px]" />
           </div>
         </h1>
 
