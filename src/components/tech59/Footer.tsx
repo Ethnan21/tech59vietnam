@@ -21,6 +21,8 @@ export const Footer = () => (
         <img
           src={heroLogo}
           alt="TECH59 Summit Vietnam"
+          loading="lazy"
+          decoding="async"
           className="h-20 md:h-24 w-auto object-contain -ml-2"
         />
 

@@ -16,10 +16,10 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="container mt-4">
-        <nav className="glass-strong rounded-2xl px-4 md:px-5 py-3 flex items-center justify-between gap-3">
+        <nav className="glass-strong rounded-2xl px-4 md:px-5 py-3 flex items-center justify-between gap-3 backdrop-blur-md">
           <a href="#" className="flex items-center gap-2 font-display font-bold text-lg shrink-0">
             <span className="h-8 w-8 rounded-full bg-brand grid place-items-center overflow-hidden p-1">
-              <img src={brandLogo} alt="TECH59" className="h-full w-full object-contain" />
+              <img src={brandLogo} alt="TECH59" width={32} height={32} decoding="async" className="h-full w-full object-contain" />
             </span>
             <span>TECH<span className="text-gradient">59</span></span>
           </a>

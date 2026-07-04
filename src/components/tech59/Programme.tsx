@@ -398,6 +398,8 @@ const SlotCard = ({
               <img
                 src={s.logo.src}
                 alt={s.logo.alt}
+                loading="lazy"
+                decoding="async"
                 className={`relative w-auto object-contain ${
                   s.logo.alt === "sixonefour labs"
                     ? "h-[2.275rem] md:h-[2.925rem]"
