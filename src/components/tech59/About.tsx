@@ -85,6 +85,8 @@ export const About = () => {
                 src={q.bg}
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
                 className={`absolute inset-0 w-full h-full object-cover ${q.imgClass} pointer-events-none transition-opacity duration-700 ease-out ${idx === i ? "opacity-30" : "opacity-0"}`}
               />
             ))}
