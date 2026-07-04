@@ -13,8 +13,9 @@ export const Hero = () => {
   const gridRef = useParallax<HTMLDivElement>(0.1);
   return (
   <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 md:pt-28 pb-16 overflow-x-clip overflow-hidden bg-hero grain">
-    <img ref={bgRef} src={heroBg} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen will-change-transform" width={1920} height={1080} />
-    <div ref={gridRef} className="absolute inset-0 grid-bg will-change-transform" />
+    <img ref={bgRef} src={heroBg} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen" width={1920} height={1080} />
+    <div ref={gridRef} className="absolute inset-0 grid-bg" />
+
     <div className="absolute inset-0 light-streak pointer-events-none" />
     <div className="absolute -top-40 -left-40 w-[60vw] max-w-[500px] aspect-square rounded-full bg-secondary/20 blur-[120px] animate-pulse-glow" />
     <div className="absolute -bottom-40 -right-40 w-[70vw] max-w-[600px] aspect-square rounded-full bg-accent/15 blur-[140px] animate-pulse-glow [animation-delay:1.5s]" />
@@ -24,18 +25,19 @@ export const Hero = () => {
         <div className="inline-flex flex-nowrap items-center gap-2 md:gap-5 glass rounded-full pl-3 pr-3 md:pl-5 md:pr-5 py-2 md:py-2.5 mb-8 animate-fade-in max-w-full">
           <span className="text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.25em] text-muted-foreground shrink-0">Powered by</span>
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoSentry} alt="The Sentry" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoSentry} alt="The Sentry" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoSpark} alt="SPARK Hub" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoSpark} alt="SPARK Hub" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoAvv} alt="Ascend Vietnam Ventures" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoAvv} alt="Ascend Vietnam Ventures" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+
         </div>
 
 
         <h1 className="mb-6 animate-fade-in-up md:-ml-[8%]">
           <span className="sr-only">TECH59 Summit Vietnam 2026</span>
           <div className="relative inline-block max-w-full">
-            <img src={heroLogo} alt="TECH59 Summit Vietnam" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px] motion-safe:animate-breathe" />
+            <img src={heroLogo} alt="TECH59 Summit Vietnam" width={900} height={300} decoding="async" className="relative w-full max-w-2xl lg:max-w-3xl h-auto my-0 py-0 md:pr-[20px] pt-4 pl-0 pb-0 px-px sm:mx-4 md:mx-[70px]" />
           </div>
         </h1>
 
