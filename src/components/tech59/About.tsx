@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import quoteGreg from "@/assets/quote-greg-v2.jpg.asset.json";
-import quoteEdwin from "@/assets/quote-edwin-v2.jpg.asset.json";
-import quoteRui from "@/assets/quote-rui-v2.jpg.asset.json";
+import quoteGreg from "@/assets/quote-greg-v3.webp.asset.json";
+import quoteEdwin from "@/assets/quote-edwin-v3.webp.asset.json";
+import quoteRui from "@/assets/quote-rui-v3.webp.asset.json";
 
 const quotes = [
   {
