@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "./Reveal";
-import osomeLogo from "@/assets/workshops/osome.png.asset.json";
-import skymavisLogo from "@/assets/workshops/skymavis.png.asset.json";
-import qapitaLogo from "@/assets/workshops/qapita.png.asset.json";
-import airwallexLogo from "@/assets/workshops/airwallex.png.asset.json";
-import sixonefourLogo from "@/assets/workshops/sixonefour.png.asset.json";
+import osomeLogo from "@/assets/workshops/osome.png";
+import skymavisLogo from "@/assets/workshops/skymavis.png";
+import qapitaLogo from "@/assets/workshops/qapita.png";
+import airwallexLogo from "@/assets/workshops/airwallex.png";
+import sixonefourLogo from "@/assets/workshops/sixonefour.png";
 
 type Person = { name: string; title: string };
 
@@ -284,14 +284,14 @@ const workshopStage: Slot[] = [
     title: "Singapore Incorporation Masterclass: Business beyond borders",
     description:
       "Legal, financial and operational foundations for scaling across Southeast Asia.",
-    logo: { src: osomeLogo.url, alt: "Osome" },
+    logo: { src: osomeLogo, alt: "Osome" },
   },
   {
     start: "11:00",
     tag: "SkyMavis",
     title: "Building High-Performance Software Teams",
     description: "Build engineering teams that ship reliably at scale.",
-    logo: { src: skymavisLogo.url, alt: "Sky Mavis" },
+    logo: { src: skymavisLogo, alt: "Sky Mavis" },
   },
   {
     start: "13:15",
@@ -299,7 +299,7 @@ const workshopStage: Slot[] = [
     title: "Managing Everything Related To Ownership & Employee Equity for Start Ups",
     description:
       "Cap tables, equity plans and employee ownership for growing startups.",
-    logo: { src: qapitaLogo.url, alt: "Qapita" },
+    logo: { src: qapitaLogo, alt: "Qapita" },
   },
   {
     start: "14:20",
@@ -307,14 +307,14 @@ const workshopStage: Slot[] = [
     title: "Global Payments Made Simple: Connecting Businesses Across Borders",
     description:
       "Simplify cross-border payments and treasury for international operations.",
-    logo: { src: airwallexLogo.url, alt: "Airwallex" },
+    logo: { src: airwallexLogo, alt: "Airwallex" },
   },
   {
     start: "15:25",
     tag: "sixonefour labs",
     title: "Developing Engineering Talent",
     description: "Source, upskill and retain engineering talent in Vietnam.",
-    logo: { src: sixonefourLogo.url, alt: "sixonefour labs" },
+    logo: { src: sixonefourLogo, alt: "sixonefour labs" },
   },
 ];
 

@@ -1,12 +1,30 @@
 import themeMarket from "@/assets/theme-market.jpg";
+import themeMarketWebp from "@/assets/theme-market.webp";
+import themeMarketAvif from "@/assets/theme-market.avif";
 import themeOutsourcing from "@/assets/theme-outsourcing.jpg";
+import themeOutsourcingWebp from "@/assets/theme-outsourcing.webp";
+import themeOutsourcingAvif from "@/assets/theme-outsourcing.avif";
 import themeGaming from "@/assets/theme-gaming.jpg";
+import themeGamingWebp from "@/assets/theme-gaming.webp";
+import themeGamingAvif from "@/assets/theme-gaming.avif";
 import themeEdu from "@/assets/theme-edu.jpg";
+import themeEduWebp from "@/assets/theme-edu.webp";
+import themeEduAvif from "@/assets/theme-edu.avif";
 import themeAi from "@/assets/theme-ai.jpg";
+import themeAiWebp from "@/assets/theme-ai.webp";
+import themeAiAvif from "@/assets/theme-ai.avif";
 import themeGov from "@/assets/theme-gov.jpg";
+import themeGovWebp from "@/assets/theme-gov.webp";
+import themeGovAvif from "@/assets/theme-gov.avif";
 import themeVc from "@/assets/theme-vc.jpg";
+import themeVcWebp from "@/assets/theme-vc.webp";
+import themeVcAvif from "@/assets/theme-vc.avif";
 import themeRealEstate from "@/assets/theme-real-estate.jpg";
+import themeRealEstateWebp from "@/assets/theme-real-estate.webp";
+import themeRealEstateAvif from "@/assets/theme-real-estate.avif";
 import themeWorkshop from "@/assets/theme-workshop.jpg";
+import themeWorkshopWebp from "@/assets/theme-workshop.webp";
+import themeWorkshopAvif from "@/assets/theme-workshop.avif";
 import { Reveal } from "./Reveal";
 import { Programme } from "./Programme";
 import { ThemesCarousel } from "./ThemesCarousel";
@@ -14,15 +32,15 @@ import { Packages } from "./Packages";
 
 
 const themes = [
-  { title: "Vietnam Market Outlook", desc: "Where capital flows next.", bg: themeMarket },
-  { title: "Outsourcing", desc: "Why Vietnam wins next.", bg: themeOutsourcing },
-  { title: "Gaming & Creator Economy", desc: "Inside the creator boom.", bg: themeGaming },
-  { title: "Education & EdTech", desc: "Building the next 100 unicorns.", bg: themeEdu },
-  { title: "AI & Enterprise Automation", desc: "What's actually shipping.", bg: themeAi },
-  { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making.", bg: themeGov },
-  { title: "Venture Capital & Investment", desc: "Find the next unicorn.", bg: themeVc },
-  { title: "Real Estate & Tech", desc: "Proptech meets capital.", bg: themeRealEstate },
-  { title: "Hot Topic Workshops", desc: "Hands-on, off-record.", bg: themeWorkshop },
+  { title: "Vietnam Market Outlook", desc: "Where capital flows next.", bg: themeMarket, bgWebp: themeMarketWebp, bgAvif: themeMarketAvif },
+  { title: "Outsourcing", desc: "Why Vietnam wins next.", bg: themeOutsourcing, bgWebp: themeOutsourcingWebp, bgAvif: themeOutsourcingAvif },
+  { title: "Gaming & Creator Economy", desc: "Inside the creator boom.", bg: themeGaming, bgWebp: themeGamingWebp, bgAvif: themeGamingAvif },
+  { title: "Education & EdTech", desc: "Building the next 100 unicorns.", bg: themeEdu, bgWebp: themeEduWebp, bgAvif: themeEduAvif },
+  { title: "AI & Enterprise Automation", desc: "What's actually shipping.", bg: themeAi, bgWebp: themeAiWebp, bgAvif: themeAiAvif },
+  { title: "Government Policy & Corporate Diplomacy", desc: "Cross-border deal-making.", bg: themeGov, bgWebp: themeGovWebp, bgAvif: themeGovAvif },
+  { title: "Venture Capital & Investment", desc: "Find the next unicorn.", bg: themeVc, bgWebp: themeVcWebp, bgAvif: themeVcAvif },
+  { title: "Real Estate & Tech", desc: "Proptech meets capital.", bg: themeRealEstate, bgWebp: themeRealEstateWebp, bgAvif: themeRealEstateAvif },
+  { title: "Hot Topic Workshops", desc: "Hands-on, off-record.", bg: themeWorkshop, bgWebp: themeWorkshopWebp, bgAvif: themeWorkshopAvif },
 ];
 
 export const Experience = () => (

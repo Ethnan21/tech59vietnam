@@ -6,6 +6,8 @@ interface Theme {
   title: string;
   desc: string;
   bg: string;
+  bgWebp: string;
+  bgAvif: string;
 }
 
 interface Props {
@@ -61,16 +63,20 @@ export const ThemesCarousel = ({ themes }: Props) => {
               aria-label={`${t.title}. ${t.desc}`}
               className="relative h-full w-full rounded-2xl overflow-hidden glass ring-1 ring-border hover:ring-accent/60 focus-visible:ring-accent focus-visible:outline-none focus-visible:ring-2 motion-safe:hover:scale-[1.02] motion-safe:focus-visible:scale-[1.02] hover:shadow-[0_30px_60px_-10px_hsl(187_92%_53%/0.55)] focus-visible:shadow-[0_30px_60px_-10px_hsl(187_92%_53%/0.55)] transition-all duration-500 motion-reduce:transition-none group cursor-default"
             >
-              <img
-                src={t.bg}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                draggable={false}
-                width={768}
-                height={1024}
-                className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-80 group-focus-visible:opacity-80 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:scale-110 transition-all duration-[1500ms] ease-out motion-reduce:transition-none pointer-events-none"
-              />
+              <picture>
+                <source type="image/avif" srcSet={t.bgAvif} />
+                <source type="image/webp" srcSet={t.bgWebp} />
+                <img
+                  src={t.bg}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  draggable={false}
+                  width={768}
+                  height={1024}
+                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-80 group-focus-visible:opacity-80 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:scale-110 transition-all duration-[1500ms] ease-out motion-reduce:transition-none pointer-events-none"
+                />
+              </picture>
               {/* Readability scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/10 pointer-events-none" />
               {/* Light streak on hover/focus */}

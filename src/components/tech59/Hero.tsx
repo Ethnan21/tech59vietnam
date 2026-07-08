@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Countdown } from "./Countdown";
 import { ArrowRight, Sparkles, MapPin, Calendar, ArrowUpRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgMobileAvif from "@/assets/hero-bg-mobile.avif";
+import heroBgMobileWebp from "@/assets/hero-bg-mobile.webp";
+import heroBgTabletAvif from "@/assets/hero-bg-tablet.avif";
+import heroBgTabletWebp from "@/assets/hero-bg-tablet.webp";
+import heroBgDesktopAvif from "@/assets/hero-bg-desktop.avif";
+import heroBgDesktopWebp from "@/assets/hero-bg-desktop.webp";
 import heroLogo from "@/assets/tech59-hero-logo-white.png";
 import logoSentry from "@/assets/logo-thesentry.png";
 import logoSpark from "@/assets/logo-sparkhub.png";
@@ -13,7 +19,15 @@ export const Hero = () => {
   const gridRef = useParallax<HTMLDivElement>(0.1);
   return (
   <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 md:pt-28 pb-16 overflow-x-clip overflow-hidden bg-hero grain">
-    <img ref={bgRef} src={heroBg} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen" width={1920} height={1080} />
+    <picture>
+      <source media="(max-width: 639px)" type="image/avif" srcSet={heroBgMobileAvif} />
+      <source media="(max-width: 639px)" type="image/webp" srcSet={heroBgMobileWebp} />
+      <source media="(max-width: 1023px)" type="image/avif" srcSet={heroBgTabletAvif} />
+      <source media="(max-width: 1023px)" type="image/webp" srcSet={heroBgTabletWebp} />
+      <source type="image/avif" srcSet={heroBgDesktopAvif} />
+      <source type="image/webp" srcSet={heroBgDesktopWebp} />
+      <img ref={bgRef} src={heroBg} alt="" loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover opacity-40 mix-blend-screen" width={1920} height={1080} />
+    </picture>
     <div ref={gridRef} className="absolute inset-0 grid-bg" />
 
     <div className="absolute inset-0 light-streak pointer-events-none" />
@@ -25,11 +39,11 @@ export const Hero = () => {
         <div className="inline-flex flex-nowrap items-center gap-2 md:gap-5 glass rounded-full pl-3 pr-3 md:pl-5 md:pr-5 py-2 md:py-2.5 mb-8 animate-fade-in max-w-full">
           <span className="text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.25em] text-muted-foreground shrink-0">Powered by</span>
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoSentry} alt="The Sentry" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoSentry} alt="The Sentry" width={120} height={28} loading="eager" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoSpark} alt="SPARK Hub" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoSpark} alt="SPARK Hub" width={120} height={28} loading="eager" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
           <span className="inline-block h-3 md:h-4 w-px bg-border shrink-0" />
-          <img src={logoAvv} alt="Ascend Vietnam Ventures" width={120} height={28} loading="lazy" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
+          <img src={logoAvv} alt="Ascend Vietnam Ventures" width={120} height={28} loading="eager" decoding="async" className="h-4 md:h-7 w-auto object-contain opacity-90 shrink-0" />
 
         </div>
 
@@ -72,4 +86,3 @@ export const Hero = () => {
   </section>
   );
 };
-

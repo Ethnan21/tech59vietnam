@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import quoteGreg from "@/assets/quote-greg-v3.webp.asset.json";
-import quoteEdwin from "@/assets/quote-edwin-v3.webp.asset.json";
-import quoteRui from "@/assets/quote-rui-v3.webp.asset.json";
+import quoteGreg from "@/assets/quote-greg-v3.webp";
+import quoteEdwin from "@/assets/quote-edwin-v3.webp";
+import quoteRui from "@/assets/quote-rui-v3.webp";
 
 const quotes = [
   {
-    bg: quoteGreg.url,
+    bg: quoteGreg,
     imgClass: "scale-105",
     text: (
       <span>
@@ -20,7 +20,7 @@ const quotes = [
     meta: "Tech59 · Est. 2024",
   },
   {
-    bg: quoteEdwin.url,
+    bg: quoteEdwin,
     imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
@@ -33,7 +33,7 @@ const quotes = [
     meta: "Edwin H. Law · Executive Director, AusCham Vietnam",
   },
   {
-    bg: quoteRui.url,
+    bg: quoteRui,
     imgClass: "scale-125 object-[center_75%]",
     text: (
       <span>
